@@ -4,6 +4,7 @@ Prebuilt binary with Tensorflow Lite enabled.
 RaspberryPi3 ... armv7l  
 
 ## Usage
+**Example of Python 2.x series**
 ```
 $ git clone https://github.com/PINTO0309/Tensorflow-bin.git
 $ cd Tensorflow-bin
