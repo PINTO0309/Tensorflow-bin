@@ -1,2 +1,2 @@
 # Tensorflow-bin
-Prebuilt binary with Tensorflow Lite enabled
+Prebuilt binary with Tensorflow Lite enabled.
