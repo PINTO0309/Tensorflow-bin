@@ -28,6 +28,9 @@ $ python
 ## Build Parameter
 **Python2.x**
 ```
+$ cd tensorflow
+$ ./configure
+
 Please specify the location of python. [Default is /usr/bin/python]: 
 
 
@@ -83,12 +86,23 @@ Please specify optimization flags to use during compilation when bazel option "-
 
 Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: n
 ```
-  
+```
+$ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
 **Python3.x (Under construction)**
 ```
-WARNING: Running Bazel server needs to be killed, because the startup options are different.
-WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
-You have bazel 0.17.2- (@non-git) installed.
+$ cd tensorflow
+$ ./configure
+
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
 
 
@@ -148,4 +162,15 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
     --config=mkl            # Build with MKL support.
     --config=monolithic     # Config for mostly static monolithic build.
 Configuration finished
+```
+```
+$ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+//tensorflow/tools/pip_package:build_pip_package
 ```
