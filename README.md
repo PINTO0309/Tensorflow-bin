@@ -2,6 +2,9 @@
 Prebuilt binary with Tensorflow Lite enabled.
 
 RaspberryPi3 ... armv7l  
+  
+Bazel's pre-build binay is below.  
+**https://github.com/PINTO0309/Bazel_bin.git**  
 
 ## Usage
 **Example of Python 2.x series**
