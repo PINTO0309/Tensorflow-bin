@@ -1,5 +1,8 @@
 # Tensorflow-bin
-Prebuilt binary with Tensorflow Lite enabled.
+Prebuilt binary with Tensorflow Lite enabled.  
+And, The following problem was solved.  
+1. `undefined symbol: _ZN6tflite12tensor_utils39NeonMatrixBatchVectorMultiplyAccumulateEPKaiiS2_PKfiPfi`  
+2. `Bus Error`
 
 RaspberryPi3 ... armv7l  
   
