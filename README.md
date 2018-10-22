@@ -14,6 +14,8 @@ $ sudo pip2 uninstall tensorflow
 $ git clone https://github.com/PINTO0309/Tensorflow-bin.git
 $ cd Tensorflow-bin
 $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
+
+【Required】 Restart the terminal.
 ```
 
 **Example of Python 3.x series**
@@ -23,6 +25,8 @@ $ sudo pip3 uninstall tensorflow
 $ git clone https://github.com/PINTO0309/Tensorflow-bin.git
 $ cd Tensorflow-bin
 $ sudo pip3 install tensorflow-1.11.0-cp35-cp35mu-linux_armv7l.whl
+
+【Required】 Restart the terminal.
 ```
 
 ## Operation check
