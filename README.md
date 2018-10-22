@@ -24,7 +24,7 @@ $ sudo apt-get install python-pip python3-pip
 $ sudo pip3 uninstall tensorflow
 $ git clone https://github.com/PINTO0309/Tensorflow-bin.git
 $ cd Tensorflow-bin
-$ sudo pip3 install tensorflow-1.11.0-cp35-cp35mu-linux_armv7l.whl
+$ sudo pip3 install tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
