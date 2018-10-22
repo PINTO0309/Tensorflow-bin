@@ -122,6 +122,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
+
 $ cd tensorflow
 $ ./configure
 
