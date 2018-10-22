@@ -16,9 +16,28 @@ $ cd Tensorflow-bin
 $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 ```
 
+**Example of Python 3.x series**
+```
+$ sudo apt-get install python-pip python3-pip
+$ sudo pip3 uninstall tensorflow
+$ git clone https://github.com/PINTO0309/Tensorflow-bin.git
+$ cd Tensorflow-bin
+$ sudo pip3 install tensorflow-1.11.0-cp35-cp35mu-linux_armv7l.whl
+```
+
 ## Operation check
+**Example of Python 2.x series**
 ```
 $ python
+>>> import tensorflow
+>>> tensorflow.__version__
+1.11.0
+>>> exit()
+```
+
+**Example of Python 3.x series**
+```
+$ python3
 >>> import tensorflow
 >>> tensorflow.__version__
 1.11.0
