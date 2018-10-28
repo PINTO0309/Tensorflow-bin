@@ -23,7 +23,7 @@ $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 
 **Example of Python 3.x series**
 ```
-$ sudo apt-get install python-pip python3-pip
+$ sudo apt-get install python-pip python3-pip python3-scipy
 $ sudo pip3 uninstall tensorflow
 $ git clone https://github.com/PINTO0309/Tensorflow-bin.git
 $ cd Tensorflow-bin
