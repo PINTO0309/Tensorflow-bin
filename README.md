@@ -58,6 +58,7 @@ $ python3
 ```
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ cd tensorflow
+$ git checkout v1.11.0
 $ ./configure
 
 Please specify the location of python. [Default is /usr/bin/python]: 
@@ -139,6 +140,7 @@ $ sudo pip3 install h5py==2.8.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
 $ cd tensorflow
+$ git checkout v1.11.0
 $ ./configure
 
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
