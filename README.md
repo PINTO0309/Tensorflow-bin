@@ -205,7 +205,36 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
-**Python3.x + jemalloc + MPI (Oct 30,2018 Under construction)**
+**Python3.x + jemalloc + MPI (Oct 30,2018 Under construction)**  
+  
+Edit tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.cc Line139 / Line140, Line261.
+```cxx
+  MPIRendezvousMgr* mgr =
+      reinterpret_cast<MPIRendezvousMgr*>(this->rendezvous_mgr_);
+- mgr->QueueRequest(parsed.FullKey().ToString(), step_id_,
+-                   std::move(request_call), rendezvous_call);
++ mgr->QueueRequest(string(parsed.FullKey()), step_id_, std::move(request_call),
++                   rendezvous_call);
+}
+ MPIRemoteRendezvous::~MPIRemoteRendezvous() {}
+
+
+        std::function<MPISendTensorCall*()> res = std::bind(
+            send_cb, status, send_args, recv_args, val, is_dead, mpi_send_call);
+-       SendQueueEntry req(parsed.FullKey().ToString().c_str(), std::move(res));
++       SendQueueEntry req(string(parsed.FullKey()), std::move(res));
+         this->QueueSendRequest(req);
+```
+Edit tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.h Line74
+```cxx
+  void Init(const Rendezvous::ParsedKey& parsed, const int64 step_id,
+            const bool is_dead) {
+-   mRes_.set_key(parsed.FullKey().ToString());
++   mRes_.set_key(string(parsed.FullKey()));
+    mRes_.set_step_id(step_id);
+    mRes_.mutable_response()->set_is_dead(is_dead);
+    mRes_.mutable_response()->set_send_start_micros(
+```
 ```
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
