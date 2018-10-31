@@ -13,6 +13,7 @@ Bazel's pre-build binay is below.
 **Example of Python 2.x series**
 ```
 $ sudo apt-get install python-pip python3-pip
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip2 uninstall tensorflow
 $ git clone https://github.com/PINTO0309/Tensorflow-bin.git
 $ cd Tensorflow-bin
@@ -24,6 +25,7 @@ $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 **Example of Python 3.x series**
 ```
 $ sudo apt-get install python-pip python3-pip python3-scipy
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip3 uninstall tensorflow
 $ git clone https://github.com/PINTO0309/Tensorflow-bin.git
 $ cd Tensorflow-bin
@@ -54,6 +56,7 @@ $ python3
 ## Build Parameter
 **Python2.x**
 ```
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ cd tensorflow
 $ ./configure
 
@@ -129,6 +132,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
 $ cd tensorflow
 $ ./configure
