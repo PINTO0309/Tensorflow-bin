@@ -126,6 +126,10 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --host_copt=-DRASPBERRY_PI \
 //tensorflow/tools/pip_package:build_pip_package
 ```
+```
+$ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+$ sudo pip2 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
+```
 
 **Python3.x**
 ```
@@ -207,6 +211,10 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-DRASPBERRY_PI \
 --host_copt=-DRASPBERRY_PI \
 //tensorflow/tools/pip_package:build_pip_package
+```
+```
+$ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+$ sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 ```
 
 **Python3.x + jemalloc + MPI (Oct 30,2018 Under construction)**  
