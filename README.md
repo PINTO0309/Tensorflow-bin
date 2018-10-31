@@ -57,6 +57,9 @@ $ python3
 **Python2.x**
 ```
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
+
+$ cd ~
+$ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
 $ git checkout v1.11.0
 $ ./configure
@@ -139,6 +142,8 @@ $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
+$ cd ~
+$ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
 $ git checkout v1.11.0
 $ ./configure
@@ -255,6 +260,8 @@ $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
+$ cd ~
+$ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
 $ ./configure
 
