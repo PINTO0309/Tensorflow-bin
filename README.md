@@ -226,7 +226,7 @@ $ sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp35-cp35m-linux_armv7
 
 **Python3.x + jemalloc + MPI (Oct 30,2018 Under construction)**  
   
-Edit tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.cc Line139 / Line140, Line261.
+Edit **`tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.cc`** Line139 / Line140, Line261.
 ```cxx
   MPIRendezvousMgr* mgr =
       reinterpret_cast<MPIRendezvousMgr*>(this->rendezvous_mgr_);
@@ -244,7 +244,7 @@ Edit tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.cc Line139 / Line140, 
 +       SendQueueEntry req(string(parsed.FullKey()), std::move(res));
          this->QueueSendRequest(req);
 ```
-Edit tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.h Line74
+Edit **`tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.h`** Line74
 ```cxx
   void Init(const Rendezvous::ParsedKey& parsed, const int64 step_id,
             const bool is_dead) {
