@@ -224,7 +224,7 @@ $ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflo
 $ sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 ```
 
-**Python3.x + jemalloc + MPI**  
+**Python3.x + jemalloc + MPI + Threads count tuning**  
   
 Edit **`tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.cc`** Line139 / Line140, Line261.
 ```cxx
@@ -253,6 +253,11 @@ Edit **`tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.h`** Line74
     mRes_.set_step_id(step_id);
     mRes_.mutable_response()->set_is_dead(is_dead);
     mRes_.mutable_response()->set_send_start_micros(
+```
+Edit **`tensorflow/tensorflow/contrib/lite/interpreter.cc`** Line127.
+```cxx
+-  context_.recommended_num_threads = -1;
++  context_.recommended_num_threads = 4;
 ```
 ```
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
