@@ -79,7 +79,7 @@ Found possible Python library paths:
   /opt/movidius/caffe/python
 Please input the desired Python library path to use.  Default is [/usr/local/lib/python2.7/dist-packages]
 
-Do you wish to build TensorFlow with jemalloc as malloc support? [Y/n]: n
+Do you wish to build TensorFlow with jemalloc as malloc support? [Y/n]: y
 No jemalloc as malloc support will be enabled for TensorFlow.
 
 Do you wish to build TensorFlow with Google Cloud Platform support? [Y/n]: n
@@ -162,7 +162,7 @@ Found possible Python library paths:
   /opt/movidius/caffe/python
 Please input the desired Python library path to use.  Default is [/usr/local/lib] /usr/local/lib/python3.5/dist-packages
 
-Do you wish to build TensorFlow with jemalloc as malloc support? [Y/n]: n
+Do you wish to build TensorFlow with jemalloc as malloc support? [Y/n]: y
 No jemalloc as malloc support will be enabled for TensorFlow.
 
 Do you wish to build TensorFlow with Google Cloud Platform support? [Y/n]: n
