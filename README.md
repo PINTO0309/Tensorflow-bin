@@ -10,6 +10,8 @@ Bazel's pre-build binay is below.
 **https://github.com/PINTO0309/Bazel_bin.git**  
 
 ## Binary type
+**`Best`** is the highest performance binary when using **`Python API`**.  
+  
 **Python 2.x**
   
 |Best|.whl|jemalloc|MPI|4Threads|
