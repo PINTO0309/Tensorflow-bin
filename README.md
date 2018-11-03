@@ -224,7 +224,7 @@ $ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflo
 $ sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 ```
 
-**Python3.x + jemalloc + MPI + MultiThread[C++ Only]**  
+**Python3.x + jemalloc + MPI + MultiThread [C++ Only]**  
   
 Edit **`tensorflow/tensorflow/contrib/mpi/mpi_rendezvous_mgr.cc`** Line139 / Line140, Line261.
 ```cxx
@@ -344,7 +344,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
-**Python3.x + jemalloc + XLA JIT + MultiThread[C++ Only] (Nov 3, 2018 Under construction)**  
+**Python3.x + jemalloc + XLA JIT + MultiThread [C++ Only] (Nov 3, 2018 Under construction)**  
   
 Edit **`tensorflow/tensorflow/contrib/lite/interpreter.cc`** Line127.
 ```cxx
