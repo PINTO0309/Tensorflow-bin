@@ -9,6 +9,23 @@ RaspberryPi3 ... armv7l
 Bazel's pre-build binay is below.  
 **https://github.com/PINTO0309/Bazel_bin.git**  
 
+## Binary type
+**Python 2.x**
+  
+|Best|.whl|jemalloc|MPI|Thread|
+|:--:|:--|:--:|:--:|:--:|
+||tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl||||
+|:star:|tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl|○|||
+
+**Python 3.x**
+  
+|Best|.whl|jemalloc|MPI|Thread|
+|:--:|:--|:--:|:--:|:--:|
+||tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl||||
+|:star:|tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl|○|||
+||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_mpi.whl|○|○||
+||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_mpi_multithread.whl|○|○|○|
+
 ## Usage
 **Example of Python 2.x series**
 ```
