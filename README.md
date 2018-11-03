@@ -344,13 +344,8 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
-**Python3.x + jemalloc + XLA JIT + MultiThread [C++ Only] (Nov 3, 2018 Under construction)**  
+**Python3.x + jemalloc + XLA JIT (Nov 3, 2018 Under construction)**  
   
-Edit **`tensorflow/tensorflow/contrib/lite/interpreter.cc`** Line127.
-```cxx
--  context_.recommended_num_threads = -1;
-+  context_.recommended_num_threads = 4;
-```
 ```
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
