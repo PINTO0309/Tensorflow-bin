@@ -12,14 +12,14 @@ Bazel's pre-build binay is below.
 ## Binary type
 **Python 2.x**
   
-|Best|.whl|jemalloc|MPI|4Thread|
+|Best|.whl|jemalloc|MPI|4Threads|
 |:--:|:--|:--:|:--:|:--:|
 ||tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl||||
 |:star:|tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl|○|||
 
 **Python 3.x**
   
-|Best|.whl|jemalloc|MPI|4Thread|
+|Best|.whl|jemalloc|MPI|4Threads|
 |:--:|:--|:--:|:--:|:--:|
 ||tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl||||
 |:star:|tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl|○|||
