@@ -12,14 +12,14 @@ Bazel's pre-build binay is below.
 ## Binary type
 **Python 2.x**
   
-|Best|.whl|jemalloc|MPI|Thread|
+|Best|.whl|jemalloc|MPI|4Thread|
 |:--:|:--|:--:|:--:|:--:|
 ||tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl||||
 |:star:|tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl|○|||
 
 **Python 3.x**
   
-|Best|.whl|jemalloc|MPI|Thread|
+|Best|.whl|jemalloc|MPI|4Thread|
 |:--:|:--|:--:|:--:|:--:|
 ||tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl||||
 |:star:|tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl|○|||
@@ -372,7 +372,7 @@ $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
-$ JAVA_OPTIONS=-Xmx500M
+$ JAVA_OPTIONS=-Xmx256M
 
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
