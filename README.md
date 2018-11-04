@@ -13,14 +13,15 @@ Bazel's pre-build binay is below.
 **`Best`** is the highest performance binary when using **`Python API`**.  
   
 **Python 2.x**
-  
+
 |Best|.whl|jemalloc|MPI|4Threads|
 |:--:|:--|:--:|:--:|:--:|
 ||tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl||||
 |:star:|tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl|○|||
+||tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc_mpi_multithread.whl|○|○|○|
 
 **Python 3.x**
-  
+
 |Best|.whl|jemalloc|MPI|4Threads|
 |:--:|:--|:--:|:--:|:--:|
 ||tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl||||
