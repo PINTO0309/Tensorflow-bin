@@ -12,7 +12,7 @@ Bazel's pre-build binay is below.
 ## Binary type
 **`Best`** is the highest performance binary when using **`Python API`**.  
   
-**Python 2.x**
+**Python 2.x**　Be sure to rename to **`tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl`** and use the pip2 command.
 
 |Best|.whl|jemalloc|MPI|4Threads|
 |:--:|:--|:--:|:--:|:--:|
@@ -20,7 +20,7 @@ Bazel's pre-build binay is below.
 |:star:|tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl|○|||
 ||tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc_mpi_multithread.whl|○|○|○|
 
-**Python 3.x**
+**Python 3.x**　Be sure to rename to **`tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl`** and use the pip3 command.
 
 |Best|.whl|jemalloc|MPI|4Threads|
 |:--:|:--|:--:|:--:|:--:|
