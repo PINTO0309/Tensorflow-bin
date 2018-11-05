@@ -35,8 +35,6 @@ Bazel's pre-build binay is below.
 $ sudo apt-get install python-pip python3-pip
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip2 uninstall tensorflow
-$ git clone https://github.com/PINTO0309/Tensorflow-bin.git
-$ cd Tensorflow-bin
 $ wget -O tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl
 $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 
@@ -48,8 +46,6 @@ $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 $ sudo apt-get install python-pip python3-pip python3-scipy
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip3 uninstall tensorflow
-$ git clone https://github.com/PINTO0309/Tensorflow-bin.git
-$ cd Tensorflow-bin
 $ wget -O tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl
 $ sudo pip3 install tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 
