@@ -32,7 +32,7 @@ Bazel's pre-build binay is below.
 ## Usage
 **Example of Python 2.x series**
 ```
-$ sudo apt-get install python-pip python3-pip
+$ sudo apt-get install python-pip python3-pip python-scipy
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip2 uninstall tensorflow
 $ wget -O tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl
