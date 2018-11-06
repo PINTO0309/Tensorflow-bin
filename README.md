@@ -456,6 +456,14 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 **Python2.x + XLA JIT (Nov 6, 2018 Under construction)**  
   
 ```
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
+
+$ cd ~
+$ git clone https://github.com/tensorflow/tensorflow.git
+$ cd tensorflow
+$ git checkout -b v1.12.0
+$ JAVA_OPTIONS=-Xmx500M
+
 $ ./configure
 You have bazel 0.17.2- (@non-git) installed.
 Please specify the location of python. [Default is /usr/bin/python]:
