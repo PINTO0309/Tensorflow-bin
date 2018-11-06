@@ -79,7 +79,7 @@ $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
-$ git checkout v1.11.0
+$ git checkout -b v1.11.0
 $ ./configure
 
 Please specify the location of python. [Default is /usr/bin/python]: 
@@ -163,7 +163,7 @@ $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
-$ git checkout v1.11.0
+$ git checkout -b v1.11.0
 $ ./configure
 
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
@@ -286,6 +286,7 @@ $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
+$ git checkout -b v1.11.0
 $ ./configure
 
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
@@ -374,6 +375,7 @@ $ JAVA_OPTIONS=-Xmx256M
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
+$ git checkout -b v1.11.0
 $ ./configure
 
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
