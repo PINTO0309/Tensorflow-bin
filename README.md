@@ -502,3 +502,14 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
         --config=ngraph         # Build with Intel nGraph support.
 Configuration finished
 ```
+```
+$ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+//tensorflow/tools/pip_package:build_pip_package
+```
