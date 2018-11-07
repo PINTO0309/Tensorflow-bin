@@ -462,7 +462,7 @@ $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
 $ git checkout -b v1.12.0
-$ JAVA_OPTIONS=-Xmx500M
+$ JAVA_OPTIONS=-J-Xmx500M
 
 $ ./configure
 You have bazel 0.17.2- (@non-git) installed.
