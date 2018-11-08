@@ -9,6 +9,9 @@ RaspberryPi3 ... armv7l
 Bazel's pre-build binay is below.  
 **https://github.com/PINTO0309/Bazel_bin.git**  
 
+Cross compilation recommends using **`lhelontra`** repository.  
+**https://github.com/lhelontra/tensorflow-on-arm.git**
+
 ## Binary type
 **`Best`** is the highest performance binary when using **`Python API`**.  
   
