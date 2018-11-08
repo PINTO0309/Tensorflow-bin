@@ -366,7 +366,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
-**Python3.x + jemalloc + XLA JIT (Nov 3, 2018 Under construction)**  
+**Python3.x + jemalloc + XLA JIT (Build impossible)**  
   
 ```
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
@@ -456,7 +456,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 ============================================================  
 **Tensorflow v1.12.0**  
   
-**Python2.x + XLA JIT (Nov 6, 2018 Under construction)**  
+**Python2.x + XLA JIT (Nov 6, 2018 Build impossible)**  
   
 ```
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
