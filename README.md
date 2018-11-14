@@ -588,5 +588,6 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-fomit-frame-pointer \
 --copt=-DRASPBERRY_PI \
 --host_copt=-DRASPBERRY_PI \
+--host_jvm_args=-Xmx512m \
 //tensorflow/tools/pip_package:build_pip_package
 ```
