@@ -468,7 +468,6 @@ $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
 $ git checkout -b v1.12.0
-$ JAVA_OPTIONS=-J-Xmx500M
 
 $ ./configure
 You have bazel 0.17.2- (@non-git) installed.
@@ -525,17 +524,24 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-fomit-frame-pointer \
 --copt=-DRASPBERRY_PI \
 --host_copt=-DRASPBERRY_PI \
+--host_jvm_args=-Xmx512m \
 //tensorflow/tools/pip_package:build_pip_package
 ```
   
 **Python3.x (Nov 14, 2018 Under construction)**  
   
 ```
-pi@raspberrypi:~/tensorflow $ ./configure
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
+
+$ cd ~
+$ git clone https://github.com/tensorflow/tensorflow.git
+$ cd tensorflow
+$ git checkout -b v1.12.0
+
+$ ./configure
 WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
 You have bazel 0.17.2- (@non-git) installed.
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
-
 
 Found possible Python library paths:
   /usr/local/lib
