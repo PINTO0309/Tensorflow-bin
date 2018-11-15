@@ -462,6 +462,9 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 **Python2.x + XLA JIT (Nov 6, 2018 Build impossible)**  
   
 ```
+$ sudo pip2 install keras_applications==1.0.4 --no-deps
+$ sudo pip2 install keras_preprocessing==1.0.2 --no-deps
+$ sudo pip2 install h5py==2.8.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
 $ cd ~
@@ -530,6 +533,9 @@ $ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.
 **Python3.x (Nov 14, 2018 Under construction)**  
   
 ```
+$ sudo pip3 install keras_applications==1.0.4 --no-deps
+$ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
+$ sudo pip3 install h5py==2.8.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
 $ cd ~
