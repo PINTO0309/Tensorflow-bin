@@ -591,7 +591,14 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 Configuration finished
 ```
 ```
-$ sudo bazel --host_jvm_args=-Xmx512m build --config opt no_aws_support no_gcp_support no_hdfs_support no_ignite_support no_kafka_support --local_resources 1024.0,0.5,0.5 \
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nogcp \
+--config=nohdfs \
+--config=noignite \
+--config=nokafka \
+--local_resources=1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
 --copt=-funsafe-math-optimizations \
