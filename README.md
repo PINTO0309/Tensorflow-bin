@@ -590,6 +590,8 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 	--config=ngraph      	# Build with Intel nGraph support.
 Configuration finished
 ```
+https://github.com/tensorflow/tensorflow/issues/22819  
+https://github.com/tensorflow/tensorflow/commit/d80eb525e94763e09cbb9fa3cbef9a0f64e2cb2a  
 ```
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
