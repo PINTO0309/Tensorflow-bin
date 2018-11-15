@@ -592,6 +592,8 @@ Configuration finished
 ```
 https://github.com/tensorflow/tensorflow/issues/22819  
 https://github.com/tensorflow/tensorflow/commit/d80eb525e94763e09cbb9fa3cbef9a0f64e2cb2a  
+https://github.com/tensorflow/tensorflow/commit/5847293aeb9ab45a02c4231c40569a15bd4541c6  
+https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/pip_package  
 ```
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
