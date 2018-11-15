@@ -516,7 +516,7 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 Configuration finished
 ```
 ```
-$ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
+$ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
 --copt=-funsafe-math-optimizations \
@@ -524,7 +524,6 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-fomit-frame-pointer \
 --copt=-DRASPBERRY_PI \
 --host_copt=-DRASPBERRY_PI \
---host_jvm_args=-Xmx512m \
 //tensorflow/tools/pip_package:build_pip_package
 ```
   
@@ -586,7 +585,7 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 Configuration finished
 ```
 ```
-$ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
+$ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
 --copt=-funsafe-math-optimizations \
@@ -594,6 +593,5 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-fomit-frame-pointer \
 --copt=-DRASPBERRY_PI \
 --host_copt=-DRASPBERRY_PI \
---host_jvm_args=-Xmx512m \
 //tensorflow/tools/pip_package:build_pip_package
 ```
