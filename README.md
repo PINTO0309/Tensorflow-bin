@@ -591,26 +591,7 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 Configuration finished
 ```
 ```
-$ nano .tf_configure.bazelrc
-
-#Before
-build --action_env TF_DOWNLOAD_CLANG="0"
-build:opt --copt=-march=native
-↓
-#After
-build --action_env TF_DOWNLOAD_CLANG="0"
-build --action_env TF_NEED_AWS="0"
-build --action_env TF_NEED_HDFS="0"
-build --action_env TF_NEED_VERBS="0"
-build --action_env TF_NEED_MPI="0"
-build --action_env TF_NEED_MKL="0"
-build --action_env TF_NEED_JEMALLOC="1"
-build --action_env TF_ENABLE_XLA="0"
-build --action_env TF_NEED_S3="0"
-build:opt --copt=-march=native
-```
-```
-$ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.0,0.5,0.5 \
+$ sudo bazel --host_jvm_args=-Xmx512m build --config opt no_aws_support no_gcp_support no_hdfs_support no_ignite_support no_kafka_support --local_resources 1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
 --copt=-funsafe-math-optimizations \
