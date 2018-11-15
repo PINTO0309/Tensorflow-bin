@@ -591,6 +591,18 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 Configuration finished
 ```
 ```
+$ nano .tf_configure.bazelrc
+
+#Before
+build --action_env TF_DOWNLOAD_CLANG="0"
+build:opt --copt=-march=native
+↓
+#After
+build --action_env TF_DOWNLOAD_CLANG="0"
+build --action_env TF_NEED_S3="0"
+build:opt --copt=-march=native
+```
+```
 $ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
