@@ -599,6 +599,13 @@ build:opt --copt=-march=native
 ↓
 #After
 build --action_env TF_DOWNLOAD_CLANG="0"
+build --action_env TF_NEED_AWS="0"
+build --action_env TF_NEED_HDFS="0"
+build --action_env TF_NEED_VERBS="0"
+build --action_env TF_NEED_MPI="0"
+build --action_env TF_NEED_MKL="0"
+build --action_env TF_NEED_JEMALLOC="1"
+build --action_env TF_ENABLE_XLA="0"
 build --action_env TF_NEED_S3="0"
 build:opt --copt=-march=native
 ```
