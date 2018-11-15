@@ -530,7 +530,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.
 //tensorflow/tools/pip_package:build_pip_package
 ```
   
-**Python3.x (Nov 14, 2018 Under construction)**  
+**Python3.x (Nov 15, 2018 Under construction)**  
   
 ```
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
