@@ -35,7 +35,7 @@ Cross compilation recommends using **`lhelontra`** repository.
 ## Usage
 **Example of Python 2.x series**
 ```
-$ sudo apt-get install python-pip python3-pip python-scipy
+$ sudo apt-get install python-pip python3-pip python-scipy libhdf5-dev
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip2 uninstall tensorflow
 $ wget -O tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl
@@ -46,7 +46,7 @@ $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 
 **Example of Python 3.x series**
 ```
-$ sudo apt-get install python-pip python3-pip python3-scipy
+$ sudo apt-get install python-pip python3-pip python3-scipy libhdf5-dev
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip3 uninstall tensorflow
 $ wget -O tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl
@@ -77,7 +77,7 @@ $ python3
 ## Build Parameter
 **Python2.x**
 ```
-$ sudo apt-get install -y openmpi-bin libopenmpi-dev
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev libhdf5-dev
 
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
@@ -158,6 +158,7 @@ $ sudo pip2 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp27-cp27mu-linux_armv
 
 **Python3.x**
 ```
+$ sudo apt-get install -y libhdf5-dev
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
@@ -281,6 +282,7 @@ Edit **`tensorflow/tensorflow/contrib/lite/interpreter.cc`** Line127.
 +  context_.recommended_num_threads = 4;
 ```
 ```
+$ sudo apt-get install -y libhdf5-dev
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
@@ -369,6 +371,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 **Python3.x + jemalloc + XLA JIT (Build impossible)**  
   
 ```
+$ sudo apt-get install -y libhdf5-dev
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
@@ -462,6 +465,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 **Python2.x + XLA JIT (Nov 6, 2018 Build impossible)**  
   
 ```
+$ sudo apt-get install -y libhdf5-dev
 $ sudo pip2 install keras_applications==1.0.4 --no-deps
 $ sudo pip2 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip2 install h5py==2.8.0
@@ -533,6 +537,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.
 **Python3.x (Nov 15, 2018 Under construction)**  
   
 ```
+$ sudo apt-get install -y libhdf5-dev
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
 $ sudo pip3 install h5py==2.8.0
