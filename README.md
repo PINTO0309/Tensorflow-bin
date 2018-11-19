@@ -458,6 +458,15 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 
 **Python3.x + TX2 aarch64 (JetPack-L4T-3.3-linux-x64_b39)**
 
+```
+- L4T R28.2.1（TX2 / TX2i）
+- L4T R28.2（TX1）
+- CUDA 9.0
+- cuDNN 7.1.5
+- TensorRT 4.0
+- VisionWorks 1.6
+```
+
 **https://github.com/tensorflow/tensorflow/issues/21574#issuecomment-429758923**  
 **https://github.com/tensorflow/serving/issues/832**  
 **https://docs.nvidia.com/deeplearning/sdk/nccl-archived/nccl_2213/nccl-install-guide/index.html**  
