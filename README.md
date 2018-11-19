@@ -456,12 +456,46 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
-**aarch64**
+**TX2 aarch64**
 
 **https://github.com/tensorflow/tensorflow/issues/21574#issuecomment-429758923**
 **https://github.com/tensorflow/serving/issues/832**
 **https://docs.nvidia.com/deeplearning/sdk/nccl-archived/nccl_2213/nccl-install-guide/index.html**
 
+```
+build --action_env PYTHON_BIN_PATH="/usr/bin/python3"
+build --action_env PYTHON_LIB_PATH="/usr/local/lib/python3.5/dist-packages"
+build --python_path="/usr/bin/python3"
+build --define with_jemalloc=true
+build:gcp --define with_gcp_support=true
+build:hdfs --define with_hdfs_support=true
+build:aws --define with_aws_support=true
+build:kafka --define with_kafka_support=true
+build:xla --define with_xla_support=true
+build:gdr --define with_gdr_support=true
+build:verbs --define with_verbs_support=true
+build:ngraph --define with_ngraph_support=true
+build --action_env TF_NEED_OPENCL_SYCL="0"
+build --action_env TF_NEED_CUDA="1"
+build --action_env CUDA_TOOLKIT_PATH="/usr/local/cuda-9.0"
+build --action_env TF_CUDA_VERSION="9.0"
+build --action_env CUDNN_INSTALL_PATH="/usr/lib/aarch64-linux-gnu"
+build --action_env TF_CUDNN_VERSION="7"
+build --action_env NCCL_INSTALL_PATH="/usr/local"
+build --action_env TF_NCCL_VERSION="2"
+build --action_env TF_CUDA_COMPUTE_CAPABILITIES="3.5,7.0"
+build --action_env LD_LIBRARY_PATH="/usr/local/cuda-9.0/lib64:../src/.libs"
+build --action_env TF_CUDA_CLANG="0"
+build --action_env GCC_HOST_COMPILER_PATH="/usr/bin/gcc"
+build --config=cuda
+test --config=cuda
+build --define grpc_no_ares=true
+build:opt --copt=-march=native
+build:opt --host_copt=-march=native
+build:opt --define with_default_optimizations=true
+```
+  
+  
 ============================================================  
   
 **Tensorflow v1.12.0**  
