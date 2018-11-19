@@ -458,9 +458,9 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 
 **TX2 aarch64**
 
-**https://github.com/tensorflow/tensorflow/issues/21574#issuecomment-429758923**
-**https://github.com/tensorflow/serving/issues/832**
-**https://docs.nvidia.com/deeplearning/sdk/nccl-archived/nccl_2213/nccl-install-guide/index.html**
+**https://github.com/tensorflow/tensorflow/issues/21574#issuecomment-429758923**  
+**https://github.com/tensorflow/serving/issues/832**  
+**https://docs.nvidia.com/deeplearning/sdk/nccl-archived/nccl_2213/nccl-install-guide/index.html**  
 
 ```
 build --action_env PYTHON_BIN_PATH="/usr/bin/python3"
