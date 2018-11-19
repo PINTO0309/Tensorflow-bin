@@ -456,6 +456,11 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
+**aarch64**
+
+**https://github.com/tensorflow/tensorflow/issues/21574#issuecomment-429758923**
+**https://github.com/tensorflow/serving/issues/832**
+
 ============================================================  
   
 **Tensorflow v1.12.0**  
