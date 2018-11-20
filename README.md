@@ -35,7 +35,7 @@ Cross compilation recommends using **`lhelontra`** repository.
 
 ## Usage
 **Example of Python 2.x series**
-```
+```bash
 $ sudo apt-get install python-pip python3-pip python-scipy libhdf5-dev
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip2 uninstall tensorflow
@@ -46,7 +46,7 @@ $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 ```
 
 **Example of Python 3.x series**
-```
+```bash
 $ sudo apt-get install python-pip python3-pip python3-scipy libhdf5-dev
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip3 uninstall tensorflow
@@ -58,7 +58,7 @@ $ sudo pip3 install tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 
 ## Operation check
 **Example of Python 2.x series**
-```
+```bash
 $ python
 >>> import tensorflow
 >>> tensorflow.__version__
@@ -67,7 +67,7 @@ $ python
 ```
 
 **Example of Python 3.x series**
-```
+```bash
 $ python3
 >>> import tensorflow
 >>> tensorflow.__version__
@@ -84,7 +84,7 @@ $ python3
 ============================================================  
   
 **Python2.x**
-```
+```bash
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev libhdf5-dev
 
 $ cd ~
@@ -148,7 +148,7 @@ Please specify optimization flags to use during compilation when bazel option "-
 
 Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: n
 ```
-```
+```bash
 $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
@@ -159,13 +159,13 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --host_copt=-DRASPBERRY_PI \
 //tensorflow/tools/pip_package:build_pip_package
 ```
-```
+```bash
 $ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 $ sudo pip2 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 ```
 
 **Python3.x**
-```
+```bash
 $ sudo apt-get install -y libhdf5-dev
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
@@ -238,7 +238,7 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
     --config=monolithic     # Config for mostly static monolithic build.
 Configuration finished
 ```
-```
+```bash
 $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
@@ -289,7 +289,7 @@ Edit **`tensorflow/tensorflow/contrib/lite/interpreter.cc`** Line127.
 -  context_.recommended_num_threads = -1;
 +  context_.recommended_num_threads = 4;
 ```
-```
+```bash
 $ sudo apt-get install -y libhdf5-dev
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
@@ -364,7 +364,7 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
     --config=monolithic     # Config for mostly static monolithic build.
 Configuration finished
 ```
-```
+```bash
 $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
@@ -378,7 +378,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 
 **Python3.x + jemalloc + XLA JIT (Build impossible)**  
   
-```
+```bash
 $ sudo apt-get install -y libhdf5-dev
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
@@ -452,7 +452,7 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
     --config=monolithic     # Config for mostly static monolithic build.
 Configuration finished
 ```
-```
+```bash
 $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
@@ -512,6 +512,14 @@ build:opt --host_copt=-march=native
 build:opt --define with_default_optimizations=true
 ```
   
+```bash
+$ sudo apt-get install -y libhdf5-dev
+$ sudo pip3 install keras_applications==1.0.4 --no-deps
+$ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
+$ sudo pip3 install h5py==2.8.0
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
+$ bazel build -c opt --config=cuda --local_resources 3072.0,4.0,1.0 --verbose_failures //tensorflow/tools/pip_package:build_pip_package
+```
   
 ============================================================  
   
