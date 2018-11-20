@@ -76,6 +76,13 @@ $ python3
 ```
 
 ## Build Parameter
+  
+============================================================  
+  
+**Tensorflow v1.11.0**  
+
+============================================================  
+  
 **Python2.x**
 ```
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev libhdf5-dev
