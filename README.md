@@ -605,11 +605,12 @@ $ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.
 **Python3.x (Nov 15, 2018 Under construction)**  
   
 ```
-$ sudo apt-get install -y libhdf5-dev
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev
 $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
 $ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
+$ sudo -H pip3 install -U --user six numpy wheel mock
 
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
