@@ -606,9 +606,9 @@ $ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.
   
 ```
 $ sudo apt-get install -y libhdf5-dev
-$ sudo pip3 install keras_applications==1.0.4 --no-deps
-$ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
-$ sudo pip3 install h5py==2.8.0
+$ sudo pip3 install keras_applications==1.0.7 --no-deps
+$ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
+$ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
 $ cd ~
