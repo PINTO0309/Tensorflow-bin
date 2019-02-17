@@ -615,7 +615,6 @@ $ sudo -H pip3 install -U --user six numpy wheel mock
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
-$ git checkout -b v1.12.0
 
 $ ./configure
 WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
@@ -664,9 +663,9 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 	--config=ngraph      	# Build with Intel nGraph support.
 Configuration finished
 ```
-https://github.com/tensorflow/tensorflow/issues/22819  
-https://github.com/tensorflow/tensorflow/commit/d80eb525e94763e09cbb9fa3cbef9a0f64e2cb2a  
-https://github.com/tensorflow/tensorflow/commit/5847293aeb9ab45a02c4231c40569a15bd4541c6  
+~~https://github.com/tensorflow/tensorflow/issues/22819~~  
+~~https://github.com/tensorflow/tensorflow/commit/d80eb525e94763e09cbb9fa3cbef9a0f64e2cb2a~~  
+~~https://github.com/tensorflow/tensorflow/commit/5847293aeb9ab45a02c4231c40569a15bd4541c6~~  
 https://github.com/tensorflow/tensorflow/pull/25748  
 https://github.com/tensorflow/tensorflow/issues/25120#issuecomment-464296755  
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/pip_package  
