@@ -612,6 +612,12 @@ CONF_MAXSWAP=2048
 $ sudo systemctl stop dphys-swapfile
 $ sudo systemctl start dphys-swapfile
 
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/zram.sh
+$ chmod 755 zram.sh
+$ sudo mv zram.sh /etc/init.d/
+$ sudo update-rc.d zram.sh defaults
+$ sudo reboot
+
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
 $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
