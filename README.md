@@ -606,13 +606,13 @@ $ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.
   
 ```bash
 $ sudo nano /etc/dphys-swapfile
-CONF_SWAPFILE=4096
-CONF_MAXSWAP=4096
+CONF_SWAPFILE=2048
+CONF_MAXSWAP=2048
 
 $ sudo systemctl stop dphys-swapfile
 $ sudo systemctl start dphys-swapfile
 
-$ sudo apt-get install -y libhdf5-dev libc-ares-dev
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
 $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
 $ sudo pip3 install h5py==2.9.0
