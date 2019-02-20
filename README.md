@@ -545,7 +545,7 @@ $ cd tensorflow
 $ git checkout -b v1.12.0
 
 $ ./configure
-You have bazel 0.17.2- (@non-git) installed.
+You have bazel 0.19.2- (@non-git) installed.
 Please specify the location of python. [Default is /usr/bin/python]:
 
 
@@ -604,7 +604,14 @@ $ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.
   
 **Python3.x (Nov 15, 2018 Under construction)**  
   
-```
+```bash
+$ sudo nano /etc/dphys-swapfile
+CONF_SWAPFILE=4096
+CONF_MAXSWAP=4096
+
+$ sudo systemctl stop dphys-swapfile
+$ sudo systemctl start dphys-swapfile
+
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev
 $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
@@ -618,7 +625,7 @@ $ cd tensorflow
 
 $ ./configure
 WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
-You have bazel 0.17.2- (@non-git) installed.
+You have bazel 0.19.2- (@non-git) installed.
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
 
 Found possible Python library paths:
