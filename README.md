@@ -701,3 +701,14 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --host_copt=-DRASPBERRY_PI \
 //tensorflow/tools/pip_package:build_pip_package
 ```
+
+=Second try=Python3.5==================================================================
+```
+$ sudo apt install swig libjpeg-dev zlib1g-dev python3-dev python3-numpy
+$ sudo -E sh tensorflow/lite/tools/pip_package/build_pip_package.sh
+$ cd tensorflow
+$ sudo nano tensorflow/lite/tools/pip_package/build_pip_package.sh
+#python setup.py bdist_wheel
+python3 setup.py bdist_wheel
+```
+=======================================================================================
