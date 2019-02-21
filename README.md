@@ -167,12 +167,25 @@ $ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflo
 $ sudo pip2 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 ```
 
-**Python3.x- Bazel 0.17.2**
+**Python3.x- Bazel 0.17.2 + ZRAM + PythonAPI(MultiThread)**
 ```bash
-$ sudo apt-get install -y libhdf5-dev
-$ sudo pip3 install keras_applications==1.0.4 --no-deps
-$ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
-$ sudo pip3 install h5py==2.8.0
+$ sudo nano /etc/dphys-swapfile
+CONF_SWAPFILE=2048
+CONF_MAXSWAP=2048
+
+$ sudo systemctl stop dphys-swapfile
+$ sudo systemctl start dphys-swapfile
+
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/zram.sh
+$ chmod 755 zram.sh
+$ sudo mv zram.sh /etc/init.d/
+$ sudo update-rc.d zram.sh defaults
+$ sudo reboot
+
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
+$ sudo pip3 install keras_applications==1.0.7 --no-deps
+$ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
+$ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
 $ cd ~
