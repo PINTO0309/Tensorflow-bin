@@ -298,7 +298,7 @@ PyObject* InterpreterWrapper::SetNumThreads(int i) {
 
 </div></details>
 
-<details><summary>tensorflow/lite/python/interpreter_wrapper/interpreter_wrapper.h</summary><div>
+<details><summary>tensorflow/contrib/lite/python/interpreter_wrapper/interpreter_wrapper.h</summary><div>
 
 ```cpp
 //Modified the middle of the logic as follows
