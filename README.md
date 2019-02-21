@@ -86,7 +86,7 @@ $ python3
 
 ============================================================  
   
-**Python2.x**
+**Python2.x - Bazel 0.17.2**
 ```bash
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev libhdf5-dev
 
@@ -167,7 +167,7 @@ $ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflo
 $ sudo pip2 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 ```
 
-**Python3.x**
+**Python3.x- Bazel 0.17.2**
 ```bash
 $ sudo apt-get install -y libhdf5-dev
 $ sudo pip3 install keras_applications==1.0.4 --no-deps
