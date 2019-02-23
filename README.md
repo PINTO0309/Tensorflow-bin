@@ -393,6 +393,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 ```bash
 $ sudo -s
 # ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+# exit
 $ sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 ```
 
