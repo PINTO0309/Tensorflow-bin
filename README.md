@@ -86,7 +86,7 @@ $ python3
 
 ============================================================  
   
-**Python2.x**
+**Python2.x - Bazel 0.17.2**
 ```bash
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev libhdf5-dev
 
@@ -167,18 +167,156 @@ $ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflo
 $ sudo pip2 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 ```
 
-**Python3.x**
+**Python3.x- Bazel 0.17.2 + ZRAM + PythonAPI(MultiThread) Feb 22, 2019, Compiling work in progress**
 ```bash
-$ sudo apt-get install -y libhdf5-dev
-$ sudo pip3 install keras_applications==1.0.4 --no-deps
-$ sudo pip3 install keras_preprocessing==1.0.2 --no-deps
-$ sudo pip3 install h5py==2.8.0
+$ sudo nano /etc/dphys-swapfile
+CONF_SWAPFILE=2048
+CONF_MAXSWAP=2048
+
+$ sudo systemctl stop dphys-swapfile
+$ sudo systemctl start dphys-swapfile
+
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/zram.sh
+$ chmod 755 zram.sh
+$ sudo mv zram.sh /etc/init.d/
+$ sudo update-rc.d zram.sh defaults
+$ sudo reboot
+
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
+$ sudo pip3 install keras_applications==1.0.7 --no-deps
+$ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
+$ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 
 $ cd ~
 $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
 $ git checkout -b v1.11.0
+```
+Modify the program with reference to the following.  
+<details><summary>tensorflow/contrib/lite/examples/python/label_image.py</summary><div>
+
+```python
+import argparse
+import numpy as np
+import time
+
+from PIL import Image
+
+from tensorflow.contrib.lite.python import interpreter as interpreter_wrapper
+def load_labels(filename):
+  my_labels = []
+  input_file = open(filename, 'r')
+  for l in input_file:
+    my_labels.append(l.strip())
+  return my_labels
+if __name__ == "__main__":
+  floating_model = False
+  parser = argparse.ArgumentParser()
+  parser.add_argument("-i", "--image", default="/tmp/grace_hopper.bmp", \
+    help="image to be classified")
+  parser.add_argument("-m", "--model_file", \
+    default="/tmp/mobilenet_v1_1.0_224_quant.tflite", \
+    help=".tflite model to be executed")
+  parser.add_argument("-l", "--label_file", default="/tmp/labels.txt", \
+    help="name of file containing labels")
+  parser.add_argument("--input_mean", default=127.5, help="input_mean")
+  parser.add_argument("--input_std", default=127.5, \
+    help="input standard deviation")
+  parser.add_argument("--num_threads", default=1, help="number of threads")
+  args = parser.parse_args()
+
+  interpreter = interpreter_wrapper.Interpreter(model_path=args.model_file)
+  interpreter.allocate_tensors()
+  input_details = interpreter.get_input_details()
+  output_details = interpreter.get_output_details()
+  # check the type of the input tensor
+  if input_details[0]['dtype'] == np.float32:
+    floating_model = True
+  # NxHxWxC, H:1, W:2
+  height = input_details[0]['shape'][1]
+  width = input_details[0]['shape'][2]
+  img = Image.open(args.image)
+  img = img.resize((width, height))
+  # add N dim
+  input_data = np.expand_dims(img, axis=0)
+  if floating_model:
+    input_data = (np.float32(input_data) - args.input_mean) / args.input_std
+
+  interpreter.set_num_threads(int(args.num_threads))
+  interpreter.set_tensor(input_details[0]['index'], input_data)
+
+  start_time = time.time()
+  interpreter.invoke()
+  stop_time = time.time()
+
+  output_data = interpreter.get_tensor(output_details[0]['index'])
+  results = np.squeeze(output_data)
+  top_k = results.argsort()[-5:][::-1]
+  labels = load_labels(args.label_file)
+  for i in top_k:
+    if floating_model:
+      print('{0:08.6f}'.format(float(results[i]))+":", labels[i])
+    else:
+      print('{0:08.6f}'.format(float(results[i]/255.0))+":", labels[i])
+
+  print("time: ", stop_time - start_time)
+```
+
+</div></details>
+
+<details><summary>tensorflow/contrib/lite/python/interpreter.py</summary><div>
+
+```python
+#Add the following two lines to the last line
+
+  def set_num_threads(self, i):
+    return self._interpreter.SetNumThreads(i)
+```
+
+</div></details>
+
+<details><summary>tensorflow/contrib/lite/python/interpreter_wrapper/interpreter_wrapper.cc</summary><div>
+
+```cpp
+//Corrected the vicinity of the last line as follows
+
+  PyObject* InterpreterWrapper::ResetVariableTensors() {
+  TFLITE_PY_ENSURE_VALID_INTERPRETER();
+  TFLITE_PY_CHECK(interpreter_->ResetVariableTensors());
+  Py_RETURN_NONE;
+}
+
+PyObject* InterpreterWrapper::SetNumThreads(int i) {
+  interpreter_->SetNumThreads(i);
+  Py_RETURN_NONE;
+}
+
+}  // namespace interpreter_wrapper
+}  // namespace tflite
+```
+
+</div></details>
+
+<details><summary>tensorflow/contrib/lite/python/interpreter_wrapper/interpreter_wrapper.h</summary><div>
+
+```cpp
+//Modified the middle of the logic as follows
+
+  // should be the interpreter object providing the memory.
+  PyObject* tensor(PyObject* base_object, int i);
+
+  PyObject* SetNumThreads(int i);
+
+ private:
+  // Helper function to construct an `InterpreterWrapper` object.
+  // It only returns InterpreterWrapper if it can construct an `Interpreter`.
+```
+
+</div></details>
+<br>
+
+```bash
 $ ./configure
 
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
@@ -252,8 +390,10 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 --host_copt=-DRASPBERRY_PI \
 //tensorflow/tools/pip_package:build_pip_package
 ```
-```
-$ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+```bash
+$ sudo -s
+# ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+# exit
 $ sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 ```
 
@@ -612,6 +752,12 @@ CONF_MAXSWAP=2048
 $ sudo systemctl stop dphys-swapfile
 $ sudo systemctl start dphys-swapfile
 
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/zram.sh
+$ chmod 755 zram.sh
+$ sudo mv zram.sh /etc/init.d/
+$ sudo update-rc.d zram.sh defaults
+$ sudo reboot
+
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
 $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
@@ -695,3 +841,14 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --host_copt=-DRASPBERRY_PI \
 //tensorflow/tools/pip_package:build_pip_package
 ```
+
+=Second try=Python3.5==================================================================
+```
+$ sudo apt install swig libjpeg-dev zlib1g-dev python3-dev python3-numpy
+$ sudo -E sh tensorflow/lite/tools/pip_package/build_pip_package.sh
+$ cd tensorflow
+$ sudo nano tensorflow/lite/tools/pip_package/build_pip_package.sh
+#python setup.py bdist_wheel
+python3 setup.py bdist_wheel
+```
+=======================================================================================
