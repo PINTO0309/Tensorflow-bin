@@ -32,9 +32,10 @@ Cross compilation recommends using **`lhelontra`** repository.
 |Best|.whl|jemalloc|MPI|4Threads|
 |:--:|:--|:--:|:--:|:--:|
 ||tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl||||
-|:star:|tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl|○|||
+||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl|○|||
 ||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_mpi.whl|○|○||
 ||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_mpi_multithread.whl|○|○|○|
+|:star:|tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_multithread.whl|○||○|
 
 ## Usage
 **Example of Python 2.x series**
@@ -53,7 +54,7 @@ $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 $ sudo apt-get install python-pip python3-pip python3-scipy libhdf5-dev
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip3 uninstall tensorflow
-$ wget -O tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl
+$ wget -O tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_multithread.whl
 $ sudo pip3 install tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
