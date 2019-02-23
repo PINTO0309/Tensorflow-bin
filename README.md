@@ -51,7 +51,10 @@ $ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 
 **Example of Python 3.x series**
 ```bash
-$ sudo apt-get install python-pip python3-pip python3-scipy libhdf5-dev
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
+$ sudo pip3 install keras_applications==1.0.7 --no-deps
+$ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
+$ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo pip3 uninstall tensorflow
 $ wget -O tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_multithread.whl
