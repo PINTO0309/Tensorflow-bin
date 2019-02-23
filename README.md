@@ -171,7 +171,7 @@ $ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflo
 $ sudo pip2 install /tmp/tensorflow_pkg/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
 ```
 
-**Python3.x- Bazel 0.17.2 + ZRAM + PythonAPI(MultiThread) Feb 22, 2019, Compiling work in progress**
+**Python3.x- Bazel 0.17.2 + ZRAM + PythonAPI(MultiThread) Feb 23, 2019, Compilation work completed**
 ```bash
 $ sudo nano /etc/dphys-swapfile
 CONF_SWAPFILE=2048
