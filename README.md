@@ -37,6 +37,12 @@ Cross compilation recommends using **`lhelontra`** repository.
 ||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_mpi_multithread.whl|○|○|○|
 |:star:|tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_multithread.whl|○||○|
 
+**Python 3.x + Tensorflow v2**  
+
+|Best|.whl|jemalloc|MPI|4Threads|Note|
+|:--:|:--|:--:|:--:|:--:|:--|
+|:star:|tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl|○||○|Alpha version|
+
 ## Usage
 **Example of Python 2.x series**
 ```bash
