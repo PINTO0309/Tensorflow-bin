@@ -66,6 +66,21 @@ $ sudo pip3 install tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
+**Example of Python 3.x + Tensorflow v2 series**
+```bash
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
+$ sudo pip3 install keras_applications==1.0.7 --no-deps
+$ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
+$ sudo pip3 install h5py==2.9.0
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
+$ sudo -H pip3 install -U --user six numpy wheel mock
+$ sudo apt update;sudo apt upgrade
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl
+$ sudo pip3 uninstall tensorflow
+$ sudo -H pip3 install tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl
+
+【Required】 Restart the terminal.
+```
 
 ## Operation check
 **Example of Python 2.x series**
