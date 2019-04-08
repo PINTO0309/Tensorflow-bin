@@ -126,10 +126,10 @@ import time
 
 from PIL import Image
 
-# Tensorflow -v1.11.0
+# Tensorflow -v1.12.0
 from tensorflow.contrib.lite.python import interpreter as interpreter_wrapper
 
-# Tensorflow v1.12.0+, v2.x.x
+# Tensorflow v1.13.0+, v2.x.x
 #from tensorflow.lite.python import interpreter as interpreter_wrapper
 
 def load_labels(filename):
@@ -973,12 +973,6 @@ https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/pip_p
 ```
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
---config=noaws \
---config=nogcp \
---config=nohdfs \
---config=noignite \
---config=nokafka \
---config=nonccl \
 --local_resources=1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
@@ -989,17 +983,6 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --host_copt=-DRASPBERRY_PI \
 //tensorflow/tools/pip_package:build_pip_package
 ```
-
-=Second try=Python3.5==================================================================
-```
-$ sudo apt install swig libjpeg-dev zlib1g-dev python3-dev python3-numpy
-$ sudo -E sh tensorflow/lite/tools/pip_package/build_pip_package.sh
-$ cd tensorflow
-$ sudo nano tensorflow/lite/tools/pip_package/build_pip_package.sh
-#python setup.py bdist_wheel
-python3 setup.py bdist_wheel
-```
-=======================================================================================
   
 ============================================================  
   
