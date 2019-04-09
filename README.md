@@ -814,11 +814,11 @@ $ bazel build -c opt --config=cuda --local_resources 3072.0,4.0,1.0 --verbose_fa
   
 ============================================================  
   
-**Tensorflow v1.12.0**  
+**Tensorflow v1.12.0 - Bazel 0.18.1**  
 
 ============================================================  
   
-**Python3.x - Bazel 0.18.1 (Nov 15, 2018 Under construction)**  
+**Python3.x (Nov 15, 2018 Under construction)**  
   
 ```bash
 $ sudo nano /etc/dphys-swapfile
