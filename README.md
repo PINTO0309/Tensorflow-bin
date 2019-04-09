@@ -755,7 +755,7 @@ $ sudo bazel build --config opt --local_resources 1024.0,0.5,0.5 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
-**Python3.x + TX2 aarch64 (JetPack-L4T-3.3-linux-x64_b39)**
+**Python3.x + TX2 aarch64 - Bazel 0.18.1 (JetPack-L4T-3.3-linux-x64_b39)**
 
 ```
 - L4T R28.2.1（TX2 / TX2i）
