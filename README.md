@@ -818,79 +818,7 @@ $ bazel build -c opt --config=cuda --local_resources 3072.0,4.0,1.0 --verbose_fa
 
 ============================================================  
   
-**Python2.x + XLA JIT (Nov 6, 2018 Build impossible)**  
-  
-```
-$ sudo apt-get install -y libhdf5-dev
-$ sudo pip2 install keras_applications==1.0.4 --no-deps
-$ sudo pip2 install keras_preprocessing==1.0.2 --no-deps
-$ sudo pip2 install h5py==2.8.0
-$ sudo apt-get install -y openmpi-bin libopenmpi-dev
-
-$ cd ~
-$ git clone https://github.com/tensorflow/tensorflow.git
-$ cd tensorflow
-$ git checkout -b v1.12.0
-
-$ ./configure
-You have bazel 0.19.2- (@non-git) installed.
-Please specify the location of python. [Default is /usr/bin/python]:
-
-
-Found possible Python library paths:
-  /usr/local/lib/python2.7/dist-packages
-  /usr/lib/python2.7/dist-packages
-  /usr/local/lib
-Please input the desired Python library path to use.  Default is [/usr/local/lib/python2.7/dist-packages]
-
-Do you wish to build TensorFlow with Apache Ignite support? [Y/n]: n
-No Apache Ignite support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with XLA JIT support? [Y/n]: y
-XLA JIT support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with OpenCL SYCL support? [y/N]: n
-No OpenCL SYCL support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with ROCm support? [y/N]: n
-No ROCm support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with CUDA support? [y/N]: n
-No CUDA support will be enabled for TensorFlow.
-
-Do you wish to download a fresh release of clang? (Experimental) [y/N]: n
-Clang will not be downloaded.
-
-Do you wish to build TensorFlow with MPI support? [y/N]: n
-No MPI support will be enabled for TensorFlow.
-
-Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native]:
-
-
-Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: n
-Not configuring the WORKSPACE for Android builds.
-
-Preconfigured Bazel build configs. You can use any of the below by adding "--config=<>" to your build command. See tools/bazel.rc for more details.
-        --config=mkl            # Build with MKL support.
-        --config=monolithic     # Config for mostly static monolithic build.
-        --config=gdr            # Build with GDR support.
-        --config=verbs          # Build with libverbs support.
-        --config=ngraph         # Build with Intel nGraph support.
-Configuration finished
-```
-```
-$ sudo bazel --host_jvm_args=-Xmx512m build --config opt --local_resources 1024.0,0.5,0.5 \
---copt=-mfpu=neon-vfpv4 \
---copt=-ftree-vectorize \
---copt=-funsafe-math-optimizations \
---copt=-ftree-loop-vectorize \
---copt=-fomit-frame-pointer \
---copt=-DRASPBERRY_PI \
---host_copt=-DRASPBERRY_PI \
-//tensorflow/tools/pip_package:build_pip_package
-```
-  
-**Python3.x (Nov 15, 2018 Under construction)**  
+**Python3.x - Bazel 0.18.1 (Nov 15, 2018 Under construction)**  
   
 ```bash
 $ sudo nano /etc/dphys-swapfile
@@ -919,7 +847,7 @@ $ cd tensorflow
 
 $ ./configure
 WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
-You have bazel 0.19.2- (@non-git) installed.
+You have bazel 0.18.1- (@non-git) installed.
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
 
 Found possible Python library paths:
@@ -967,6 +895,7 @@ Configuration finished
 ~~https://github.com/tensorflow/tensorflow/issues/22819~~  
 ~~https://github.com/tensorflow/tensorflow/commit/d80eb525e94763e09cbb9fa3cbef9a0f64e2cb2a~~  
 ~~https://github.com/tensorflow/tensorflow/commit/5847293aeb9ab45a02c4231c40569a15bd4541c6~~  
+https://github.com/tensorflow/tensorflow/issues/23721  
 https://github.com/tensorflow/tensorflow/pull/25748  
 https://github.com/tensorflow/tensorflow/issues/25120#issuecomment-464296755  
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/pip_package  
@@ -986,7 +915,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
   
 ============================================================  
   
-**Tensorflow v2.0.0-alpha**  
+**Tensorflow v2.0.0-alpha - Bazel 0.19.2**  
 
 ============================================================  
 
