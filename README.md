@@ -2472,20 +2472,21 @@ $ git clone https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
 
 $ ./configure
+WARNING: Processed legacy workspace file /home/pi/work/tensorflow/tools/bazel.rc. This file will not be processed in the next release of Bazel. Please read https://github.com/bazelbuild/bazel/issues/6319 for further information, including how to upgrade.
+WARNING: Running Bazel server needs to be killed, because the startup options are different.
 WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
 You have bazel 0.18.1- (@non-git) installed.
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
 
-Found possible Python library paths:
-  /usr/local/lib
-  /usr/lib/python3/dist-packages
-  /usr/local/lib/python3.5/dist-packages
-  /opt/movidius/caffe/python
-Please input the desired Python library path to use.  Default is [/usr/local/lib]
-/usr/local/lib/python3.5/dist-packages
-Do you wish to build TensorFlow with Apache Ignite support? [Y/n]: n
-No Apache Ignite support will be enabled for TensorFlow.
 
+Found possible Python library paths:
+  /home/pi/inference_engine_vpu_arm/python/python3.5/armv7l
+  /usr/local/lib
+  /home/pi/inference_engine_vpu_arm/python/python3.5
+  /usr/local/lib/python3.5/dist-packages
+  /usr/lib/python3/dist-packages
+Please input the desired Python library path to use.  Default is [/home/pi/inference_engine_vpu_arm/python/python3.5/armv7l]
+/usr/local/lib/python3.5/dist-packages
 Do you wish to build TensorFlow with XLA JIT support? [Y/n]: n
 No XLA JIT support will be enabled for TensorFlow.
 
@@ -2510,12 +2511,18 @@ Please specify optimization flags to use during compilation when bazel option "-
 Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: n
 Not configuring the WORKSPACE for Android builds.
 
-Preconfigured Bazel build configs. You can use any of the below by adding "--config=<>" to your build command. See tools/bazel.rc for more details.
+Preconfigured Bazel build configs. You can use any of the below by adding "--config=<>" to your build command. See .bazelrc for more details.
 	--config=mkl         	# Build with MKL support.
 	--config=monolithic  	# Config for mostly static monolithic build.
 	--config=gdr         	# Build with GDR support.
 	--config=verbs       	# Build with libverbs support.
 	--config=ngraph      	# Build with Intel nGraph support.
+Preconfigured Bazel build configs to DISABLE default on features:
+	--config=noaws       	# Disable AWS S3 filesystem support.
+	--config=nogcp       	# Disable GCP support.
+	--config=nohdfs      	# Disable HDFS support.
+	--config=noignite    	# Disable Apacha Ignite support.
+	--config=nokafka     	# Disable Apache Kafka support.
 Configuration finished
 ```
 ~~https://github.com/tensorflow/tensorflow/issues/22819~~  
@@ -2535,7 +2542,6 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=nohdfs \
 --config=noignite \
 --config=nokafka \
---config=nonccl \
 --local_resources=1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
