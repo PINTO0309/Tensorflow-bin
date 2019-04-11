@@ -820,6 +820,81 @@ $ bazel build -c opt --config=cuda --local_resources 3072.0,4.0,1.0 --verbose_fa
   
 **Python3.x (Nov 15, 2018 Under construction)**  
   
+- tensorflow/BUILD
+```config
+config_setting(
+    name = "no_aws_support",
+    define_values = {"no_aws_support": "false"},
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "no_gcp_support",
+    define_values = {"no_gcp_support": "false"},
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "no_hdfs_support",
+    define_values = {"no_hdfs_support": "false"},
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "no_ignite_support",
+    define_values = {"no_ignite_support": "false"},
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "no_kafka_support",
+    define_values = {"no_kafka_support": "false"},
+    visibility = ["//visibility:public"],
+)
+```
+- bazel.rc
+```rc
+# Options to disable default on features
+build:noaws --define=no_aws_support=true
+build:nogcp --define=no_gcp_support=true
+build:nohdfs --define=no_hdfs_support=true
+build:nokafka --define=no_kafka_support=true
+build:noignite --define=no_ignite_support=true
+```
+- configure.py
+```python:configure.py
+  #set_build_var(environ_cp, 'TF_NEED_IGNITE', 'Apache Ignite',
+  #              'with_ignite_support', True, 'ignite')
+
+
+  ## On Windows, we don't have MKL support and the build is always monolithic.
+  ## So no need to print the following message.
+  ## TODO(pcloudy): remove the following if check when they make sense on Windows
+  #if not is_windows():
+  #  print('Preconfigured Bazel build configs. You can use any of the below by '
+  #        'adding "--config=<>" to your build command. See tools/bazel.rc for '
+  #        'more details.')
+  #  config_info_line('mkl', 'Build with MKL support.')
+  #  config_info_line('monolithic', 'Config for mostly static monolithic build.')
+  #  config_info_line('gdr', 'Build with GDR support.')
+  #  config_info_line('verbs', 'Build with libverbs support.')
+  #  config_info_line('ngraph', 'Build with Intel nGraph support.')
+  print('Preconfigured Bazel build configs. You can use any of the below by '
+        'adding "--config=<>" to your build command. See .bazelrc for more '
+        'details.')
+  config_info_line('mkl', 'Build with MKL support.')
+  config_info_line('monolithic', 'Config for mostly static monolithic build.')
+  config_info_line('gdr', 'Build with GDR support.')
+  config_info_line('verbs', 'Build with libverbs support.')
+  config_info_line('ngraph', 'Build with Intel nGraph support.')
+
+  print('Preconfigured Bazel build configs to DISABLE default on features:')
+  config_info_line('noaws', 'Disable AWS S3 filesystem support.')
+  config_info_line('nogcp', 'Disable GCP support.')
+  config_info_line('nohdfs', 'Disable HDFS support.')
+  config_info_line('noignite', 'Disable Apacha Ignite support.')
+  config_info_line('nokafka', 'Disable Apache Kafka support.')
+```
 ```bash
 $ sudo nano /etc/dphys-swapfile
 CONF_SWAPFILE=2048
@@ -1287,78 +1362,6 @@ else
 	CORE_CC_EXCLUDE_SRCS += tensorflow/lite/minimal_logging_android.cc
 	CORE_CC_EXCLUDE_SRCS += tensorflow/lite/minimal_logging_ios.cc
 endif
-```
-```tensorflow/BUILD
-config_setting(
-    name = "no_aws_support",
-    define_values = {"no_aws_support": "false"},
-    visibility = ["//visibility:public"],
-)
-
-config_setting(
-    name = "no_gcp_support",
-    define_values = {"no_gcp_support": "false"},
-    visibility = ["//visibility:public"],
-)
-
-config_setting(
-    name = "no_hdfs_support",
-    define_values = {"no_hdfs_support": "false"},
-    visibility = ["//visibility:public"],
-)
-
-config_setting(
-    name = "no_ignite_support",
-    define_values = {"no_ignite_support": "false"},
-    visibility = ["//visibility:public"],
-)
-
-config_setting(
-    name = "no_kafka_support",
-    define_values = {"no_kafka_support": "false"},
-    visibility = ["//visibility:public"],
-)
-```
-```bazel.rc
-# Options to disable default on features
-build:noaws --define=no_aws_support=true
-build:nogcp --define=no_gcp_support=true
-build:nohdfs --define=no_hdfs_support=true
-build:nokafka --define=no_kafka_support=true
-build:noignite --define=no_ignite_support=true
-```
-```configure.py
-  #set_build_var(environ_cp, 'TF_NEED_IGNITE', 'Apache Ignite',
-  #              'with_ignite_support', True, 'ignite')
-
-
-  ## On Windows, we don't have MKL support and the build is always monolithic.
-  ## So no need to print the following message.
-  ## TODO(pcloudy): remove the following if check when they make sense on Windows
-  #if not is_windows():
-  #  print('Preconfigured Bazel build configs. You can use any of the below by '
-  #        'adding "--config=<>" to your build command. See tools/bazel.rc for '
-  #        'more details.')
-  #  config_info_line('mkl', 'Build with MKL support.')
-  #  config_info_line('monolithic', 'Config for mostly static monolithic build.')
-  #  config_info_line('gdr', 'Build with GDR support.')
-  #  config_info_line('verbs', 'Build with libverbs support.')
-  #  config_info_line('ngraph', 'Build with Intel nGraph support.')
-  print('Preconfigured Bazel build configs. You can use any of the below by '
-        'adding "--config=<>" to your build command. See .bazelrc for more '
-        'details.')
-  config_info_line('mkl', 'Build with MKL support.')
-  config_info_line('monolithic', 'Config for mostly static monolithic build.')
-  config_info_line('gdr', 'Build with GDR support.')
-  config_info_line('verbs', 'Build with libverbs support.')
-  config_info_line('ngraph', 'Build with Intel nGraph support.')
-
-  print('Preconfigured Bazel build configs to DISABLE default on features:')
-  config_info_line('noaws', 'Disable AWS S3 filesystem support.')
-  config_info_line('nogcp', 'Disable GCP support.')
-  config_info_line('nohdfs', 'Disable HDFS support.')
-  config_info_line('noignite', 'Disable Apacha Ignite support.')
-  config_info_line('nokafka', 'Disable Apache Kafka support.')
 ```
 - configure
 ```bash
