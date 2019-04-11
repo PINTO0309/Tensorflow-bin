@@ -899,6 +899,8 @@ https://github.com/tensorflow/tensorflow/issues/23721
 https://github.com/tensorflow/tensorflow/pull/25748  
 https://github.com/tensorflow/tensorflow/issues/25120#issuecomment-464296755  
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/pip_package  
+https://github.com/tensorflow/tensorflow/issues/24372  
+https://gist.github.com/fyhertz/4cef0b696b37d38964801d3ef21e8ce2  
 ```
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
