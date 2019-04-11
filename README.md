@@ -1323,12 +1323,12 @@ def cc_proto_library(
         # For pre-checked-in generated files, we add the internal_bootstrap_hack
         # which will skip the codegen action.
         proto_gen(
-             name = name + "_genproto",
-             srcs = srcs,
-             includes = includes,
-             protoc = protoc,
-             visibility = ["//visibility:public"],
-             deps = [s + "_genproto" for s in deps],
+            name = name + "_genproto",
+            srcs = srcs,
+            includes = includes,
+            protoc = protoc,
+            visibility = ["//visibility:public"],
+            deps = [s + "_genproto" for s in deps],
         )
 
         # An empty cc_library to make rule dependency consistent.
@@ -1350,17 +1350,17 @@ def cc_proto_library(
     outs = gen_srcs + gen_hdrs
 
     proto_gen(
-         name = name + "_genproto",
-         srcs = srcs,
-         outs = outs,
-         gen_cc = 1,
-         includes = includes,
-         plugin = grpc_cpp_plugin,
-         plugin_language = "grpc",
-         plugin_options = plugin_options,
-         protoc = protoc,
-         visibility = ["//visibility:public"],
-         deps = [s + "_genproto" for s in deps],
+        name = name + "_genproto",
+        srcs = srcs,
+        outs = outs,
+        gen_cc = 1,
+        includes = includes,
+        plugin = grpc_cpp_plugin,
+        plugin_language = "grpc",
+        plugin_options = plugin_options,
+        protoc = protoc,
+        visibility = ["//visibility:public"],
+        deps = [s + "_genproto" for s in deps],
     )
 
     if use_grpc_plugin:
@@ -1443,16 +1443,16 @@ def py_proto_library(
         # have grpc installed.
 
     proto_gen(
-         name = name + "_genproto",
-         srcs = srcs,
-         outs = outs,
-         gen_py = 1,
-         includes = includes,
-         plugin = grpc_python_plugin,
-         plugin_language = "grpc",
-         protoc = protoc,
-         visibility = ["//visibility:public"],
-         deps = [s + "_genproto" for s in deps],
+        name = name + "_genproto",
+        srcs = srcs,
+        outs = outs,
+        gen_py = 1,
+        includes = includes,
+        plugin = grpc_python_plugin,
+        plugin_language = "grpc",
+        protoc = protoc,
+        visibility = ["//visibility:public"],
+        deps = [s + "_genproto" for s in deps],
     )
 
     if default_runtime and not default_runtime in py_libs + deps:
@@ -1534,11 +1534,11 @@ def tf_proto_library_cc(
             "-Wno-unused-but-set-variable",
             "-Wno-sign-compare",
         ]),
-         default_header = default_header,
-         protoc = "@protobuf_archive//:protoc",
-         use_grpc_plugin = use_grpc_plugin,
-         visibility = visibility,
-         deps = cc_deps + ["@protobuf_archive//:cc_wkt_protos"],
+        default_header = default_header,
+        protoc = "@protobuf_archive//:protoc",
+        use_grpc_plugin = use_grpc_plugin,
+        visibility = visibility,
+        deps = cc_deps + ["@protobuf_archive//:cc_wkt_protos"],
     )
 
 def tf_proto_library_py(
@@ -1556,10 +1556,10 @@ def tf_proto_library_py(
         # This is a collection of sub-libraries. Build header-only and impl
         # libraries containing all the sources.
         proto_gen(
-             name = py_name + "_genproto",
-             protoc = "@protobuf_archive//:protoc",
-             visibility = ["//visibility:public"],
-             deps = [s + "_genproto" for s in py_deps],
+            name = py_name + "_genproto",
+            protoc = "@protobuf_archive//:protoc",
+            visibility = ["//visibility:public"],
+            deps = [s + "_genproto" for s in py_deps],
         )
         native.py_library(
             name = py_name,
@@ -1570,15 +1570,15 @@ def tf_proto_library_py(
         return
 
     py_proto_library(
-         name = py_name,
-         testonly = testonly,
-         srcs = srcs,
-         default_runtime = "@protobuf_archive//:protobuf_python",
-         protoc = "@protobuf_archive//:protoc",
-         srcs_version = srcs_version,
-         use_grpc_plugin = use_grpc_plugin,
-         visibility = visibility,
-         deps = deps + py_deps + ["@protobuf_archive//:protobuf_python"],
+        name = py_name,
+        testonly = testonly,
+        srcs = srcs,
+        default_runtime = "@protobuf_archive//:protobuf_python",
+        protoc = "@protobuf_archive//:protoc",
+        srcs_version = srcs_version,
+        use_grpc_plugin = use_grpc_plugin,
+        visibility = visibility,
+        deps = deps + py_deps + ["@protobuf_archive//:protobuf_python"],
     )
 
 def tf_jspb_proto_library(**kwargs):
@@ -1609,24 +1609,24 @@ def tf_proto_library(
     _ignore = (js_api_version, js_codegen, provide_cc_alias)
 
     tf_proto_library_cc(
-         name = name,
-         testonly = testonly,
-         srcs = srcs,
-         cc_grpc_version = cc_grpc_version,
-         cc_libs = cc_libs,
-         default_header = default_header,
-         protodeps = protodeps,
-         visibility = visibility,
+        name = name,
+        testonly = testonly,
+        srcs = srcs,
+        cc_grpc_version = cc_grpc_version,
+        cc_libs = cc_libs,
+        default_header = default_header,
+        protodeps = protodeps,
+        visibility = visibility,
     )
 
     tf_proto_library_py(
-         name = name,
-         testonly = testonly,
-         srcs = srcs,
-         protodeps = protodeps,
-         srcs_version = "PY2AND3",
-         use_grpc_plugin = has_services,
-         visibility = visibility,
+        name = name,
+        testonly = testonly,
+        srcs = srcs,
+        protodeps = protodeps,
+        srcs_version = "PY2AND3",
+        use_grpc_plugin = has_services,
+        visibility = visibility,
     )
 
 # A list of all files under platform matching the pattern in 'files'. In
@@ -1817,32 +1817,19 @@ def tf_additional_core_deps():
          ],
      })
  
- # TODO(jart, jhseu): Delete when GCP is default on.
- def tf_additional_cloud_op_deps():
-     return select({
-         "//tensorflow:android": [],
-         "//tensorflow:ios": [],
-         "//tensorflow:linux_s390x": [],
-         "//tensorflow:windows": [],
-         "//tensorflow:no_gcp_support": [],
-         "//conditions:default": [
-            "//tensorflow/contrib/cloud:bigquery_reader_ops_op_lib",
-            "//tensorflow/contrib/cloud:gcs_config_ops_op_lib",
-        ],
-    })
-
 # TODO(jart, jhseu): Delete when GCP is default on.
-def tf_additional_cloud_kernel_deps():
+def tf_additional_cloud_op_deps():
     return select({
         "//tensorflow:android": [],
-        "//tensorflow:windows": [],
         "//tensorflow:ios": [],
         "//tensorflow:linux_s390x": [],
+        "//tensorflow:windows": [],
+        "//tensorflow:no_gcp_support": [],
         "//conditions:default": [
-            "//tensorflow/contrib/cloud/kernels:bigquery_reader_ops",
-            "//tensorflow/contrib/cloud/kernels:gcs_config_ops",
-        ],
-    })
+           "//tensorflow/contrib/cloud:bigquery_reader_ops_op_lib",
+           "//tensorflow/contrib/cloud:gcs_config_ops_op_lib",
+       ],
+   })
 
 def tf_lib_proto_parsing_deps():
     return [
