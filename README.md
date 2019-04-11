@@ -979,6 +979,12 @@ https://gist.github.com/fyhertz/4cef0b696b37d38964801d3ef21e8ce2
 ```
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
+--config=noaws \
+--config=nogcp \
+--config=nohdfs \
+--config=noignite \
+--config=nokafka \
+--config=nonccl \
 --local_resources=1024.0,0.5,0.5 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
