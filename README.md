@@ -1831,6 +1831,19 @@ def tf_additional_cloud_op_deps():
        ],
    })
 
+# TODO(jart, jhseu): Delete when GCP is default on.
+def tf_additional_cloud_kernel_deps():
+    return select({
+        "//tensorflow:android": [],
+        "//tensorflow:windows": [],
+        "//tensorflow:ios": [],
+        "//tensorflow:linux_s390x": [],
+        "//conditions:default": [
+            "//tensorflow/contrib/cloud/kernels:bigquery_reader_ops",
+            "//tensorflow/contrib/cloud/kernels:gcs_config_ops",
+        ],
+    })
+
 def tf_lib_proto_parsing_deps():
     return [
         ":protos_all_cc",
