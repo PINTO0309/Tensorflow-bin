@@ -3080,6 +3080,7 @@ PyObject* InterpreterWrapper::SetNumThreads(int i) {
 }  // namespace tflite
 ```
 - tensorflow/lite/python/interpreter_wrapper/interpreter_wrapper.h
+
 ```C++
   // should be the interpreter object providing the memory.
   PyObject* tensor(PyObject* base_object, int i);
