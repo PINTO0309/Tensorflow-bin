@@ -2878,9 +2878,8 @@ PyObject* InterpreterWrapper::SetNumThreads(int i) {
   // Helper function to construct an `InterpreterWrapper` object.
   // It only returns InterpreterWrapper if it can construct an `Interpreter`.
 ```
-```
 - tensorflow/tensorflow/core/kernels/BUILD
-
+```
 cc_library(
     name = "linalg",
     deps = [
