@@ -7,6 +7,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
   
 RaspberryPi3 ... armv7l  
 Jetson TX2 ... aarch64  
+Ubuntu ... x86_64
   
 Bazel's pre-build binay is below.  
 **https://github.com/PINTO0309/Bazel_bin.git**  
