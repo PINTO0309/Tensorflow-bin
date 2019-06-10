@@ -3222,7 +3222,7 @@ $ sudo -H pip3 install tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl
 
 ============================================================  
   
-**Tensorflow v2.0.0-beta - Bazel 0.24.1 - Under construction on June 08, 2019**  
+**Tensorflow v2.0.0-beta - Bazel 0.24.1**  
 
 ============================================================  
 
