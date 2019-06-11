@@ -818,6 +818,8 @@ $ bazel build -c opt --config=cuda --local_resources 3072.0,4.0,1.0 --verbose_fa
   
 </div></details>
   
+<details><summary>Tensorflow v1.12.0</summary><div>
+  
 ============================================================  
   
 **Tensorflow v1.12.0 - Bazel 0.18.1**  
@@ -2559,6 +2561,10 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 //tensorflow/tools/pip_package:build_pip_package
 ```
   
+</div></details>
+  
+<details><summary>Tensorflow v1.13.0</summary><div>
+  
 ============================================================  
   
 **Tensorflow v1.13.1 - Bazel 0.19.2**  
@@ -3024,6 +3030,10 @@ $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl 
 ```
   
+</div></details>
+  
+<details><summary>Tensorflow v2.0.0-alpha</summary><div>
+  
 ============================================================  
   
 **Tensorflow v2.0.0-alpha - Bazel 0.19.2**  
@@ -3224,7 +3234,11 @@ $ cd ~
 $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl 
 ```
+  
+</div></details>
 
+<details><summary>Tensorflow v2.0.0-beta</summary><div>
+  
 ============================================================  
   
 **Tensorflow v2.0.0-beta - Bazel 0.24.1**  
@@ -3421,3 +3435,5 @@ $ cd ~
 $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl 
 ```
+
+</div></details>
