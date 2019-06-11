@@ -46,7 +46,8 @@ Cross compilation recommends using **`lhelontra`** repository.
 
 |Best|.whl|jemalloc|MPI|4Threads|Note|
 |:--:|:--|:--:|:--:|:--:|:--|
-|:star:|tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl|○||○|Alpha version|
+||tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl|○||○|Alpha version|
+|:star:|tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl|○||○|Beta version|
 
 ## Usage
 **Example of Python 2.x series**
@@ -82,9 +83,9 @@ $ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo -H pip3 install -U --user six numpy wheel mock
 $ sudo apt update;sudo apt upgrade
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl
+$ sudo -H pip3 install tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
