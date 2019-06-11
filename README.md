@@ -230,6 +230,8 @@ time:  0.1647195816040039
 
 ## Build Parameter
   
+<details><summary>Tensorflow v1.11.0</summary><div>
+
 ============================================================  
   
 **Tensorflow v1.11.0**  
@@ -813,6 +815,8 @@ $ sudo pip3 install h5py==2.8.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ bazel build -c opt --config=cuda --local_resources 3072.0,4.0,1.0 --verbose_failures //tensorflow/tools/pip_package:build_pip_package
 ```
+  
+</div></details>
   
 ============================================================  
   
