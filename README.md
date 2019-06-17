@@ -3439,7 +3439,7 @@ $ sudo -H pip3 install tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl
 
 </div></details>
 
-<details><summary>Tensorflow v2.0.0-beta0</summary><div>
+<details><summary>Tensorflow v2.0.0-beta1</summary><div>
   
 ============================================================  
   
