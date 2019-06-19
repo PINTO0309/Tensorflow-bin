@@ -82,7 +82,8 @@ $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
 $ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
-$ sudo -H pip3 install -U --user six numpy wheel mock
+$ sudo apt-get install -y libatlas-base-dev
+$ pip3 install -U --user six wheel mock
 $ sudo apt update;sudo apt upgrade
 $ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl
 $ sudo pip3 uninstall tensorflow
