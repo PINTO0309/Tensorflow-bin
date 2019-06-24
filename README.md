@@ -42,6 +42,12 @@ Cross compilation recommends using **`lhelontra`** repository.
 |:--:|:--|:--:|:--:|:--:|:--|
 |:star:|tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl|○||○||
 
+**Python 3.x + Tensorflow v1.14.0**  
+
+|Best|.whl|jemalloc|MPI|4Threads|Note|
+|:--:|:--|:--:|:--:|:--:|:--|
+|:star:|tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl|○||○||
+
 **Python 3.x + Tensorflow v2**  
 
 |Best|.whl|jemalloc|MPI|4Threads|Note|
@@ -69,9 +75,11 @@ $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
 $ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
+$ sudo apt-get install -y libatlas-base-dev
+$ pip3 install -U --user six wheel mock
 $ sudo pip3 uninstall tensorflow
-$ wget -O tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_multithread.whl
-$ sudo pip3 install tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl
+$ sudo pip3 install tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
