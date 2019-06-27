@@ -13,7 +13,10 @@ Bazel's pre-build binay is below.
 **https://github.com/PINTO0309/Bazel_bin.git**  
 
 Cross compilation recommends using **`lhelontra`** repository.  
-**https://github.com/lhelontra/tensorflow-on-arm.git**
+**https://github.com/lhelontra/tensorflow-on-arm.git**  
+
+Prebuilt binary for Jetson Nano by **`Michael`**.  
+**https://dl.photoprism.org/tensorflow/**
 
 ## Binary type
 **`Best`** is the highest performance binary when using **`Python API`**.  
