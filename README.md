@@ -6,7 +6,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 2. `Bus Error`
   
 RaspberryPi3 ... armv7l  
-Jetson TX2 ... aarch64  
+Jetson TX2 / Nano ... aarch64  
 LaptopPC ... x86_64
   
 Bazel's pre-build binay is below.  
