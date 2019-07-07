@@ -3049,7 +3049,7 @@ $ sudo -H pip3 install tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl
   
 ============================================================  
   
-**Tensorflow v1.14.0 - Bazel 0.24.1**  
+**Tensorflow v1.14.0 - Bazel 0.24.1 - armhf**  
 
 ============================================================  
 
@@ -3242,6 +3242,256 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-1.14.0-cp35-cp35m-linux_arm7l.whl ~
 $ cd ~
 $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl 
+```
+  
+============================================================  
+  
+**Tensorflow v1.14.0 - Bazel 0.24.1 - aarch64**  
+
+============================================================  
+  
+First, prepare an emulation environment for aarch64 with QEMU 4.0.0.  
+**[How to create a Debian Buster aarch64 OS image from scratch in QEMU 4.0.0 hardware emulation mode (Kernel 4.19.0-5-arm64, for Tensorflow aarch64 build)](https://qiita.com/PINTO/items/e117bb0389f2163e2ac8)**
+  
+Next, build Bazel and Tensorflow according to the following procedure in the emulator environment.
+```bash
+$ sudo apt-get install -y \
+libhdf5-dev libc-ares-dev libeigen3-dev \
+libatlas3-base net-tools build-essential \
+zip unzip python3-pip curl wget git zip unzip
+$ sudo pip3 install pip --upgrade
+$ sudo pip3 install zipper
+$ sudo pip3 install keras_applications==1.0.7 --no-deps
+$ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/packages/absl_py-0.7.1-cp37-none-any.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/packages/gast-0.2.2-cp37-none-any.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/packages/grpcio-1.21.1-cp37-cp37m-linux_aarch64.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/packages/h5py-2.9.0-cp37-cp37m-linux_aarch64.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/packages/numpy-1.16.4-cp37-cp37m-linux_aarch64.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/packages/wrapt-1.11.2-cp37-cp37m-linux_aarch64.whl
+$ sudo pip3 install *.whl
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
+$ sudo pip3 install -U --user mock zipper wheel
+
+$ sudo apt-get update
+$ sudo apt-get remove -y openjdk-8* --purge
+$ sudo apt-get install -y openjdk-11-jdk
+
+$ cd ~
+$ mkdir bazel;cd bazel
+$ wget https://github.com/bazelbuild/bazel/releases/download/0.24.1/bazel-0.24.1-dist.zip
+$ unzip bazel-0.24.1-dist.zip
+$ env EXTRA_BAZEL_ARGS="--host_javabase=@local_jdk//:jdk"
+
+$ nano compile.sh
+
+#################################################################################
+bazel_build "src:bazel_nojdk${EXE_EXT}" \
+  --action_env=PATH \
+  --host_platform=@bazel_tools//platforms:host_platform \
+  --platforms=@bazel_tools//platforms:target_platform \
+  || fail "Could not build Bazel"
+#################################################################################
+↓
+#################################################################################
+bazel_build "src:bazel_nojdk${EXE_EXT}" \
+  --host_javabase=@local_jdk//:jdk \
+  --action_env=PATH \
+  --host_platform=@bazel_tools//platforms:host_platform \
+  --platforms=@bazel_tools//platforms:target_platform \
+  || fail "Could not build Bazel"
+#################################################################################
+
+$ sudo bash ./compile.sh
+$ sudo cp output/bazel /usr/local/bin
+
+$ bazel version
+Extracting Bazel installation...
+WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
+Build label: 0.24.1- (@non-git)
+Build target: bazel-out/aarch64-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
+Build time: Sun Jun 23 20:46:48 2019 (1561322808)
+Build timestamp: 1561322808
+Build timestamp as int: 1561322808
+
+$ cd ~
+$ git clone -b v1.14.0 https://github.com/tensorflow/tensorflow.git
+$ cd tensorflow
+$ git checkout -b v1.14.0
+```
+- tensorflow/lite/python/interpreter.py
+```bash
+# Add the following two lines to the last line
+  def set_num_threads(self, i):
+    return self._interpreter.SetNumThreads(i)
+```
+- tensorflow/lite/python/interpreter_wrapper/interpreter_wrapper.cc
+```bash
+// Corrected the vicinity of the last line as follows
+PyObject* InterpreterWrapper::ResetVariableTensors() {
+  TFLITE_PY_ENSURE_VALID_INTERPRETER();
+  TFLITE_PY_CHECK(interpreter_->ResetVariableTensors());
+  Py_RETURN_NONE;
+}
+
+PyObject* InterpreterWrapper::SetNumThreads(int i) {
+  interpreter_->SetNumThreads(i);
+  Py_RETURN_NONE;
+}
+
+}  // namespace interpreter_wrapper
+}  // namespace tflite
+```
+- tensorflow/lite/python/interpreter_wrapper/interpreter_wrapper.h
+```bash
+  // should be the interpreter object providing the memory.
+  PyObject* tensor(PyObject* base_object, int i);
+
+  PyObject* SetNumThreads(int i);
+
+ private:
+  // Helper function to construct an `InterpreterWrapper` object.
+  // It only returns InterpreterWrapper if it can construct an `Interpreter`.
+```
+- tensorflow/lite/tools/make/Makefile
+```bash
+BUILD_WITH_NNAPI=false
+```
+- tensorflow/lite/tools/make/targets/aarch64_makefile.inc  
+**https://stackoverflow.com/questions/56055359/tensorflow-lite-arm64-error-cannot-convert-const-int8x8-t**
+```bash
+# Settings for generic aarch64 boards such as Odroid C2 or Pine64.
+ifeq ($(TARGET),aarch64)
+  # The aarch64 architecture covers all 64-bit ARM chips. This arch mandates
+  # NEON, so FPU flags are not needed below.
+  TARGET_ARCH := armv8-a
+  TARGET_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
+
+  CXXFLAGS += \
+    -march=armv8-a \
+    -funsafe-math-optimizations \
+    -ftree-vectorize \
+    -flax-vector-conversions \
+    -fomit-frame-pointer \
+    -fPIC
+
+  CFLAGS += \
+    -march=armv8-a \
+    -funsafe-math-optimizations \
+    -ftree-vectorize \
+    -flax-vector-conversions \
+    -fomit-frame-pointer \
+    -fPIC
+
+  LDFLAGS := \
+    -Wl,--no-export-dynamic \
+    -Wl,--exclude-libs,ALL \
+    -Wl,--gc-sections \
+    -Wl,--as-needed
+
+       
+  LIBS := \
+    -lstdc++ \
+    -lpthread \
+    -lm \
+    -ldl \
+    -lrt
+
+endif
+```
+- tensorflow/lite/build_def.bzl  
+**https://github.com/tensorflow/tensorflow/issues/26731**  
+**https://github.com/tensorflow/tensorflow/pull/29515/files**
+```bash
+            "/DTF_COMPILE_LIBRARY",
+            "/wd4018",  # -Wno-sign-compare
+        ],
++       str(Label("//tensorflow:linux_aarch64")): [
++           "-flax-vector-conversions",
++           "-fomit-frame-pointer",
++       ],
+        "//conditions:default": [
+            "-Wno-sign-compare",
+        ],
+```
+```bash
+$ ./configure
+Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
+
+
+Found possible Python library paths:
+  /usr/local/lib/python3.7/dist-packages
+  /usr/lib/python3/dist-packages
+Please input the desired Python library path to use.  Default is [/usr/local/lib/python3.7/dist-packages]
+
+Do you wish to build TensorFlow with XLA JIT support? [Y/n]: n
+No XLA JIT support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with OpenCL SYCL support? [y/N]: n
+No OpenCL SYCL support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with ROCm support? [y/N]: n
+No ROCm support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with CUDA support? [y/N]: n
+No CUDA support will be enabled for TensorFlow.
+
+Do you wish to download a fresh release of clang? (Experimental) [y/N]: n
+Clang will not be downloaded.
+
+Do you wish to build TensorFlow with MPI support? [y/N]: n
+No MPI support will be enabled for TensorFlow.
+
+Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native -Wno-sign-compare]: 
+
+
+Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: n
+Not configuring the WORKSPACE for Android builds.
+
+Preconfigured Bazel build configs. You can use any of the below by adding "--config=<>" to your build command. See .bazelrc for more details.
+	--config=mkl         	# Build with MKL support.
+	--config=monolithic  	# Config for mostly static monolithic build.
+	--config=gdr         	# Build with GDR support.
+	--config=verbs       	# Build with libverbs support.
+	--config=ngraph      	# Build with Intel nGraph support.
+	--config=numa        	# Build with NUMA support.
+	--config=dynamic_kernels	# (Experimental) Build kernels into separate shared objects.
+Preconfigured Bazel build configs to DISABLE default on features:
+	--config=noaws       	# Disable AWS S3 filesystem support.
+	--config=nogcp       	# Disable GCP support.
+	--config=nohdfs      	# Disable HDFS support.
+	--config=noignite    	# Disable Apache Ignite support.
+	--config=nokafka     	# Disable Apache Kafka support.
+	--config=nonccl      	# Disable NVIDIA NCCL support.
+Configuration finished
+```
+```bash
+$ sudo bazel build \
+--config=opt \
+--config=noaws \
+--config=nogcp \
+--config=nohdfs \
+--config=noignite \
+--config=nokafka \
+--config=nonccl \
+--local_resources=8192.0,4.0,1.0 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-flax-vector-conversions \
+--copt=-fomit-frame-pointer \
+//tensorflow/tools/pip_package:build_pip_package
+```
+```bash
+$ su --preserve-environment
+# ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+# exit
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl ~
+```
+```bash
+$ cd ~
+$ sudo pip3 uninstall tensorflow
+$ sudo -H pip3 install tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl 
 ```
 
 </div></details>
