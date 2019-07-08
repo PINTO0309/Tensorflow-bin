@@ -5,7 +5,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 1. `undefined symbol: _ZN6tflite12tensor_utils39NeonMatrixBatchVectorMultiplyAccumulateEPKaiiS2_PKfiPfi`  
 2. `Bus Error`
   
-RaspberryPi3 ... armv7l  
+RaspberryPi3 ... armv7l / aarch64  
 Jetson TX2 / Nano ... aarch64  
 LaptopPC ... x86_64
   
@@ -50,6 +50,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |Best|.whl|jemalloc|MPI|4Threads|Note|
 |:--:|:--|:--:|:--:|:--:|:--|
 |:star:|tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl|○||○||
+|:star:|tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl|○||○||
 
 **Python 3.x + Tensorflow v2**  
 
