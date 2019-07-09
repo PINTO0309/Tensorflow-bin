@@ -43,22 +43,22 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 |Best|.whl|jemalloc|MPI|4Threads|Note|
 |:--:|:--|:--:|:--:|:--:|:--|
-|:star:|tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl|○||○||
+|:star:|tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl|○||○|Raspbian/Debian Stretch|
 
 **Python 3.x + Tensorflow v1.14.0**  
 
 |Best|.whl|jemalloc|MPI|4Threads|Note|
 |:--:|:--|:--:|:--:|:--:|:--|
-|:star:|tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl|○||○||
-|:star:|tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl|○||○||
+|:star:|tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl|○||○|Raspbian/Debian Stretch|
+|:star:|tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl|○||○|Raspbian/Debian Buster|
 
 **Python 3.x + Tensorflow v2**  
 
 |Best|.whl|jemalloc|MPI|4Threads|Note|
 |:--:|:--|:--:|:--:|:--:|:--|
-||tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl|○||○|Alpha version|
-||tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl|○||○|Beta version0|
-|:star:|tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl|○||○|Beta version1|
+||tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl|○||○|Alpha version,Raspbian/Debian Stretch|
+||tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl|○||○|Beta version0,Raspbian/Debian Stretch|
+|:star:|tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl|○||○|Beta version1,Raspbian/Debian Stretch|
 
 ## Usage
 **Example of Python 2.x series**
