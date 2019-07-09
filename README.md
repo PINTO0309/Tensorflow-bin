@@ -3050,7 +3050,7 @@ $ sudo -H pip3 install tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl
   
 ============================================================  
   
-**Tensorflow v1.14.0 - Bazel 0.24.1 - armhf**  
+**Tensorflow v1.14.0 - Bazel 0.24.1 - Stretch - armhf**  
 
 ============================================================  
 
@@ -3068,7 +3068,8 @@ $ sudo mv zram.sh /etc/init.d/
 $ sudo update-rc.d zram.sh defaults
 $ sudo reboot
 
-$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev openjdk-8-jdk
+
 $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
 $ sudo pip3 install h5py==2.9.0
@@ -3247,7 +3248,7 @@ $ sudo -H pip3 install tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl
   
 ============================================================  
   
-**Tensorflow v1.14.0 - Bazel 0.24.1 - aarch64**  
+**Tensorflow v1.14.0 - Bazel 0.24.1 - Buster - aarch64**  
 
 ============================================================  
   
@@ -3501,7 +3502,7 @@ $ sudo -H pip3 install tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl
   
 ============================================================  
   
-**Tensorflow v2.0.0-alpha - Bazel 0.19.2**  
+**Tensorflow v2.0.0-alpha - Stretch - Bazel 0.19.2**  
 
 ============================================================  
 
@@ -3706,7 +3707,7 @@ $ sudo -H pip3 install tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl
   
 ============================================================  
   
-**Tensorflow v2.0.0-beta0 - Bazel 0.24.1**  
+**Tensorflow v2.0.0-beta0 - Stretch - Bazel 0.24.1**  
 
 ============================================================  
 
@@ -3907,7 +3908,7 @@ $ sudo -H pip3 install tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl
   
 ============================================================  
   
-**Tensorflow v2.0.0-beta1 - Bazel 0.24.1**  
+**Tensorflow v2.0.0-beta1 - Stretch - Bazel 0.24.1**  
 
 ============================================================  
 
