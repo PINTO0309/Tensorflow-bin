@@ -1,4 +1,6 @@
 # Tensorflow-bin
+**The old binary has been transported to the [Releases](https://github.com/PINTO0309/Tensorflow-bin/releases) tab.**  
+  
 Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi / Jetson TX2.  
 And, The following problem was solved. **[#15062](https://github.com/tensorflow/tensorflow/issues/15062), [#21574](https://github.com/tensorflow/tensorflow/issues/21574), [#21855](https://github.com/tensorflow/tensorflow/issues/21855),  [#23082](https://github.com/tensorflow/tensorflow/issues/23082), [#25120](https://github.com/tensorflow/tensorflow/issues/25120), [#25748](https://github.com/tensorflow/tensorflow/pull/25748)**  
   
@@ -50,6 +52,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |Best|.whl|4Threads|Note|
 |:--:|:--|:--:|:--|
 |:star:|tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl|○|Raspbian/Debian Stretch|
+|:star:|tensorflow-1.14.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
 |:star:|tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster|
 
 **Python 3.x + Tensorflow v2**  
@@ -59,6 +62,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 ||tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl|○|Alpha version,Raspbian/Debian Stretch|
 ||tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl|○|Beta version0,Raspbian/Debian Stretch|
 |:star:|tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Stretch|
+|:star:|tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Buster|
 
 ## Usage
 **Example of Python 2.x series**
