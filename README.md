@@ -71,6 +71,7 @@ The behavior is unconfirmed because I do not have C language implementation skil
 $ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/1.14.0-armv7l/libtensorflow.tar.gz
 $ tar -C /usr/local -xzf libtensorflow.tar.gz
 $ rm libtensorflow.tar.gz
+$ sudo ldconfig
 ```
 |Version|Binary|Note|
 |:--:|:--|:--|
