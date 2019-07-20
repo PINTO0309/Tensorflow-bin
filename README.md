@@ -1,13 +1,12 @@
 # Tensorflow-bin
   
-Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi / Jetson TX2.  
+Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi.  
 And, The following problem was solved. **[#15062](https://github.com/tensorflow/tensorflow/issues/15062), [#21574](https://github.com/tensorflow/tensorflow/issues/21574), [#21855](https://github.com/tensorflow/tensorflow/issues/21855),  [#23082](https://github.com/tensorflow/tensorflow/issues/23082), [#25120](https://github.com/tensorflow/tensorflow/issues/25120), [#25748](https://github.com/tensorflow/tensorflow/pull/25748), [#30359](https://github.com/tensorflow/tensorflow/issues/30359)**  
   
 1. `undefined symbol: _ZN6tflite12tensor_utils39NeonMatrixBatchVectorMultiplyAccumulateEPKaiiS2_PKfiPfi`  
 2. `Bus Error`
   
 RaspberryPi3 ... armv7l / aarch64  
-Jetson TX2 / Nano ... aarch64  
 LaptopPC ... x86_64
   
 Bazel's pre-build binay is below.  
