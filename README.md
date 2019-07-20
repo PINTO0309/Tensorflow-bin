@@ -20,23 +20,22 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 **https://dl.photoprism.org/tensorflow/**
 
 ## Binary type
-**`Best`** is the highest performance binary when using **`Python API`**.  
   
 **Python 3.x + Tensorflow v1.14.0**  
 
-|Best|.whl|4Threads|Note|
-|:--:|:--|:--:|:--|
-|:star:|tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl|○|Raspbian/Debian Stretch|
-|:star:|tensorflow-1.14.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
-|:star:|tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster|
+|.whl|4Threads|Note|
+|:--|:--:|:--|
+|tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl|○|Raspbian/Debian Stretch|
+|tensorflow-1.14.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
+|tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster|
 
 **Python 3.x + Tensorflow v2**  
 
-|Best|.whl|4Threads|Note|
-|:--:|:--|:--:|:--|
-|:star:|tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Stretch|
-|:star:|tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Buster|
-|:star:|tensorflow-2.0.0b1-cp37-cp37m-linux_aarch64.whl|○|Beta version1,Debian Buster|
+|.whl|4Threads|Note|
+|:--|:--:|:--|
+|tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Stretch|
+|tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Buster|
+|tensorflow-2.0.0b1-cp37-cp37m-linux_aarch64.whl|○|Beta version1,Debian Buster|
 
 **【Appendix】 C Library + Tensorflow v1.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.
