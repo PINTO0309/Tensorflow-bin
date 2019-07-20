@@ -1,5 +1,4 @@
 # Tensorflow-bin
-**The old binary has been transported to the [Release](https://github.com/PINTO0309/Tensorflow-bin/releases) tab.**  
   
 Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi / Jetson TX2.  
 And, The following problem was solved. **[#15062](https://github.com/tensorflow/tensorflow/issues/15062), [#21574](https://github.com/tensorflow/tensorflow/issues/21574), [#21855](https://github.com/tensorflow/tensorflow/issues/21855),  [#23082](https://github.com/tensorflow/tensorflow/issues/23082), [#25120](https://github.com/tensorflow/tensorflow/issues/25120), [#25748](https://github.com/tensorflow/tensorflow/pull/25748), [#30359](https://github.com/tensorflow/tensorflow/issues/30359)**  
@@ -23,30 +22,6 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 ## Binary type
 **`Best`** is the highest performance binary when using **`Python API`**.  
   
-**Python 2.x**　Be sure to rename to **`tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl`** and use the pip2 command.
-
-|Best|.whl|jemalloc|MPI|4Threads|
-|:--:|:--|:--:|:--:|:--:|
-||tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl||||
-|:star:|tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl|○|||
-||tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc_mpi_multithread.whl|○|○|○|
-
-**Python 3.x**　Be sure to rename to **`tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl`** and use the pip3 command.
-
-|Best|.whl|jemalloc|MPI|4Threads|
-|:--:|:--|:--:|:--:|:--:|
-||tensorflow-1.11.0-cp35-cp35m-linux_armv7l.whl||||
-||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc.whl|○|||
-||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_mpi.whl|○|○||
-||tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_mpi_multithread.whl|○|○|○|
-|:star:|tensorflow-1.11.0-cp35-cp35m-linux_armv7l_jemalloc_multithread.whl|○||○|
-
-**Python 3.x + Tensorflow v1.13.1**  
-
-|Best|.whl|4Threads|Note|
-|:--:|:--|:--:|:--|
-|:star:|tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl|○|Raspbian/Debian Stretch|
-
 **Python 3.x + Tensorflow v1.14.0**  
 
 |Best|.whl|4Threads|Note|
@@ -59,8 +34,6 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 |Best|.whl|4Threads|Note|
 |:--:|:--|:--:|:--|
-||tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl|○|Alpha version,Raspbian/Debian Stretch|
-||tensorflow-2.0.0b0-cp35-cp35m-linux_armv7l.whl|○|Beta version0,Raspbian/Debian Stretch|
 |:star:|tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Stretch|
 |:star:|tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Buster|
 |:star:|tensorflow-2.0.0b1-cp37-cp37m-linux_aarch64.whl|○|Beta version1,Debian Buster|
@@ -78,17 +51,6 @@ $ sudo ldconfig
 |v1.14.0|C-library/1.14.0-armv7l/libtensorflow.tar.gz|Raspbian/Debian Buster|
 
 ## Usage
-**Example of Python 2.x series**
-```bash
-$ sudo apt-get install python-pip python3-pip python-scipy libhdf5-dev
-$ sudo apt-get install -y openmpi-bin libopenmpi-dev
-$ sudo pip2 uninstall tensorflow
-$ wget -O tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.11.0-cp27-cp27mu-linux_armv7l_jemalloc.whl
-$ sudo pip2 install tensorflow-1.11.0-cp27-cp27mu-linux_armv7l.whl
-
-【Required】 Restart the terminal.
-```
-
 **Example of Python 3.x series**
 ```bash
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
@@ -122,21 +84,12 @@ $ sudo -H pip3 install tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl
 ```
 
 ## Operation check
-**Example of Python 2.x series**
-```bash
-$ python
->>> import tensorflow
->>> tensorflow.__version__
-1.11.0
->>> exit()
-```
-
 **Example of Python 3.x series**
 ```bash
 $ python3
 >>> import tensorflow
 >>> tensorflow.__version__
-1.11.0
+1.14.0
 >>> exit()
 ```
 
