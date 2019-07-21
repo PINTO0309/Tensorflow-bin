@@ -36,7 +36,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Buster|
 |tensorflow-2.0.0b1-cp37-cp37m-linux_aarch64.whl|○|Beta version1,Debian Buster|
 
-**【Appendix】 C Library + Tensorflow v1.x.x**  
+**【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.
 ```sh
 $ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/1.14.0-armv7l/libtensorflow.tar.gz
@@ -47,6 +47,7 @@ $ sudo ldconfig
 |Version|Binary|Note|
 |:--:|:--|:--|
 |v1.14.0|C-library/1.14.0-armv7l/libtensorflow.tar.gz|Raspbian/Debian Buster|
+|v2.0.0-beta1|C-library/2.0.0beta1-armv7l/libtensorflow.tar.gz|Raspbian/Debian Buster|
 
 ## Usage
 **Example of Python 3.x + Tensorflow v1 series**
