@@ -3295,14 +3295,14 @@ PyObject* InterpreterWrapper::SetNumThreads(int i) {
 ```python
 BUILD_WITH_NNAPI=false
 ```
-- tensorflow/contrib/__init__.py
+- tensorflow/contrib/\_\_init\_\_.py
 ```python
 from tensorflow.contrib import checkpoint
 #if os.name != "nt" and platform.machine() != "s390x":
 #  from tensorflow.contrib import cloud
 from tensorflow.contrib import cluster_resolver
 ```
-- tensorflow/contrib/__init__.py
+- tensorflow/contrib/\_\_init\_\_.py
 ```python
 from tensorflow.contrib.summary import summary
 
@@ -3575,6 +3575,27 @@ endif
             "-Wno-sign-compare",
         ],
 ```
+- tensorflow/contrib/\_\_init\_\_.py
+```python
+from tensorflow.contrib import checkpoint
+#if os.name != "nt" and platform.machine() != "s390x":
+#  from tensorflow.contrib import cloud
+from tensorflow.contrib import cluster_resolver
+```
+- tensorflow/contrib/\_\_init\_\_.py
+```python
+from tensorflow.contrib.summary import summary
+
+if os.name != "nt" and platform.machine() != "s390x":
+  try:
+    from tensorflow.contrib import cloud
+  except ImportError:
+    pass
+
+from tensorflow.python.util.lazy_loader import LazyLoader
+ffmpeg = LazyLoader("ffmpeg", globals(),
+                    "tensorflow.contrib.ffmpeg")
+```
 ```bash
 $ ./configure
 Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
@@ -3766,6 +3787,27 @@ tf_kernel_library(
 - tensorflow/lite/tools/make/Makefile
 ```python
 BUILD_WITH_NNAPI=false
+```
+- tensorflow/contrib/\_\_init\_\_.py
+```python
+from tensorflow.contrib import checkpoint
+#if os.name != "nt" and platform.machine() != "s390x":
+#  from tensorflow.contrib import cloud
+from tensorflow.contrib import cluster_resolver
+```
+- tensorflow/contrib/\_\_init\_\_.py
+```python
+from tensorflow.contrib.summary import summary
+
+if os.name != "nt" and platform.machine() != "s390x":
+  try:
+    from tensorflow.contrib import cloud
+  except ImportError:
+    pass
+
+from tensorflow.python.util.lazy_loader import LazyLoader
+ffmpeg = LazyLoader("ffmpeg", globals(),
+                    "tensorflow.contrib.ffmpeg")
 ```
 - configure
 ```bash
@@ -3972,6 +4014,27 @@ tf_kernel_library(
 ```python
 BUILD_WITH_NNAPI=false
 ```
+- tensorflow/contrib/\_\_init\_\_.py
+```python
+from tensorflow.contrib import checkpoint
+#if os.name != "nt" and platform.machine() != "s390x":
+#  from tensorflow.contrib import cloud
+from tensorflow.contrib import cluster_resolver
+```
+- tensorflow/contrib/\_\_init\_\_.py
+```python
+from tensorflow.contrib.summary import summary
+
+if os.name != "nt" and platform.machine() != "s390x":
+  try:
+    from tensorflow.contrib import cloud
+  except ImportError:
+    pass
+
+from tensorflow.python.util.lazy_loader import LazyLoader
+ffmpeg = LazyLoader("ffmpeg", globals(),
+                    "tensorflow.contrib.ffmpeg")
+```
 - configure
 ```bash
 $ ./configure 
@@ -4172,6 +4235,27 @@ tf_kernel_library(
 - tensorflow/lite/tools/make/Makefile
 ```python
 BUILD_WITH_NNAPI=false
+```
+- tensorflow/contrib/\_\_init\_\_.py
+```python
+from tensorflow.contrib import checkpoint
+#if os.name != "nt" and platform.machine() != "s390x":
+#  from tensorflow.contrib import cloud
+from tensorflow.contrib import cluster_resolver
+```
+- tensorflow/contrib/\_\_init\_\_.py
+```python
+from tensorflow.contrib.summary import summary
+
+if os.name != "nt" and platform.machine() != "s390x":
+  try:
+    from tensorflow.contrib import cloud
+  except ImportError:
+    pass
+
+from tensorflow.python.util.lazy_loader import LazyLoader
+ffmpeg = LazyLoader("ffmpeg", globals(),
+                    "tensorflow.contrib.ffmpeg")
 ```
 - configure
 ```bash
