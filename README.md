@@ -13,11 +13,11 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
   
 **Python API packages**
 
-|Device|OS|Distribution|Architecture|Note|
-|:--|:--|:--|:--|:--|
-|RaspberryPi3/4|Raspbian/Debian|Stretch|armhf / armv7l|32bit|
-|RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|32bit|
-|RaspberryPi3/4|Debian|Buster|aarch64 / armv8|64bit|
+|Device|OS|Distribution|Architecture|Python ver|Note|
+|:--|:--|:--|:--|:--|:--|
+|RaspberryPi3/4|Raspbian/Debian|Stretch|armhf / armv7l|3.5.3|32bit|
+|RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3|32bit|
+|RaspberryPi3/4|Debian|Buster|aarch64 / armv8|3.7.3|64bit|
 
 Bazel's pre-build binay is below.  
 **https://github.com/PINTO0309/Bazel_bin.git**  
