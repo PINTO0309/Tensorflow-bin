@@ -8,6 +8,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 1. `undefined symbol: _ZN6tflite12tensor_utils39NeonMatrixBatchVectorMultiplyAccumulateEPKaiiS2_PKfiPfi`  
 2. `Bus Error`
 3. `ImportError: cannot import name 'cloud' from 'tensorflow.contrib' `
+4. `export SetNumThreads to TFLite Python API`
   
 RaspberryPi3 ... armv7l / aarch64  
 LaptopPC ... x86_64
