@@ -11,9 +11,14 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 4. `export SetNumThreads to TFLite Python API`
 5. `TensorFlow C binding for Raspberry Pi`
   
-RaspberryPi3 ... armv7l / aarch64  
-LaptopPC ... x86_64
-  
+**Python API packages**
+
+|Device|OS|Distribution|Architecture|Note|
+|:--|:--|:--|:--|:--|
+|RaspberryPi3/4|Raspbian/Debian|Stretch|armhf / armv7l|32bit|
+|RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|32bit|
+|RaspberryPi3/4|Debian|Buster|aarch64 / armv8|64bit|
+
 Bazel's pre-build binay is below.  
 **https://github.com/PINTO0309/Bazel_bin.git**  
 
