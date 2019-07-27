@@ -9,6 +9,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 2. `Bus Error`
 3. `ImportError: cannot import name 'cloud' from 'tensorflow.contrib' `
 4. `export SetNumThreads to TFLite Python API`
+5. `TensorFlow C binding for Raspberry Pi`
   
 RaspberryPi3 ... armv7l / aarch64  
 LaptopPC ... x86_64
