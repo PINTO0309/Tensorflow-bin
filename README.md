@@ -56,9 +56,9 @@ $ sudo ldconfig
 ```
 |Version|Binary|Note|
 |:--:|:--|:--|
-|v1.14.0|C-library/1.14.0-armv7l/libtensorflow.tar.gz|Raspbian/Debian Buster armhf|
-|v1.14.0|C-library/1.14.0-aarch64/libtensorflow.tar.gz|Debian Buster aarch64|
-|v2.0.0-beta1|C-library/2.0.0beta1-armv7l/libtensorflow.tar.gz|Raspbian/Debian Buster|
+|v1.14.0|C-library/1.14.0-armv7l/libtensorflow.tar.gz|Raspbian/Debian Buster armhf, glibc 2.28|
+|v1.14.0|C-library/1.14.0-aarch64/libtensorflow.tar.gz|Debian Buster aarch64, glibc 2.28|
+|v2.0.0-beta1|C-library/2.0.0beta1-armv7l/libtensorflow.tar.gz|Raspbian/Debian Buster, glibc 2.28|
 
 ## Usage
 **Example of Python 3.x + Tensorflow v1 series**
