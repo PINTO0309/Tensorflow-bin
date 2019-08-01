@@ -3234,7 +3234,7 @@ $ sudo -H pip3 install tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl
 First, prepare an emulation environment for armhf with QEMU 4.0.0. (CPU 4core, RAM 4GB)  
 **[How to create a Debian Buster armhf OS image from scratch in hardware emulation mode of QEMU 4.0.0 (Kernel 4.19.0-5-armmp-lpae, for building Tensorflow armhf)](https://qiita.com/PINTO/items/c10283a28d0699f01e01)**  
 ```bash
-$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev openjdk-8-jdk
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev openjdk-11-jdk
 
 $ sudo pip3 install keras_applications==1.0.7 --no-deps
 $ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
