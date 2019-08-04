@@ -22,6 +22,9 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 Bazel's pre-build binay is below.  
 **https://github.com/PINTO0309/Bazel_bin.git**  
 
+Procedure for building a remote caching environment by Bazel.  
+**[Ultra-fast build of Tensorflow with Bazel Remote Caching [Google Cloud Storage version]](https://qiita.com/PINTO/items/eef2eccc21dc72227d0f)**  
+
 Cross compilation recommends using **`lhelontra`** repository.  
 **https://github.com/lhelontra/tensorflow-on-arm.git**  
 
