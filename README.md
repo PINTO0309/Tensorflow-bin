@@ -19,6 +19,9 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 |RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3|32bit|
 |RaspberryPi3/4|Debian|Buster|aarch64 / armv8|3.7.3|64bit|
 
+The official installer including only the Tensorflow Lite runtime can be obtained from the following URL.  
+**https://www.tensorflow.org/lite/guide/python**  
+
 Bazel's pre-build binay is below.  
 **https://github.com/PINTO0309/Bazel_bin.git**  
 
