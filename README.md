@@ -4396,9 +4396,9 @@ $ cd Bazel_bin
 $ ./0.26.1/Raspbian_Debian_Buster_armhf/openjdk-8-jdk/install.sh
 
 $ cd ~
-$ git clone -b v2.0.0-beta1 https://github.com/tensorflow/tensorflow.git
+$ git clone -b v2.0.0-rc0 https://github.com/tensorflow/tensorflow.git
 $ cd tensorflow
-$ git checkout -b v2.0.0-beta1
+$ git checkout -b v2.0.0-rc0
 ```
 - tensorflow/lite/python/interpreter.py
 ```bash
