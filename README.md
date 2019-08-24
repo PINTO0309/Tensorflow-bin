@@ -4531,7 +4531,6 @@ Configuration finished
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
 --config=noaws \
---config=nogcp \
 --config=nohdfs \
 --config=noignite \
 --config=nokafka \
