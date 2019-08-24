@@ -4389,7 +4389,7 @@ $ sudo apt update;sudo apt upgrade
 $ cd ~
 $ git clone https://github.com/PINTO0309/Bazel_bin.git
 $ cd Bazel_bin
-$ ./0.24.1/Raspbian_Stretch_armhf/install.sh
+$ ./0.26.1/Raspbian_Debian_Buster_armhf/openjdk-8-jdk/install.sh
 
 $ cd ~
 $ git clone -b v2.0.0-beta1 https://github.com/tensorflow/tensorflow.git
