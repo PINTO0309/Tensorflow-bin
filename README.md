@@ -4363,7 +4363,9 @@ $ sudo -H pip3 install tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl
 **Tensorflow v2.0.0-rc0 - Buster - Bazel 0.26.1**  
 
 ============================================================  
-
+First, install openjdk-8-jdk according to the procedure of the following URL.  
+**[How to install openjdk-8-jdk on Raspbian Buster armhf](https://qiita.com/PINTO/items/a6ae8e04d382493ef369)**  
+Next, follow the steps below to build Tensorflow on RaspberryPi3.  
 ```bash
 $ sudo nano /etc/dphys-swapfile
 CONF_SWAPFILE=2048
