@@ -4478,10 +4478,10 @@ Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/py
 Found possible Python library paths:
   /usr/local/lib
   /usr/lib/python3/dist-packages
-  /home/pi/inference_engine_vpu_arm/python/python3.5
-  /usr/local/lib/python3.5/dist-packages
+  /home/pi/inference_engine_vpu_arm/python/python3.7
+  /usr/local/lib/python3.7/dist-packages
 Please input the desired Python library path to use.  Default is [/usr/local/lib]
-/usr/local/lib/python3.5/dist-packages
+/usr/local/lib/python3.7/dist-packages
 Do you wish to build TensorFlow with XLA JIT support? [Y/n]: n
 No XLA JIT support will be enabled for TensorFlow.
 
