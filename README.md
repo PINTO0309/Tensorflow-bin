@@ -4514,6 +4514,7 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 	--config=ngraph      	# Build with Intel nGraph support.
 	--config=numa        	# Build with NUMA support.
 	--config=dynamic_kernels	# (Experimental) Build kernels into separate shared objects.
+	--config=v2             # Build Tensorflow 2.x instead of 1.x
 Preconfigured Bazel build configs to DISABLE default on features:
 	--config=noaws       	# Disable AWS S3 filesystem support.
 	--config=nogcp       	# Disable GCP support.
