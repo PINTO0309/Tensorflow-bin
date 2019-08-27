@@ -53,6 +53,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Stretch|
 |tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Buster|
 |tensorflow-2.0.0b1-cp37-cp37m-linux_aarch64.whl|○|Beta version1,Debian Buster|
+|tensorflow-2.0.0rc0-cp37-cp37m-linux_aarch64.whl|○|RC0 version,Raspbian/Debian Buster|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.
@@ -85,18 +86,23 @@ $ sudo pip3 install tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl
 【Required】 Restart the terminal.
 ```
 **Example of Python 3.x + Tensorflow v2 series**
+First, install openjdk-8-jdk according to the procedure of the following URL.  
+**[How to install openjdk-8-jdk on Raspbian Buster armhf](https://qiita.com/PINTO/items/a6ae8e04d382493ef369)**  
+or  
+**[How to install openjdk-8-jdk on Debian Buster (Debian 10) armhf](https://qiita.com/PINTO/items/5445c5e899f68d928f0d)**  
+Next, follow the steps below to build Tensorflow on RaspberryPi3.  
 ```bash
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
-$ sudo pip3 install keras_applications==1.0.7 --no-deps
-$ sudo pip3 install keras_preprocessing==1.0.9 --no-deps
+$ sudo pip3 install keras_applications==1.0.8 --no-deps
+$ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
 $ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo apt-get install -y libatlas-base-dev
 $ pip3 install -U --user six wheel mock
 $ sudo apt update;sudo apt upgrade
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0rc0-cp37-cp37m-linux_armv7l.whl
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl
+$ sudo -H pip3 install tensorflow-2.0.0rc0-cp37-cp37m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
