@@ -85,7 +85,7 @@ $ sudo pip3 install tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
-**Example of Python 3.x + Tensorflow v2 series**
+**Example of Python 3.x + Tensorflow v2 series**  
 First, install openjdk-8-jdk according to the procedure of the following URL.  
 **[How to install openjdk-8-jdk on Raspbian Buster armhf](https://qiita.com/PINTO/items/a6ae8e04d382493ef369)**  
 or  
