@@ -4768,12 +4768,12 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 $ su --preserve-environment
 # ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 # exit
-$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.0.0rc0-cp37-cp37m-linux_arm7l.whl ~
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.0.0rc1-cp37-cp37m-linux_arm7l.whl ~
 ```
 ```bash
 $ cd ~
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.0.0rc0-cp37-cp37m-linux_armv7l.whl 
+$ sudo -H pip3 install tensorflow-2.0.0rc1-cp37-cp37m-linux_armv7l.whl 
 ```
 
 </div></details>
