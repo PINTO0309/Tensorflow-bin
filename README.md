@@ -4986,7 +4986,7 @@ $ sudo -H pip3 install tensorflow-2.0.0rc2-cp37-cp37m-linux_armv7l.whl
 
 </div></details>
 
-<details><summary>Tensorflow v2.0.0-rc2</summary><div>
+<details><summary>Tensorflow v2.0.0</summary><div>
   
 ============================================================  
   
@@ -5127,7 +5127,29 @@ Preconfigured Bazel build configs to DISABLE default on features:
 	--config=nonccl      	# Disable NVIDIA NCCL support.
 Configuration finished
 ```
-- build
+- build  
+
+(1) RaspberryPi3
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=noignite \
+--config=nokafka \
+--config=nonccl \
+--config=v2 \
+--local_resources=1024.0,0.5,0.5 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+//tensorflow/tools/pip_package:build_pip_package
+```
+(2) RaspberryPi4
 ```bash
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
