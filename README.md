@@ -59,6 +59,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-2.0.0rc0-cp37-cp37m-linux_armv7l.whl|○|RC0 version,Raspbian/Debian Buster|
 |tensorflow-2.0.0rc1-cp37-cp37m-linux_armv7l.whl|○|RC1 version,Raspbian/Debian Buster|
 |tensorflow-2.0.0rc2-cp37-cp37m-linux_armv7l.whl|○|RC1 version,Raspbian/Debian Buster|
+|tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.
@@ -105,9 +106,9 @@ $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo apt-get install -y libatlas-base-dev
 $ pip3 install -U --user six wheel mock
 $ sudo apt update;sudo apt upgrade
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0rc2-cp37-cp37m-linux_armv7l.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.0.0rc2-cp37-cp37m-linux_armv7l.whl
+$ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
@@ -4981,6 +4982,181 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.0.0rc2-cp37-cp37m-linux_arm7l.whl ~
 $ cd ~
 $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-2.0.0rc2-cp37-cp37m-linux_armv7l.whl 
+```
+
+</div></details>
+
+<details><summary>Tensorflow v2.0.0-rc2</summary><div>
+  
+============================================================  
+  
+**Tensorflow v2.0.0 - Buster - Bazel 0.26.1**  
+
+============================================================  
+First, install openjdk-8-jdk according to the procedure of the following URL.  
+**[How to install openjdk-8-jdk on Raspbian Buster armhf](https://qiita.com/PINTO/items/a6ae8e04d382493ef369)**  
+or  
+**[How to install openjdk-8-jdk on Debian Buster (Debian 10) armhf](https://qiita.com/PINTO/items/5445c5e899f68d928f0d)**  
+Next, follow the steps below to build Tensorflow on RaspberryPi3.  
+```bash
+$ sudo nano /etc/dphys-swapfile
+CONF_SWAPFILE=2048
+CONF_MAXSWAP=2048
+
+$ sudo systemctl stop dphys-swapfile
+$ sudo systemctl start dphys-swapfile
+
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/zram.sh
+$ chmod 755 zram.sh
+$ sudo mv zram.sh /etc/init.d/
+$ sudo update-rc.d zram.sh defaults
+$ sudo reboot
+
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev libatlas-base-dev libopenblas-dev
+$ sudo pip3 install keras_applications==1.0.8 --no-deps
+$ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
+$ sudo pip3 install h5py==2.9.0
+$ sudo apt-get install -y openmpi-bin libopenmpi-dev
+$ sudo -H pip3 install -U --user six numpy wheel mock
+$ sudo apt update;sudo apt upgrade
+
+$ cd ~
+$ git clone https://github.com/PINTO0309/Bazel_bin.git
+$ cd Bazel_bin
+$ ./0.26.1/Raspbian_Debian_Buster_armhf/openjdk-8-jdk/install.sh
+
+$ cd ~
+$ git clone -b v2.0.0 https://github.com/tensorflow/tensorflow.git
+$ cd tensorflow
+$ git checkout -b v2.0.0
+```
+- tensorflow/lite/python/interpreter.py
+```bash
+# Add the following two lines to the last line
+  def set_num_threads(self, i):
+    return self._interpreter.SetNumThreads(i)
+```
+- tensorflow/lite/python/interpreter_wrapper/interpreter_wrapper.cc
+```C++
+// Corrected the vicinity of the last line as follows
+PyObject* InterpreterWrapper::ResetVariableTensors() {
+  TFLITE_PY_ENSURE_VALID_INTERPRETER();
+  TFLITE_PY_CHECK(interpreter_->ResetVariableTensors());
+  Py_RETURN_NONE;
+}
+
+PyObject* InterpreterWrapper::SetNumThreads(int i) {
+  interpreter_->SetNumThreads(i);
+  Py_RETURN_NONE;
+}
+
+}  // namespace interpreter_wrapper
+}  // namespace tflite
+```
+- tensorflow/lite/python/interpreter_wrapper/interpreter_wrapper.h
+
+```C++
+  // should be the interpreter object providing the memory.
+  PyObject* tensor(PyObject* base_object, int i);
+
+  PyObject* SetNumThreads(int i);
+
+ private:
+  // Helper function to construct an `InterpreterWrapper` object.
+  // It only returns InterpreterWrapper if it can construct an `Interpreter`.
+```
+- tensorflow/lite/tools/make/Makefile
+```python
+BUILD_WITH_NNAPI=false
+```
+- configure
+```bash
+$ ./configure 
+Extracting Bazel installation...
+WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
+You have bazel 0.26.1- (@non-git) installed.
+Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
+
+
+Found possible Python library paths:
+  /usr/local/lib
+  /usr/lib/python3/dist-packages
+  /home/pi/inference_engine_vpu_arm/python/python3.7
+  /usr/local/lib/python3.7/dist-packages
+Please input the desired Python library path to use.  Default is [/usr/local/lib]
+/usr/local/lib/python3.7/dist-packages
+Do you wish to build TensorFlow with XLA JIT support? [Y/n]: n
+No XLA JIT support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with OpenCL SYCL support? [y/N]: n
+No OpenCL SYCL support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with ROCm support? [y/N]: n
+No ROCm support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with CUDA support? [y/N]: n
+No CUDA support will be enabled for TensorFlow.
+
+Do you wish to download a fresh release of clang? (Experimental) [y/N]: n
+Clang will not be downloaded.
+
+Do you wish to build TensorFlow with MPI support? [y/N]: n
+No MPI support will be enabled for TensorFlow.
+
+Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native -Wno-sign-compare]: 
+
+
+Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: n
+Not configuring the WORKSPACE for Android builds.
+
+Preconfigured Bazel build configs. You can use any of the below by adding "--config=<>" to your build command. See .bazelrc for more details.
+	--config=mkl         	# Build with MKL support.
+	--config=monolithic  	# Config for mostly static monolithic build.
+	--config=gdr         	# Build with GDR support.
+	--config=verbs       	# Build with libverbs support.
+	--config=ngraph      	# Build with Intel nGraph support.
+	--config=numa        	# Build with NUMA support.
+	--config=dynamic_kernels	# (Experimental) Build kernels into separate shared objects.
+	--config=v2             # Build Tensorflow 2.x instead of 1.x
+Preconfigured Bazel build configs to DISABLE default on features:
+	--config=noaws       	# Disable AWS S3 filesystem support.
+	--config=nogcp       	# Disable GCP support.
+	--config=nohdfs      	# Disable HDFS support.
+	--config=noignite    	# Disable Apache Ignite support.
+	--config=nokafka     	# Disable Apache Kafka support.
+	--config=nonccl      	# Disable NVIDIA NCCL support.
+Configuration finished
+```
+- build
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=noignite \
+--config=nokafka \
+--config=nonccl \
+--config=v2 \
+--local_resources=4096.0,3.0,1.0 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+//tensorflow/tools/pip_package:build_pip_package
+```
+```bash
+$ su --preserve-environment
+# ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+# exit
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.0.0-cp37-cp37m-linux_arm7l.whl ~
+```
+```bash
+$ cd ~
+$ sudo pip3 uninstall tensorflow
+$ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl 
 ```
 
 </div></details>
