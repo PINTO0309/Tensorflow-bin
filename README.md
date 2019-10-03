@@ -4812,7 +4812,6 @@ $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
 $ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo -H pip3 install -U --user six numpy wheel mock
-$ sudo apt update;sudo apt upgrade
 
 $ cd ~
 $ git clone https://github.com/PINTO0309/Bazel_bin.git
