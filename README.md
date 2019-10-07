@@ -5064,9 +5064,9 @@ BUILD_WITH_NNAPI=false
 ```
 - tensorflow/lite/experimental/ruy/pack_arm.cc - Line 1292
 ```bash
-          "mov r0, 0\n"
-	  ↓
-          "mov r0, #0\n"
+"mov r0, 0\n"
+  ↓
+"mov r0, #0\n"
 ```
 
 - configure
