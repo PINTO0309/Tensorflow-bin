@@ -107,7 +107,6 @@ $ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo apt-get install -y libatlas-base-dev
 $ pip3 install -U --user six wheel mock
-$ sudo apt update;sudo apt upgrade
 $ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
 $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
