@@ -14,14 +14,8 @@ assignees: ''
 **[Required]** Your OS (Raspbian, Ubuntu1604, or other os name):  
   
 **[Required]** Details of the work you did before the problem occurred:  
-<br>
-<br>
-<br>
+  
 **[Required]** Error message:  
-<br>
-<br>
-<br>
+  
 **[Required]** Overview of problems and questions:  
-<br>
-<br>
-<br>
+  
