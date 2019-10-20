@@ -96,9 +96,7 @@ $ sudo pip3 install tensorflow-1.14.0-cp37-cp37m-linux_armv7l.whl
 ```
 **Example of Python 3.x + Tensorflow v2 series**  
 First, install openjdk-8-jdk according to the procedure of the following URL.  
-**[How to install openjdk-8-jdk on Raspbian Buster armhf](https://qiita.com/PINTO/items/a6ae8e04d382493ef369)**  
-or  
-**[How to install openjdk-8-jdk on Debian Buster (Debian 10) armhf](https://qiita.com/PINTO/items/5445c5e899f68d928f0d)**  
+**[[Stable] Install openjdk-8-jdk safely in Raspbian Buster (Debian 10) environment](https://qiita.com/PINTO/items/612718c0ce4f1def6c6e)**  
 Next, follow the steps below.  
 ```bash
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
@@ -5073,7 +5071,7 @@ BUILD_WITH_NNAPI=false
 
 - configure
 ```bash
-$ ./configure 
+$ sudo ./configure 
 Extracting Bazel installation...
 WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
 You have bazel 0.26.1- (@non-git) installed.
@@ -5168,9 +5166,7 @@ $ sudo -H pip3 install tensorflow-2.0.0-cp35-cp35m-linux_armv7l.whl
 
 ============================================================  
 First, install openjdk-8-jdk according to the procedure of the following URL.  
-**[How to install openjdk-8-jdk on Raspbian Buster armhf](https://qiita.com/PINTO/items/a6ae8e04d382493ef369)**  
-or  
-**[How to install openjdk-8-jdk on Debian Buster (Debian 10) armhf](https://qiita.com/PINTO/items/5445c5e899f68d928f0d)**  
+**[[Stable] Install openjdk-8-jdk safely in Raspbian Buster (Debian 10) environment](https://qiita.com/PINTO/items/612718c0ce4f1def6c6e)**  
 Next, follow the steps below to build Tensorflow on RaspberryPi3.  
 ```bash
 $ sudo nano /etc/dphys-swapfile
@@ -5242,9 +5238,15 @@ PyObject* InterpreterWrapper::SetNumThreads(int i) {
 ```python
 BUILD_WITH_NNAPI=false
 ```
+- tensorflow/lite/experimental/ruy/pack_arm.cc - Line 1292
+```bash
+"mov r0, 0\n"
+  ↓
+"mov r0, #0\n"
+```
 - configure
 ```bash
-$ ./configure 
+$ sudo ./configure 
 Extracting Bazel installation...
 WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
 You have bazel 0.26.1- (@non-git) installed.
