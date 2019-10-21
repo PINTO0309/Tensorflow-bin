@@ -5334,7 +5334,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=nokafka \
 --config=nonccl \
 --config=v2 \
---local_resources=4096.0,3.0,1.0 \
+--local_resources=4096.0,.0,1.0 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
 --copt=-funsafe-math-optimizations \
