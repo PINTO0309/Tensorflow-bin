@@ -3844,9 +3844,8 @@ $ cd ~
 $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl 
 ```
-  
 </div></details>
-　　
+
 <details><summary>Tensorflow v2.0.0-alpha</summary><div>
   
 ============================================================  
