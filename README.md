@@ -57,7 +57,8 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-2.0.0-cp37-cp37m-linux_aarch64.whl|○|First release,Raspbian/Debian Buster|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
-The behavior is unconfirmed because I do not have C language implementation skills.
+The behavior is unconfirmed because I do not have C language implementation skills.  
+**[Official tutorial on Tensorflow C binding generation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/lib_package/README.md)**
 ```sh
 $ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/1.14.0-armv7l/libtensorflow.tar.gz
 $ tar -C /usr/local -xzf libtensorflow.tar.gz
