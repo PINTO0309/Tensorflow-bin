@@ -41,7 +41,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 ## Binary type
   
-**Python 3.x + Tensorflow v1.14.0**  
+**Python 3.x + Tensorflow v1.15.0**  
 
 |.whl|4Threads|Note|
 |:--|:--:|:--|
