@@ -45,20 +45,12 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 |.whl|4Threads|Note|
 |:--|:--:|:--|
-|tensorflow-1.14.0-cp35-cp35m-linux_armv7l.whl|○|Raspbian/Debian Stretch|
-|tensorflow-1.14.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
-|tensorflow-1.14.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster|
+|tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
 
 **Python 3.x + Tensorflow v2**  
 
 |.whl|4Threads|Note|
 |:--|:--:|:--|
-|tensorflow-2.0.0b1-cp35-cp35m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Stretch|
-|tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl|○|Beta version1,Raspbian/Debian Buster|
-|tensorflow-2.0.0b1-cp37-cp37m-linux_aarch64.whl|○|Beta version1,Debian Buster|
-|tensorflow-2.0.0rc0-cp37-cp37m-linux_armv7l.whl|○|RC0 version,Raspbian/Debian Buster|
-|tensorflow-2.0.0rc1-cp37-cp37m-linux_armv7l.whl|○|RC1 version,Raspbian/Debian Buster|
-|tensorflow-2.0.0rc2-cp37-cp37m-linux_armv7l.whl|○|RC2 version,Raspbian/Debian Buster|
 |tensorflow-2.0.0-cp35-cp35m-linux_armv7l.whl|○|First release,Raspbian/Debian Stretch|
 |tensorflow-2.0.0-cp27-cp27mu-linux_armv7l.whl|○|First release,Raspbian/Debian Buster|
 |tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl|○|First release,Raspbian/Debian Buster|
