@@ -95,9 +95,6 @@ $ sudo pip3 install tensorflow-1.14.0-cp37-cp37m-linux_armv7l.whl
 【Required】 Restart the terminal.
 ```
 **Example of Python 3.x + Tensorflow v2 series**  
-First, install openjdk-8-jdk according to the procedure of the following URL.  
-**[[Stable] Install openjdk-8-jdk safely in Raspbian Buster (Debian 10) environment](https://qiita.com/PINTO/items/612718c0ce4f1def6c6e)**  
-Next, follow the steps below.  
 ```bash
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
