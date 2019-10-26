@@ -16,7 +16,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 |Device|OS|Distribution|Architecture|Python ver|Note|
 |:--|:--|:--|:--|:--|:--|
 |RaspberryPi3/4|Raspbian/Debian|Stretch|armhf / armv7l|3.5.3|32bit|
-|RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3/2.7.16|32bit|
+|RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3 / 2.7.16|32bit|
 |RaspberryPi3/4|Debian|Buster|aarch64 / armv8|3.7.3|64bit|
 
 Minimal configuration stand-alone installer for Tensorflow Lite.  
