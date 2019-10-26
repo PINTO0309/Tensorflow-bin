@@ -16,7 +16,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 |Device|OS|Distribution|Architecture|Python ver|Note|
 |:--|:--|:--|:--|:--|:--|
 |RaspberryPi3/4|Raspbian/Debian|Stretch|armhf / armv7l|3.5.3|32bit|
-|RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3|32bit|
+|RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3/2.7.16|32bit|
 |RaspberryPi3/4|Debian|Buster|aarch64 / armv8|3.7.3|64bit|
 
 Minimal configuration stand-alone installer for Tensorflow Lite.  
@@ -45,6 +45,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 |.whl|4Threads|Note|
 |:--|:--:|:--|
+|tensorflow-1.15.0-cp27-cp27mu-linux_armv7l.whl|○|Raspbian/Debian Buster|
 |tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
 
 **Python 3.x + Tensorflow v2**  
