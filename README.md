@@ -3700,8 +3700,6 @@ First, install openjdk-8-jdk according to the procedure of the following URL.
 **[[Stable] Install openjdk-8-jdk safely in Raspbian Buster (Debian 10) environment](https://qiita.com/PINTO/items/612718c0ce4f1def6c6e)**  
 Next, follow the steps below to build Tensorflow on RaspberryPi3/4.  
 ```bash
-$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
-
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev libatlas-base-dev libopenblas-dev
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
 $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
