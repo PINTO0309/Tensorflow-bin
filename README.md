@@ -47,6 +47,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |:--|:--:|:--|
 |tensorflow-1.15.0-cp27-cp27mu-linux_armv7l.whl|○|Raspbian/Debian Buster|
 |tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
+|tensorflow-1.15.0-cp37-cp37mu-linux_aarch64.whl|○|Raspbian/Debian Buster|
 
 **Python 3.x + Tensorflow v2**  
 
