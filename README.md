@@ -47,7 +47,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |:--|:--:|:--|
 |tensorflow-1.15.0-cp27-cp27mu-linux_armv7l.whl|○|Raspbian/Debian Buster|
 |tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
-|tensorflow-1.15.0-cp37-cp37mu-linux_aarch64.whl|○|Raspbian/Debian Buster|
+|tensorflow-1.15.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster|
 
 **Python 3.x + Tensorflow v2**  
 
@@ -56,7 +56,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-2.0.0-cp35-cp35m-linux_armv7l.whl|○|First release,Raspbian/Debian Stretch|
 |tensorflow-2.0.0-cp27-cp27mu-linux_armv7l.whl|○|First release,Raspbian/Debian Buster|
 |tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl|○|First release,Raspbian/Debian Buster|
-|tensorflow-2.0.0-cp37-cp37m-linux_aarch64.whl|○|First release,Raspbian/Debian Buster|
+|tensorflow-2.0.0-cp37-cp37m-linux_aarch64.whl|○|First release,Debian Buster|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.  
