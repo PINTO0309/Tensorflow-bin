@@ -62,7 +62,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 The behavior is unconfirmed because I do not have C language implementation skills.  
 **[Official tutorial on Tensorflow C binding generation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/lib_package/README.md)**
 ```sh
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/1.14.0-armv7l/libtensorflow.tar.gz
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/2.0.0-aarch64/libtensorflow.tar.gz
 $ tar -C /usr/local -xzf libtensorflow.tar.gz
 $ rm libtensorflow.tar.gz
 $ sudo ldconfig
