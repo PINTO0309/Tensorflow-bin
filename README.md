@@ -41,7 +41,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 ## Binary type
   
-**Python 3.x + Tensorflow v1.15.0**  
+**Python 2.x / 3.x + Tensorflow v1.15.0**  
 
 |.whl|4Threads|Note|
 |:--|:--:|:--|
@@ -49,7 +49,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster|
 |tensorflow-1.15.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster|
 
-**Python 3.x + Tensorflow v2**  
+**Python 2.x / 3.x + Tensorflow v2**  
 
 |.whl|4Threads|Note|
 |:--|:--:|:--|
