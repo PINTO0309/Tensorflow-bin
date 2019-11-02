@@ -110,7 +110,7 @@ $ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
 $ python3
 >>> import tensorflow
 >>> tensorflow.__version__
-1.14.0
+1.15.0
 >>> exit()
 ```
 
