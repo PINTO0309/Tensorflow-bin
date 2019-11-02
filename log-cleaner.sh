@@ -1,6 +1,7 @@
 #!/bin/bash
 TARGETS=(
   "*.whl"
+  "*.tar.gz"
 )
 
 target=$(printf " %s" "${TARGETS[@]}")
