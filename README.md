@@ -5509,3 +5509,7 @@ $ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
 ```
 
 </div></details>
+
+## Reference articles
+64-bit OS image creation repository for RaspberryPi3/4  
+**https://github.com/drtyhlpr/rpi23-gen-image.git**
