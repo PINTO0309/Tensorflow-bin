@@ -5511,5 +5511,5 @@ $ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
 </div></details>
 
 ## Reference articles
-64-bit OS image creation repository for RaspberryPi3/4  
-**https://github.com/drtyhlpr/rpi23-gen-image.git**
+- **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
+- **[How to install Ubuntu 18.04 aarch64 (64bit) on RaspberryPi3](https://qiita.com/PINTO/items/4f3bca0629bc41f22b83)**
