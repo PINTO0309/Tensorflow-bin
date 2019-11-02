@@ -61,7 +61,12 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.  
-**[Official tutorial on Tensorflow C binding generation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/lib_package/README.md)**
+**[Official tutorial on Tensorflow C binding generation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/lib_package/README.md)**  
+  
+**Appx1. C-API build procedure**  
+**https://github.com/PINTO0309/Tensorflow-bin/wiki/Build-C-API**  
+  
+**Appx2. C-API Usage**  
 ```sh
 $ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/2.0.0-aarch64/install-buster.sh
 $ ./install-buster.sh
