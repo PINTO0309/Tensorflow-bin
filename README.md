@@ -63,11 +63,8 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 The behavior is unconfirmed because I do not have C language implementation skills.  
 **[Official tutorial on Tensorflow C binding generation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/lib_package/README.md)**  
   
-My article.  
-**[Native build procedure of Tensorflow v2.0.0 C API for RaspberryPi / arm64 devices (armhf / aarch64)](https://qiita.com/PINTO/items/4f26f63bf40014bec146)**
-  
 **Appx1. C-API build procedure**  
-**https://github.com/PINTO0309/Tensorflow-bin/wiki/Build-C-API**  
+**[Native build procedure of Tensorflow v2.0.0 C API for RaspberryPi / arm64 devices (armhf / aarch64)](https://qiita.com/PINTO/items/4f26f63bf40014bec146)**  
   
 **Appx2. C-API Usage**  
 ```sh
