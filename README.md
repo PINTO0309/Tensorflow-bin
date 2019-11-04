@@ -73,6 +73,7 @@ $ ./install-buster.sh
 ```
 |Version|Binary|Note|
 |:--:|:--|:--|
+|v1.15.0|C-library/1.15.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v1.15.0|C-library/1.15.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v2.0.0|C-library/2.0.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v2.0.0|C-library/2.0.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
