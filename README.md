@@ -5488,7 +5488,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=nokafka \
 --config=nonccl \
 --config=v2 \
---local_resources=4096.0,4.0,1.0 \
+--local_resources=4096.0,3.0,1.0 \
 --copt=-mfpu=neon-vfpv4 \
 --copt=-ftree-vectorize \
 --copt=-funsafe-math-optimizations \
@@ -5508,6 +5508,34 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.0.0-cp37-cp37m-linux_arm7l.whl ~
 $ cd ~
 $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl 
+```
+
+</div></details>
+
+<details><summary>Tensorflow v2.1.0-rc0</summary><div>
+  
+============================================================  
+  
+**Tensorflow v2.1.0-rc0 - Buster - Bazel 0.29.1**  
+
+============================================================  
+
+```bash
+sudo bazel build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_resources=4096.0,3.0,1.0 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+//tensorflow/tools/pip_package:build_pip_package
 ```
 
 </div></details>
