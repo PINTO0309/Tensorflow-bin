@@ -5521,7 +5521,7 @@ $ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
 ============================================================  
 
 ```bash
-sudo bazel build \
+sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
 --config=noaws \
 --config=nohdfs \
