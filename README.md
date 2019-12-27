@@ -5568,6 +5568,34 @@ sudo bazel --host_jvm_args=-Xmx512m build \
 
 </div></details>
 
+<details><summary>Tensorflow v2.1.0-rc1</summary><div>
+  
+============================================================  
+  
+**Tensorflow v2.1.0-rc2 - Buster - Bazel 0.29.1**  
+
+============================================================  
+
+```bash
+sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_resources=4096.0,3.0,1.0 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+</div></details>
+
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
 - **[How to install Ubuntu 18.04 aarch64 (64bit) on RaspberryPi3](https://qiita.com/PINTO/items/4f3bca0629bc41f22b83)**
