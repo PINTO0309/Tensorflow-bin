@@ -5596,37 +5596,29 @@ sudo bazel --host_jvm_args=-Xmx512m build \
 
 </div></details>
 
-```curl -L https://github.com/tensorflow/tensorflow/compare/master...hi-ogawa:grpc-backport-pr-18950.patch | git apply```
+<details><summary>Tensorflow v2.1.0</summary><div>
+
+============================================================  
+  
+**Tensorflow v2.1.0 - Ubuntu 19.10 aarch64 - Bazel 0.29.1**  
+
+============================================================  
 
 ```bash
-$ nano external/grpc/src/core/lib/gpr/log_linux.cc
+$ curl -L https://github.com/tensorflow/tensorflow/compare/master...hi-ogawa:grpc-backport-pr-18950.patch | git apply
 
-- // Not naming it as gettid() to avoid duplicate declarations when complied with
-- // GCC 9.1.
-- static long gettid(void) { return syscall(__NR_gettid); }
-+ static long sys_gettid(void) { return syscall(__NR_gettid); }
-
--  if (tid == 0) tid = gettid();
-+  if (tid == 0) tid = sys_gettid();
+sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_resources=4096.0,3.0,1.0 \
+//tensorflow/tools/pip_package:build_pip_package
 ```
-```bash
-$ nano external/grpc/src/core/lib/gpr/log_posix.cc
 
-- static intptr_t gettid(void) { return (intptr_t)pthread_self(); }
-+ static intptr_t sys_gettid(void) { return (intptr_t)pthread_self(); }
+</div></details>
 
--               (int)(now.tv_nsec), gettid(), display_file, args->line);
-+               (int)(now.tv_nsec), sys_gettid(), display_file, args->line);
-```
-```bash
-$ nano external/grpc/src/core/lib/iomgr/ev_epollex_linux.cc
-
-- static long gettid(void) { return syscall(__NR_gettid); }
-+ static long sys_gettid(void) { return syscall(__NR_gettid); }
-
--  WORKER_PTR->originator = gettid();
-+  WORKER_PTR->originator = sys_gettid();
-```
 
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
