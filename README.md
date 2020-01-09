@@ -5607,7 +5607,7 @@ sudo bazel --host_jvm_args=-Xmx512m build \
 ```bash
 $ curl -L https://github.com/tensorflow/tensorflow/compare/master...hi-ogawa:grpc-backport-pr-18950.patch | git apply
 
-sudo bazel --host_jvm_args=-Xmx512m build \
+$ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
 --config=noaws \
 --config=nohdfs \
