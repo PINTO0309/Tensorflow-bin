@@ -5601,10 +5601,10 @@ $ nano external/grpc/src/core/lib/gpr/log_linux.cc
 
 - // Not naming it as gettid() to avoid duplicate declarations when complied with
 - // GCC 9.1.
-- static long local_gettid(void) { return syscall(__NR_gettid); }
+- static long gettid(void) { return syscall(__NR_gettid); }
 + static long sys_gettid(void) { return syscall(__NR_gettid); }
 
--  if (tid == 0) tid = local_gettid();
+-  if (tid == 0) tid = gettid();
 +  if (tid == 0) tid = sys_gettid();
 ```
 ```bash
