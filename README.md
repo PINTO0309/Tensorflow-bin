@@ -5596,6 +5596,36 @@ sudo bazel --host_jvm_args=-Xmx512m build \
 
 </div></details>
 
+```bash
+$ nano external/grpc/src/core/lib/gpr/log_linux.cc
+
+- // Not naming it as gettid() to avoid duplicate declarations when complied with
+- // GCC 9.1.
+- static long local_gettid(void) { return syscall(__NR_gettid); }
++ static long sys_gettid(void) { return syscall(__NR_gettid); }
+
+-  if (tid == 0) tid = local_gettid();
++  if (tid == 0) tid = sys_gettid();
+```
+```bash
+$ nano external/grpc/src/core/lib/gpr/log_posix.cc
+
+- static intptr_t gettid(void) { return (intptr_t)pthread_self(); }
++ static intptr_t sys_gettid(void) { return (intptr_t)pthread_self(); }
+
+-               (int)(now.tv_nsec), gettid(), display_file, args->line);
++               (int)(now.tv_nsec), sys_gettid(), display_file, args->line);
+```
+```bash
+$ nano external/grpc/src/core/lib/iomgr/ev_epollex_linux.cc
+
+- static long gettid(void) { return syscall(__NR_gettid); }
++ static long sys_gettid(void) { return syscall(__NR_gettid); }
+
+-  WORKER_PTR->originator = gettid();
++  WORKER_PTR->originator = sys_gettid();
+```
+
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
 - **[How to install Ubuntu 18.04 aarch64 (64bit) on RaspberryPi3](https://qiita.com/PINTO/items/4f3bca0629bc41f22b83)**
