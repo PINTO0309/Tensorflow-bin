@@ -76,8 +76,8 @@ $ ./install-buster.sh
 |:--:|:--|:--|
 |v1.15.0|C-library/1.15.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v1.15.0|C-library/1.15.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
-|v2.0.0|C-library/2.0.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
-|v2.0.0|C-library/2.0.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
+|v2.1.0|C-library/2.1.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
+|v2.1.0|C-library/2.1.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 
 ## Usage
 **Example of Python 3.x + Tensorflow v1 series**
