@@ -72,7 +72,7 @@ The behavior is unconfirmed because I do not have C language implementation skil
   
 **Appx2. C-API Usage**  
 ```sh
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/2.0.0-armhf/install-buster.sh
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/2.1.0-armhf/install-buster.sh
 $ ./install-buster.sh
 ```
 |Version|Binary|Note|
@@ -107,9 +107,9 @@ $ sudo pip3 install h5py==2.9.0
 $ sudo apt-get install -y openmpi-bin libopenmpi-dev
 $ sudo apt-get install -y libatlas-base-dev
 $ pip3 install -U --user six wheel mock
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.1.0-cp37-cp37m-linux_armv7l.whl
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
+$ sudo -H pip3 install tensorflow-2.1.0-cp37-cp37m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
