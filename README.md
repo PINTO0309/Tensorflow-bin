@@ -28,6 +28,9 @@ The official installer including only the Tensorflow Lite runtime can be obtaine
 Bazel's pre-build binay is below.  
 **https://github.com/PINTO0309/Bazel_bin.git**  
 
+Use the Tensorflow Lite FlexDelegate shared library below to execute .tflite models that contain custom operations that cannot be performed by Tensorflow Lite. **`libtensorflowlite.so`**  
+**https://github.com/PINTO0309/TensorflowLite-flexdelegate.git**  
+
 Procedure for building a remote caching environment by Bazel.  
 **[Ultra-fast build of Tensorflow with Bazel Remote Caching [Google Cloud Storage version]](https://qiita.com/PINTO/items/eef2eccc21dc72227d0f)**  
 **[Ultra-fast build of Tensorflow with Bazel Remote Caching [Docker version]](https://qiita.com/PINTO/items/49ce77a6ee03b404c156)**  
