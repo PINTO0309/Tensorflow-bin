@@ -5521,7 +5521,7 @@ $ sudo -H pip3 install tensorflow-2.0.0-cp37-cp37m-linux_armv7l.whl
 ============================================================  
 
 ```bash
-sudo bazel --host_jvm_args=-Xmx512m build \
+$ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
 --config=noaws \
 --config=nohdfs \
@@ -5549,7 +5549,7 @@ sudo bazel --host_jvm_args=-Xmx512m build \
 ============================================================  
 
 ```bash
-sudo bazel --host_jvm_args=-Xmx512m build \
+$ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
 --config=noaws \
 --config=nohdfs \
@@ -5577,7 +5577,7 @@ sudo bazel --host_jvm_args=-Xmx512m build \
 ============================================================  
 
 ```bash
-sudo bazel --host_jvm_args=-Xmx512m build \
+$ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
 --config=noaws \
 --config=nohdfs \
@@ -5616,6 +5616,30 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=nonccl \
 --config=v2 \
 --local_resources=4096.0,3.0,1.0 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.1.0 - Buster - Bazel 0.29.1**  
+
+============================================================  
+
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_resources=4096.0,3.0,1.0 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
