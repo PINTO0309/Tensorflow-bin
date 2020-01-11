@@ -5604,6 +5604,8 @@ sudo bazel --host_jvm_args=-Xmx512m build \
 
 ============================================================  
 
+**[Update grpc dependency for glibc 2.30 compatibility](https://github.com/tensorflow/tensorflow/issues/33758)**  
+
 ```bash
 $ curl -L https://github.com/tensorflow/tensorflow/compare/master...hi-ogawa:grpc-backport-pr-18950.patch | git apply
 
