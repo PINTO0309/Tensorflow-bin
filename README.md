@@ -85,12 +85,12 @@ $ ./install-buster.sh
 ## Usage
 **Example of Python 3.x + Tensorflow v1 series**
 ```bash
-$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran python-dev libgfortran5 \
+                          libatlas3-base libatlas-base-dev libopenblas-dev libopenblas-base libblas-dev \
+			  liblapack-dev cython openmpi-bin libopenmpi-dev libatlas-base-dev
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
 $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
 $ sudo pip3 install h5py==2.9.0
-$ sudo apt-get install -y openmpi-bin libopenmpi-dev
-$ sudo apt-get install -y libatlas-base-dev
 $ pip3 install -U --user six wheel mock
 $ sudo pip3 uninstall tensorflow
 $ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
@@ -100,12 +100,12 @@ $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
 ```
 **Example of Python 3.x + Tensorflow v2 series**  
 ```bash
-$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
+$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran python-dev libgfortran5 \
+                          libatlas3-base libatlas-base-dev libopenblas-dev libopenblas-base libblas-dev \
+			  liblapack-dev cython libatlas-base-dev openmpi-bin libopenmpi-dev
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
 $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
 $ sudo pip3 install h5py==2.9.0
-$ sudo apt-get install -y openmpi-bin libopenmpi-dev
-$ sudo apt-get install -y libatlas-base-dev
 $ pip3 install -U --user six wheel mock
 $ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.1.0-cp37-cp37m-linux_armv7l.whl
 $ sudo pip3 uninstall tensorflow
