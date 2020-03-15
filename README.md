@@ -245,6 +245,16 @@ $ python3 label_image.py \
 time:  0.1647195816040039
 ```
 
+**Sample of MultiThread x4 - Real-time inference with a USB camera**  
+- RaspberryPi4 (CPU only)
+- Ubuntu 19.10 aarch64
+- High resolution IPS 1080p display
+- USB camera resolution 640x480
+- Tensorflow Lite
+- **[MobileNetV2-SSDLite (Pascal-VOC, Integer Quantization)](https://github.com/PINTO0309/PINTO_model_zoo/tree/master/06_mobilenetv2-ssdlite/02_voc)**
+
+![002](media/002.gif)
+
 ## Build Parameter
   
 <details><summary>Tensorflow v1.11.0</summary><div>
