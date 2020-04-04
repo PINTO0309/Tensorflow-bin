@@ -5661,6 +5661,44 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 
 </div></details>
 
+<details><summary>Tensorflow v2.2.0</summary><div>
+
+============================================================  
+  
+**Tensorflow v2.2.0 - Ubuntu 19.10 aarch64 - Bazel 2.0.0**  
+
+============================================================  
+
+```bash
+$ nano tensorflow/third_party/py/python_configure.bzl
+
+def _get_python_include(repository_ctx, python_bin):
+    """Gets the python include path."""
+    result = execute(
+        repository_ctx,
+        [
+            python_bin,
+
+↓
+
+def _get_python_include(repository_ctx, python_bin):
+    """Gets the python include path."""
+    result = execute(
+        repository_ctx,
+        [
+            "python3",
+
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_resources=4096.0,3.0,1.0 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+</div></details>
 
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
