@@ -5693,7 +5693,6 @@ build --action_env TF_CONFIGURE_IOS="0"
 build --action_env PYTHON_BIN_PATH="/usr/bin/python3"
 build --action_env PYTHON_LIB_PATH="/usr/local/lib/python3.7/dist-packages"
 build --python_path="/usr/bin/python3"
-build --config=xla
 build:opt --copt=-march=native
 build:opt --copt=-Wno-sign-compare
 build:opt --host_copt=-march=native
@@ -5705,8 +5704,8 @@ test:v1 --build_tag_filters=-benchmark-test,-no_oss,-gpu
 test:v2 --test_tag_filters=-benchmark-test,-no_oss,-gpu,-oss_serial,-v1only
 test:v2 --build_tag_filters=-benchmark-test,-no_oss,-gpu,-v1only
 build --action_env TF_CONFIGURE_IOS="0"
-build:xla --action_env=TF_ENABLE_XLA="0"
-build:xla --define=with_xla_support=false
+build --action_env TF_ENABLE_XLA="0"
+build --define with_xla_support=false
 ```
 
 ```bash
