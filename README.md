@@ -5704,6 +5704,8 @@ test:v1 --build_tag_filters=-benchmark-test,-no_oss,-gpu
 test:v2 --test_tag_filters=-benchmark-test,-no_oss,-gpu,-oss_serial,-v1only
 test:v2 --build_tag_filters=-benchmark-test,-no_oss,-gpu,-v1only
 build --action_env TF_CONFIGURE_IOS="0"
+build:xla --action_env=TF_ENABLE_XLA="0"
+build:xla --define=with_xla_support=false
 ```
 
 ```bash
