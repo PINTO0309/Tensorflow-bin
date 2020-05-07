@@ -61,7 +61,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |.whl|4Threads|Note|
 |:--|:--:|:--|
 |tensorflow-2.1.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster, glibc 2.28|
-|tensorflow-2.1.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
+|tensorflow-2.2.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.  
@@ -80,7 +80,7 @@ $ ./install-buster.sh
 |v1.15.0|C-library/1.15.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v1.15.0|C-library/1.15.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v2.1.0|C-library/2.1.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
-|v2.1.0|C-library/2.1.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
+|v2.2.0|C-library/2.1.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 
 ## Usage
 **Example of Python 3.x + Tensorflow v1 series**
@@ -5662,6 +5662,30 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 </div></details>
 
 <details><summary>Tensorflow v2.2.0</summary><div>
+
+============================================================  
+  
+**Tensorflow v2.2.0 - Buster - Bazel 2.0.0**  
+
+============================================================  
+
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_resources=4096.0,3.0,1.0 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+//tensorflow/tools/pip_package:build_pip_package
+```
 
 ============================================================  
   
