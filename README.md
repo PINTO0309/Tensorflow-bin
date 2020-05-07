@@ -5693,6 +5693,7 @@ build --action_env TF_CONFIGURE_IOS="0"
 build --action_env PYTHON_BIN_PATH="/usr/bin/python3"
 build --action_env PYTHON_LIB_PATH="/usr/local/lib/python3.7/dist-packages"
 build --python_path="/usr/bin/python3"
+build --config=xla
 build:opt --copt=-march=native
 build:opt --copt=-Wno-sign-compare
 build:opt --host_copt=-march=native
