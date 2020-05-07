@@ -5670,6 +5670,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 ============================================================  
 
 ```bash
+$ export TF_ENABLE_XLA=0
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=opt \
 --config=noaws \
