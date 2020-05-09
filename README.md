@@ -5671,7 +5671,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 ============================================================  
 
 ```bash
-sudo nano .tf_configure.bazelrc
+$ sudo nano .tf_configure.bazelrc
 
 build --action_env PYTHON_BIN_PATH="/usr/bin/python3"
 build --action_env PYTHON_LIB_PATH="/usr/local/lib/python3.7/dist-packages"
