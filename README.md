@@ -147,10 +147,10 @@ import time
 from PIL import Image
 
 # Tensorflow -v1.12.0
-from tensorflow.contrib.lite.python import interpreter as interpreter_wrapper
+#from tensorflow.contrib.lite.python import interpreter as interpreter_wrapper
 
 # Tensorflow v1.13.0+, v2.x.x
-#from tensorflow.lite.python import interpreter as interpreter_wrapper
+from tensorflow.lite.python import interpreter as interpreter_wrapper
 
 def load_labels(filename):
   my_labels = []
