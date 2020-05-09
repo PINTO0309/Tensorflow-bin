@@ -60,7 +60,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 |.whl|4Threads|Note|
 |:--|:--:|:--|
-|tensorflow-2.1.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster, glibc 2.28|
+|tensorflow-2.2.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster, glibc 2.28|
 |tensorflow-2.2.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
@@ -109,9 +109,10 @@ $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
 $ sudo pip3 install h5py==2.9.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.1.0-cp37-cp37m-linux_armv7l.whl
+$ wget https://github.com/PINTO0309/Tensorflow-bin/blob/master/tensorflow-2.2.0-cp37-cp37m-linux_armv7l_download.sh
+$ ./tensorflow-2.2.0-cp37-cp37m-linux_armv7l_download.sh
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.1.0-cp37-cp37m-linux_armv7l.whl
+$ sudo -H pip3 install tensorflow-2.2.0-cp37-cp37m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
