@@ -5767,3 +5767,5 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
 - **[How to install Ubuntu 18.04 aarch64 (64bit) on RaspberryPi3](https://qiita.com/PINTO/items/4f3bca0629bc41f22b83)**
+- **[[Japanese ver.] [Tensorflow Lite] Various Neural Network Model quantization methods for Tensorflow Lite (Weight Quantization, Integer Quantization, Full Integer Quantization, Float16 Quantization, EdgeTPU). As of May 05, 2020.](https://qiita.com/PINTO/items/008c54536fca690e0572)**
+- **[[English ver.] [Tensorflow Lite] Various Neural Network Model quantization methods for Tensorflow Lite (Weight Quantization, Integer Quantization, Full Integer Quantization, Float16 Quantization, EdgeTPU). As of May 05, 2020.](https://qiita.com/PINTO/items/865250ee23a15339d556)**
