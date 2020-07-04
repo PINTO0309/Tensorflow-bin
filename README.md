@@ -5764,6 +5764,95 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 
 </div></details>
 
+<details><summary>Tensorflow v2.3.0</summary><div>
+
+============================================================  
+  
+**Tensorflow v2.3.0 - Buster - Bazel 3.1.0**  
+
+============================================================  
+
+```bash
+$ sudo nano .tf_configure.bazelrc
+
+build --action_env PYTHON_BIN_PATH="/usr/bin/python3"
+build --action_env PYTHON_LIB_PATH="/usr/local/lib/python3.7/dist-packages"
+build --python_path="/usr/bin/python3"
+build --config=xla
+build:opt --copt=-march=native
+build:opt --copt=-Wno-sign-compare
+build:opt --host_copt=-march=native
+build:opt --define with_default_optimizations=true
+test --flaky_test_attempts=3
+test --test_size_filters=small,medium
+test:v1 --test_tag_filters=-benchmark-test,-no_oss,-gpu,-oss_serial
+test:v1 --build_tag_filters=-benchmark-test,-no_oss,-gpu
+test:v2 --test_tag_filters=-benchmark-test,-no_oss,-gpu,-oss_serial,-v1only
+test:v2 --build_tag_filters=-benchmark-test,-no_oss,-gpu,-v1only
+build --action_env TF_CONFIGURE_IOS="0"
+
+↓
+
+build --action_env PYTHON_BIN_PATH="/usr/bin/python3"
+build --action_env PYTHON_LIB_PATH="/usr/local/lib/python3.7/dist-packages"
+build --python_path="/usr/bin/python3"
+build:opt --copt=-march=native
+build:opt --copt=-Wno-sign-compare
+build:opt --host_copt=-march=native
+build:opt --define with_default_optimizations=true
+test --flaky_test_attempts=3
+test --test_size_filters=small,medium
+test:v1 --test_tag_filters=-benchmark-test,-no_oss,-gpu,-oss_serial
+test:v1 --build_tag_filters=-benchmark-test,-no_oss,-gpu
+test:v2 --test_tag_filters=-benchmark-test,-no_oss,-gpu,-oss_serial,-v1only
+test:v2 --build_tag_filters=-benchmark-test,-no_oss,-gpu,-v1only
+build --action_env TF_CONFIGURE_IOS="0"
+build --action_env TF_ENABLE_XLA="0"
+build --define with_xla_support=false
+```
+
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_ram_resources=4096 \
+--local_cpu_resources=2 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+--define=raspberry_pi_with_neon=true \
+--define=tflite_pip_with_flex=true \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.3.0 - Debian Buster aarch64 - Bazel 3.1.0**  
+
+============================================================  
+
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=opt \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--local_ram_resources=30720 \
+--local_cpu_resources=8 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+</div></details>
+
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
 
