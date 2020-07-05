@@ -5839,7 +5839,7 @@ $ nano tensorflow/workspace.bzl
         sha256 = "f632d82e43ffc46adfac9043beace700b0265748075e7edc0701d81380258038",  # SHARED_EIGEN_SHA
         strip_prefix = "eigen-386d809bde475c65b7940f290efe80e6a05878c4",
         urls = [
-	    "file://\/home/pi/tensorflow/eigen-9cb8771e9c4a1f44ba59741c9fac495d1872bb25.tar.gz",
+	    "file:///home/pi/tensorflow/eigen-9cb8771e9c4a1f44ba59741c9fac495d1872bb25.tar.gz",
             "https://storage.googleapis.com/mirror.tensorflow.org/gitlab.com/libeigen/eigen/-/archive/386d809bde475c65b7940f290efe80e6a05878c4/eigen-386d809bde475c65b7940f290efe80e6a05878c4.tar.gz",
             "https://gitlab.com/libeigen/eigen/-/archive/386d809bde475c65b7940f290efe80e6a05878c4/eigen-386d809bde475c65b7940f290efe80e6a05878c4.tar.gz",
         ],
