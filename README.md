@@ -5840,7 +5840,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 
 ```bash
 $ sudo bazel build \
---config=opt \
+--config=monolithic \
 --config=noaws \
 --config=nohdfs \
 --config=nonccl \
