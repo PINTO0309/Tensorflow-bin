@@ -174,7 +174,11 @@ if __name__ == "__main__":
   parser.add_argument("--num_threads", default=1, help="number of threads")
   args = parser.parse_args()
 
-  interpreter = interpreter_wrapper.Interpreter(model_path=args.model_file)
+  ### Tensorflow -v2.2.0
+  #interpreter = interpreter_wrapper.Interpreter(model_path=args.model_file)
+  ### Tensorflow v2.3.0+
+  interpreter = interpreter_wrapper.Interpreter(model_path=args.model_file, num_threads=int(args.num_threads))
+  
   interpreter.allocate_tensors()
   input_details = interpreter.get_input_details()
   output_details = interpreter.get_output_details()
@@ -191,7 +195,8 @@ if __name__ == "__main__":
   if floating_model:
     input_data = (np.float32(input_data) - args.input_mean) / args.input_std
 
-  interpreter.set_num_threads(int(args.num_threads))
+  ### Tensorflow -v2.2.0
+  #interpreter.set_num_threads(int(args.num_threads))
   interpreter.set_tensor(input_details[0]['index'], input_data)
 
   start_time = time.time()
