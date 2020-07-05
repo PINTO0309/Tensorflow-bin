@@ -5864,6 +5864,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --host_copt=-DRASPBERRY_PI \
 --linkopt=-Wl,-latomic \
 --host_linkopt=-Wl,-latomic \
+--define=tensorflow_mkldnn_contraction_kernel=0 \
 --define=raspberry_pi_with_neon=true \
 --define=tflite_pip_with_flex=true \
 //tensorflow/tools/pip_package:build_pip_package
