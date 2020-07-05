@@ -5817,7 +5817,7 @@ build --define with_xla_support=false
 ```
 
 ```bash
-$ wget https://storage.googleapis.com/mirror.tensorflow.org/gitlab.com/libeigen/eigen/-/archive/386d809bde475c65b7940f290efe80e6a05878c4/eigen-386d809bde475c65b7940f290efe80e6a05878c4.tar.gz
+$ wget https://gitlab.com/libeigen/eigen/-/archive/386d809bde475c65b7940f290efe80e6a05878c4/eigen-386d809bde475c65b7940f290efe80e6a05878c4.tar.gz
 $ nano tensorflow/workspace.bzl
 
     tf_http_archive(
@@ -5829,6 +5829,7 @@ $ nano tensorflow/workspace.bzl
         urls = [
             "https://storage.googleapis.com/mirror.tensorflow.org/gitlab.com/libeigen/eigen/-/archive/386d809bde475c65b7940f290efe80e6a05878c4/eigen-386d809bde475c65b7940f290efe80e6a05878c4.tar.gz",
             "https://gitlab.com/libeigen/eigen/-/archive/386d809bde475c65b7940f290efe80e6a05878c4/eigen-386d809bde475c65b7940f290efe80e6a05878c4.tar.gz",
+	    "file:///home/pi/tensorflow/eigen-386d809bde475c65b7940f290efe80e6a05878c4.tar.gz",
         ],
     )
 ↓
