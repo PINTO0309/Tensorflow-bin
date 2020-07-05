@@ -5764,11 +5764,11 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 
 </div></details>
 
-<details><summary>Tensorflow v2.3.0</summary><div>
+<details><summary>Tensorflow v2.3.0-rc0</summary><div>
 
 ============================================================  
   
-**Tensorflow v2.3.0 - Buster - Bazel 3.1.0**  
+**Tensorflow v2.3.0-rc0 - Buster - Bazel 3.1.0**  
 
 ============================================================  
 
@@ -5834,7 +5834,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 
 ============================================================  
   
-**Tensorflow v2.3.0 - Debian Buster aarch64 - Bazel 3.1.0**  
+**Tensorflow v2.3.0-rc0 - Debian Buster aarch64 - Bazel 3.1.0**  
 
 ============================================================  
 
