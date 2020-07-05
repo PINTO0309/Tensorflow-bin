@@ -5839,7 +5839,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 ============================================================  
 
 ```bash
-$ sudo bazel --host_jvm_args=-Xmx512m build \
+$ sudo bazel build \
 --config=opt \
 --config=noaws \
 --config=nohdfs \
