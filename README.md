@@ -5813,7 +5813,7 @@ build --define with_xla_support=false
 
 ```bash
 $ sudo bazel --host_jvm_args=-Xmx512m build \
---config=opt \
+--config=monolithic \
 --config=noaws \
 --config=nohdfs \
 --config=nonccl \
