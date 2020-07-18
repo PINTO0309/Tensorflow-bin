@@ -5915,7 +5915,7 @@ $ sudo bazel build \
 --config=v2 \
 --define=tflite_pip_with_flex=true \
 --local_ram_resources=30720 \
---local_cpu_resources=8 \
+--local_cpu_resources= \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
