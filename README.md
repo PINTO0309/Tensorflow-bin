@@ -80,7 +80,7 @@ $ ./install-buster.sh
 |v1.15.0|C-library/1.15.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v1.15.0|C-library/1.15.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v2.2.0|C-library/2.2.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
-|v2.2.0|C-library/2.2.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
+|v2.3.0|C-library/2.3.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 
 ## Usage
 **Example of Python 3.x + Tensorflow v1 series**
