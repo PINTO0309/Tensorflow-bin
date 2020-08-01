@@ -5769,7 +5769,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 
 </div></details>
 
-<details><summary>Tensorflow v2.3.0-rc0</summary><div>
+<details><summary>Tensorflow v2.3.0</summary><div>
 
 ============================================================  
   
