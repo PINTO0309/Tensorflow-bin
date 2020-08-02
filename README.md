@@ -18,6 +18,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 |RaspberryPi3/4|Raspbian/Debian|Stretch|armhf / armv7l|3.5.3|32bit, glibc2.24|
 |RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3 / 2.7.16|32bit, glibc2.28|
 |RaspberryPi3/4|Debian|Buster|aarch64 / armv8|3.7.3|64bit, glibc2.28|
+|RaspberryPi3/4|Ubuntu|20.04 Focal|aarch64 / armv8|3.8.2|64bit, glibc2.31|
 
 Minimal configuration stand-alone installer for Tensorflow Lite.  
 **https://github.com/PINTO0309/TensorflowLite-bin.git**
@@ -62,6 +63,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |:--|:--:|:--|
 |tensorflow-2.3.0-cp37-none-linux_armv7l.whl|○|Raspbian/Debian Buster, glibc 2.28|
 |tensorflow-2.3.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
+|tensorflow-2.3.0-cp38-cp38m-linux_aarch64.whl|○|Ubuntu 20.04 Focal, glibc 2.31|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.  
