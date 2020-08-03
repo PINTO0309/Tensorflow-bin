@@ -17,7 +17,7 @@ And, The following problem was solved. **[#15062](https://github.com/tensorflow/
 |:--|:--|:--|:--|:--|:--|
 |RaspberryPi3/4|Raspbian/Debian|Stretch|armhf / armv7l|3.5.3|32bit, glibc2.24|
 |RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3 / 2.7.16|32bit, glibc2.28|
-|RaspberryPi3/4|Debian|Buster|aarch64 / armv8|3.7.3|64bit, glibc2.28|
+|RaspberryPi3/4|RaspberryPiOS/Debian|Buster|aarch64 / armv8|3.7.3|64bit, glibc2.28|
 |RaspberryPi3/4|Ubuntu 20.04|Focal|aarch64 / armv8|3.8.2|64bit, glibc2.31|
 
 Minimal configuration stand-alone installer for Tensorflow Lite.  
@@ -58,12 +58,12 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-1.15.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
 
 **Python 3.x + Tensorflow v2**  
-
-|.whl|4Threads|Note|
-|:--|:--:|:--|
-|tensorflow-2.3.0-cp37-none-linux_armv7l.whl|○|Raspbian/Debian Buster, glibc 2.28|
-|tensorflow-2.3.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
-|tensorflow-2.3.0-cp38-cp38m-linux_aarch64.whl|○|Ubuntu 20.04 Focal, glibc 2.31|
+\*4T = 4 Threads, \*\*FD = FlexDelegate, \*\*\*XP = XNNPACK
+|.whl|4T|FD|XP|Note|
+|:--|:--:|:--:|:--:|:--|
+|tensorflow-2.3.0-cp37-none-linux_armv7l.whl|○|○|○|Raspbian/Debian Buster, glibc 2.28|
+|tensorflow-2.3.0-cp37-cp37m-linux_aarch64.whl|○|○|○|RaspberryPiOS/Debian Buster, glibc 2.28|
+|tensorflow-2.3.0-cp38-cp38m-linux_aarch64.whl|○|○|○|Ubuntu 20.04 Focal, glibc 2.31|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.  
@@ -82,7 +82,7 @@ $ ./install-buster.sh
 |v1.15.0|C-library/1.15.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v1.15.0|C-library/1.15.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v2.2.0|C-library/2.2.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
-|v2.3.0|C-library/2.3.0-aarch64/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
+|v2.3.0|C-library/2.3.0-aarch64/install-buster.sh|RaspberryPiOS/Raspbian/Debian Buster, glibc 2.28|
 
 ## Usage
 **Example of Python 3.x + Tensorflow v1 series**
