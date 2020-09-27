@@ -96,7 +96,8 @@ $ sudo pip3 install h5py==2.9.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
 $ sudo pip3 uninstall tensorflow
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
+$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-1.15.0-cp37-cp37m-linux_armv7l_download.sh"
+$ ./tensorflow-1.15.0-cp37-cp37m-linux_armv7l_download.sh
 $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
 
 【Required】 Restart the terminal.
