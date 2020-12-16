@@ -61,7 +61,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 \*4T = 4 Threads, \*\*FD = FlexDelegate, \*\*\*XP = XNNPACK
 |.whl|4T|FD|XP|Note|
 |:--|:--:|:--:|:--:|:--|
-|tensorflow-2.3.1-cp37-none-linux_armv7l.whl|○|○|○|Raspbian/Debian Buster, glibc 2.28|
+|tensorflow-2.4.0-cp37-none-linux_armv7l.whl|○|○|○|Raspbian/Debian Buster, glibc 2.28|
 |tensorflow-2.3.1-cp37-cp37m-linux_aarch64.whl|○|○|○|RaspberryPiOS/Debian Buster, glibc 2.28|
 |tensorflow-2.3.1-cp38-none-linux_aarch64.whl|○|○|○|Ubuntu 20.04 Focal, glibc 2.31|
 
@@ -112,10 +112,10 @@ $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
 $ sudo pip3 install h5py==2.9.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
-$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-2.3.1-cp37-none-linux_armv7l_download.sh"
-$ ./tensorflow-2.3.1-cp37-none-linux_armv7l_download.sh
+$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-2.4.0-cp37-none-linux_armv7l_download.sh"
+$ ./tensorflow-2.4.0-cp37-none-linux_armv7l_download.sh
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.3.1-cp37-none-linux_armv7l.whl
+$ sudo -H pip3 install tensorflow-2.4.0-cp37-none-linux_armv7l.whl
 
 【Required】 Restart the terminal.
 ```
@@ -5906,6 +5906,61 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 ============================================================  
   
 **Tensorflow v2.3.0-rc0 - Debian Buster aarch64 - Bazel 3.1.0**  
+
+============================================================  
+
+```bash
+$ sudo bazel build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+--local_ram_resources=30720 \
+--local_cpu_resources=10 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+</div></details>
+
+<details><summary>Tensorflow v2.4.0</summary><div>
+
+============================================================  
+  
+**Tensorflow v2.4.0 - Buster - Bazel 3.1.0**  
+
+============================================================  
+
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_ram_resources=4096 \
+--local_cpu_resources=2 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+--linkopt=-Wl,-latomic \
+--host_linkopt=-Wl,-latomic \
+--define=tensorflow_mkldnn_contraction_kernel=0 \
+--define=raspberry_pi_with_neon=true \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.4.0 - Debian Buster aarch64 - Bazel 3.1.0**  
 
 ============================================================  
 
