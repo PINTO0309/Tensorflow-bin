@@ -5978,6 +5978,15 @@ $ sudo bazel build \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
+============================================================  
+
+```bash
+$ su --preserve-environment
+# ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+# exit
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.4.0-cp37-cp37m-linux_arm7l.whl ~
+```
+
 </div></details>
 
 ## Reference articles
