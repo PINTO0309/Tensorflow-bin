@@ -46,6 +46,8 @@ Cross compilation recommends using **`lhelontra`** repository.
 Prebuilt binary for Jetson Nano by **`Michael`**.  
 **https://dl.photoprism.org/tensorflow/**
 
+**[Add a custom OP to the TFLite runtime to build the whl installer (for Python)](https://zenn.dev/pinto0309/articles/a0e40c2817f2ee)**, **`MaxPoolingWithArgmax2D`**, **`MaxUnpooling2D`**, **`Convolution2DTransposeBias`**
+
 ## Binary type
   
 **Python 2.x / 3.x + Tensorflow v1.15.0**  
