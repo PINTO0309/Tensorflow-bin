@@ -5959,7 +5959,7 @@ cc_library(
 $ cd tensorflow/tensorflow/lite/kernels
 $ sudo gdown 17qEXPvo5l72j4O5qEcSoLcmJAthaqSws
 $ tar -zxvf kernels.tar.gz && rm kernels.tar.gz
-$ ../../..
+$ cd ../../..
 ```
 
 ============================================================  
