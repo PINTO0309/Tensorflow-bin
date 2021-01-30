@@ -5956,8 +5956,9 @@ cc_library(
 )
 ```
 ```bash
+$ sudo pip3 install gdown
 $ cd tensorflow/tensorflow/lite/kernels
-$ sudo gdown 17qEXPvo5l72j4O5qEcSoLcmJAthaqSws
+$ sudo gdown --id 17qEXPvo5l72j4O5qEcSoLcmJAthaqSws
 $ tar -zxvf kernels.tar.gz && rm kernels.tar.gz
 $ cd ../../..
 ```
