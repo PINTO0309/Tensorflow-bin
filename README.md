@@ -64,7 +64,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 \*4T = 4 Threads, \*\*FD = FlexDelegate, \*\*\*XP = XNNPACK, \*\*\*\*MP = MediaPipe CustomOP
 |.whl|4T|FD|XP|MP|Note|
 |:--|:--:|:--:|:--:|:--:|:--|
-|tensorflow-2.4.0-cp37-none-linux_armv7l.whl|○|○|○||Raspbian/Debian Buster, glibc 2.28|
+|tensorflow-2.4.0-cp37-none-linux_armv7l.whl|○|○|○|○|Raspbian/Debian Buster, glibc 2.28|
 |tensorflow-2.4.0-cp37-none-linux_aarch64.whl|○|○|○|○|RaspberryPiOS/Debian Buster, glibc 2.28|
 |tensorflow-2.4.0-cp38-none-linux_aarch64.whl|○|○|○|○|Ubuntu 20.04 Focal, glibc 2.31|
 
