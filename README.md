@@ -6028,7 +6028,8 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.4.0-cp37-cp37m-linux_arm7l.whl ~
 
 <details><summary>Tensorflow v2.5.0</summary><div>
 
-- **tensorflow/tensorflow/lite/kernels/BUILD**
+- **tensorflow/tensorflow/lite/kernels/BUILD**  
+Add a custom kernel for MediaPipe.
 ```bash
 cc_library(
     name = "builtin_op_kernels",
