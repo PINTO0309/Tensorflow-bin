@@ -6026,6 +6026,104 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.4.0-cp37-cp37m-linux_arm7l.whl ~
 
 </div></details>
 
+<details><summary>Tensorflow v2.5.0</summary><div>
+
+- **tensorflow/tensorflow/lite/kernels/BUILD**
+```bash
+cc_library(
+    name = "builtin_op_kernels",
+    srcs = BUILTIN_KERNEL_SRCS + [
+        "max_pool_argmax.cc",
+        "max_unpooling.cc",
+        "transpose_conv_bias.cc",
+    ],
+    hdrs = [
+        "dequantize.h",
+        "max_pool_argmax.h",
+        "max_unpooling.h",
+        "transpose_conv_bias.h",
+    ],
+    compatible_with = get_compatible_with_portable(),
+    copts = tflite_copts() + tf_opts_nortti_if_android() + EXTRA_EIGEN_COPTS,
+    visibility = ["//visibility:private"],
+    deps = BUILTIN_KERNEL_DEPS + [
+        "@ruy//ruy/profiler:instrumentation",
+        "//tensorflow/lite/kernels/internal:cppmath",
+        "//tensorflow/lite:string",
+        "@farmhash_archive//:farmhash",
+    ],
+)
+```
+```bash
+$ sudo pip3 install gdown
+$ cd tensorflow/tensorflow/lite/kernels
+$ sudo gdown --id 1fuB2m7B_-3u7-kxuNcALUp9wkrHsfCQB
+$ tar -zxvf kernels.tar.gz && rm kernels.tar.gz -f
+$ cd ../../..
+```
+
+============================================================  
+  
+**Tensorflow v2.5.0 - Buster - Bazel 3.7.2**  
+
+============================================================  
+
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_ram_resources=4096 \
+--local_cpu_resources=2 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+--linkopt=-Wl,-latomic \
+--host_linkopt=-Wl,-latomic \
+--define=tensorflow_mkldnn_contraction_kernel=0 \
+--define=raspberry_pi_with_neon=true \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.5.0 - Debian Buster aarch64 - Bazel 3.7.2**  
+
+============================================================  
+
+```bash
+$ sudo bazel build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+--local_ram_resources=30720 \
+--local_cpu_resources=10 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+
+```bash
+$ su --preserve-environment
+# ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+# exit
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.5.0-cp37-cp37m-linux_arm7l.whl ~
+```
+
+</div></details>
+
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
 
