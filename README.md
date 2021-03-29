@@ -6096,6 +6096,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 ============================================================  
   
 **Tensorflow v2.5.0 - Debian Buster aarch64 - Bazel 3.7.2**  
+**Using EC2 m6g.16xlarge**
 
 ============================================================  
 
@@ -6108,8 +6109,7 @@ $ sudo bazel build \
 --config=v2 \
 --define=tflite_pip_with_flex=true \
 --define=tflite_with_xnnpack=true \
---local_ram_resources=30720 \
---local_cpu_resources=10 \
+--ui_actions_shown=64 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
 
