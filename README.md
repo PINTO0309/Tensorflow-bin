@@ -6110,7 +6110,8 @@ $ docker run -it --rm \
   -v /tmp/tensorflow_pkg/:/tmp/tensorflow_pkg/ \
   --env TF_PYTHON_VERSION=3.7 \
   tf-arm ./build_tensorflow.sh configs/rpi.conf
-$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.5.0-cp37-cp37m-linux_arm7l.whl ~
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.5.0-cp37-none-linux_armv7l.whl .
+$ sudo chmod 777 tensorflow-2.5.0-cp37-none-linux_armv7l.whl
 ```
 
 ============================================================  
