@@ -6065,7 +6065,8 @@ $ cd ../../..
 
 ============================================================  
   
-**Tensorflow v2.5.0 - Buster - Bazel 3.7.2**  
+**Tensorflow v2.5.0 - Buster armv7l/armhf - Bazel 3.7.2**  
+**Native Build**
 
 ============================================================  
 
@@ -6092,6 +6093,24 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 --define=tflite_pip_with_flex=true \
 --define=tflite_with_xnnpack=true \
 //tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.5.0 - Buster armv7l/armhf - Bazel 3.7.2**  
+**Cross-compilation by x86 host**
+
+============================================================  
+
+```bash
+$ git clone https://github.com/PINTO0309/tensorflow-on-arm.git && \
+  cd tensorflow-on-arm/build_tensorflow
+$ docker build -t tf-arm -f Dockerfile .
+$ docker run -it --rm \
+  -v /tmp/tensorflow_pkg/:/tmp/tensorflow_pkg/ \
+  --env TF_PYTHON_VERSION=3.7 \
+  tf-arm ./build_tensorflow.sh configs/rpi.conf
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.5.0-cp37-cp37m-linux_arm7l.whl ~
 ```
 
 ============================================================  
