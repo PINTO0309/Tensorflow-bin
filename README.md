@@ -115,7 +115,7 @@ $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran p
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
 $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
 $ sudo pip3 install numpy==1.20.3
-$ sudo pip3 install h5py==2.9.0
+$ sudo pip3 install h5py==3.1.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
 $ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-2.5.0-cp37-none-linux_armv7l_download.sh"
