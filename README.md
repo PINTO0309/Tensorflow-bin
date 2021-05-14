@@ -19,6 +19,7 @@ Support for custom operations in MediaPipe. **`MaxPoolingWithArgmax2D`**, **`Max
 |RaspberryPi3/4|Raspbian/Debian|Stretch|armhf / armv7l|3.5.3|32bit, glibc2.24|
 |RaspberryPi3/4|Raspbian/Debian|Buster|armhf / armv7l|3.7.3 / 2.7.16|32bit, glibc2.28|
 |RaspberryPi3/4|RaspberryPiOS/Debian|Buster|aarch64 / armv8|3.7.3|64bit, glibc2.28|
+|RaspberryPi3/4|Ubuntu 18.04|Bionic|aarch64 / armv8|3.6.9|64bit, glibc2.27|
 |RaspberryPi3/4|Ubuntu 20.04|Focal|aarch64 / armv8|3.8.2|64bit, glibc2.31|
 
 Minimal configuration stand-alone installer for Tensorflow Lite.  
@@ -66,6 +67,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |:--|:--:|:--:|:--:|:--:|:--|
 |tensorflow-2.5.0-cp37-none-linux_armv7l.whl|○|○|○|○|Raspbian/Debian Buster, glibc 2.28|
 |tensorflow-2.5.0-cp37-none-linux_aarch64.whl|○|○|○|○|RaspberryPiOS/Debian Buster, glibc 2.28|
+|tensorflow-2.5.0-cp36-none-linux_aarch64.whl|○|○|○|○|Ubuntu 18.04 Bionic, glibc 2.27|
 |tensorflow-2.5.0-cp38-none-linux_aarch64.whl|○|○|○|○|Ubuntu 20.04 Focal, glibc 2.31|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
