@@ -6062,7 +6062,7 @@ cc_library(
 ```
 ```bash
 $ sudo pip3 install gdown h5py==3.1.0
-$ cd tensorflow/tensorflow/lite/kernels
+$ cd tensorflow/lite/kernels
 $ sudo gdown --id 1fuB2m7B_-3u7-kxuNcALUp9wkrHsfCQB
 $ tar -zxvf kernels.tar.gz && rm kernels.tar.gz -f
 $ cd ../../..
