@@ -3,15 +3,10 @@
 **Older versions of Wheel files can be obtained from the [Previous version download script (GoogleDrive)](previous_versions).**  
   
 Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi.  
-And, The following problem was solved. **[#15062](https://github.com/tensorflow/tensorflow/issues/15062), [#21574](https://github.com/tensorflow/tensorflow/issues/21574), [#21855](https://github.com/tensorflow/tensorflow/issues/21855),  [#23082](https://github.com/tensorflow/tensorflow/issues/23082), [#25120](https://github.com/tensorflow/tensorflow/issues/25120), [#25748](https://github.com/tensorflow/tensorflow/pull/25748), [#29617](https://github.com/tensorflow/tensorflow/issues/29617), [#29704](https://github.com/tensorflow/tensorflow/issues/29704), [#30359](https://github.com/tensorflow/tensorflow/issues/30359)**  
-Support for custom operations in MediaPipe. **`MaxPoolingWithArgmax2D`**, **`MaxUnpooling2D`**, **`Convolution2DTransposeBias`**  
-  
-1. `undefined symbol: _ZN6tflite12tensor_utils39NeonMatrixBatchVectorMultiplyAccumulateEPKaiiS2_PKfiPfi`  
-2. `Bus Error`
-3. `ImportError: cannot import name 'cloud' from 'tensorflow.contrib' `
-4. `export SetNumThreads to TFLite Python API`
-5. `TensorFlow C binding for Raspberry Pi`
-  
+- Support for custom operations in MediaPipe. **`MaxPoolingWithArgmax2D`**, **`MaxUnpooling2D`**, **`Convolution2DTransposeBias`**  
+- Support for Flex Delegate.  
+- Support for XNNPACK.
+
 **Python API packages**
 
 |Device|OS|Distribution|Architecture|Python ver|Note|
