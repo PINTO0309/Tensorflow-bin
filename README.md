@@ -6,6 +6,7 @@ Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi.
 - Support for custom operations in MediaPipe. **`MaxPoolingWithArgmax2D`**, **`MaxUnpooling2D`**, **`Convolution2DTransposeBias`**  
 - Support for Flex Delegate.  
 - Support for XNNPACK.
+- Support for XNNPACK Multi-Threads.
 
 **Python API packages**
 
