@@ -6149,6 +6149,144 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.5.0-cp37-cp37m-linux_arm7l.whl ~
 
 </div></details>
 
+<details><summary>Tensorflow v2.6.0</summary><div>
+
+```
+$ sudo pip3 install pip --upgrade
+$ sudo pip3 install keras_applications==1.0.8 --no-deps
+$ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
+$ sudo pip3 install gdown h5py==3.1.0
+$ sudo pip3 install pybind11
+$ pip3 install -U --user six wheel mock
+```
+- Apply customization to add custom operations for MediaPipe. (max_pool_argmax, max_unpooling, transpose_conv_bias)
+```bash
+cd tensorflow/lite/kernels
+sudo gdown --id 124YrrMZjj_lZxVnpxePs-F69i0xz7Qru
+tar -zxvf kernels.tar.gz && rm kernels.tar.gz -f
+cd ../../..
+```
+- Apply multi-threading support for XNNPACK.
+```bash
+# interpreter.py
+cd tensorflow/lite/python
+sudo gdown --id 1LuEW11VLhR4gO1RPlymELDvXBFqU7WSK
+cd ../../..
+# interpreter_wrapper.cc, interpreter_wrapper.h, interpreter_wrapper_pybind11.cc
+cd tensorflow/lite/python/interpreter_wrapper
+sudo gdown --id 1zTO0z6Pe_a6RJxw7N_3gyqhFxGunFK-y
+tar -zxvf interpreter_wrapper.tar.gz && rm interpreter_wrapper.tar.gz -f
+cd ../../../..
+$ sudo bazel clean --expunge
+```
+- Fix XNNPACK build errors [#50920](https://github.com/tensorflow/tensorflow/issues/50920).
+```
+$ nano tensorflow/workspace2.bzl
+```
+```bzl
+    tf_http_archive(
+        name = "XNNPACK",
+        sha256 = "7320355409ae5dd2c8600cafbd07b56c379cd13666a7c971ffd3a01025c0f63e",
+        strip_prefix = "XNNPACK-56b78a03e359ac04a3ba758596cd28b198a8000f",
+        urls = [
+            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/XNNPACK/archive/56b78a03e359ac04a3ba758596cd28b198a8000f.zip",
+            "https://github.com/google/XNNPACK/archive/56b78a03e359ac04a3ba758596cd28b198a8000f.zip",
+        ],
+    )
+↓
+    tf_http_archive(
+        name = "XNNPACK",
+        sha256 = "e1fee5a16e4a06d3bd77ab33cf87b1c6d826715906248a308ab790486198d3c9",
+        strip_prefix = "XNNPACK-476eb84d6a8e6f8249d5584d30759c6fbdbf791d",
+        urls = [
+            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/XNNPACK/archive/476eb84d6a8e6f8249d5584d30759c6fbdbf791d.zip",
+            "https://github.com/google/XNNPACK/archive/476eb84d6a8e6f8249d5584d30759c6fbdbf791d.zip",
+        ],
+    )
+```
+
+============================================================  
+  
+**Tensorflow v2.6.0 - Buster armv7l/armhf - Bazel 3.7.2**  
+**Native Build**
+
+============================================================  
+
+```bash
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_ram_resources=4096 \
+--local_cpu_resources=2 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+--linkopt=-Wl,-latomic \
+--host_linkopt=-Wl,-latomic \
+--define=tensorflow_mkldnn_contraction_kernel=0 \
+--define=raspberry_pi_with_neon=true \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.6.0 - Buster armv7l/armhf - Bazel 3.7.2**  
+**Cross-compilation by x86 host**
+
+============================================================  
+
+```bash
+$ git clone https://github.com/PINTO0309/tensorflow-on-arm.git && \
+  cd tensorflow-on-arm/build_tensorflow
+$ docker build -t tf-arm -f Dockerfile .
+$ docker run -it --rm \
+  -v /tmp/tensorflow_pkg/:/tmp/tensorflow_pkg/ \
+  --env TF_PYTHON_VERSION=3.7 \
+  tf-arm ./build_tensorflow.sh configs/rpi.conf
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.6.0-cp37-none-linux_armv7l.whl .
+$ sudo chmod 777 tensorflow-2.6.0-cp37-none-linux_armv7l.whl
+```
+
+============================================================  
+  
+**Tensorflow v2.6.0 - Debian Buster aarch64 - Bazel 3.7.2**  
+**Using EC2 m6g.16xlarge**
+
+============================================================  
+
+```bash
+$ sudo bazel build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+--ui_actions_shown=64 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+
+```bash
+$ su --preserve-environment
+# ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+# exit
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.6.0-cp37-cp37m-linux_arm7l.whl ~
+```
+
+</div></details>
+
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
 
