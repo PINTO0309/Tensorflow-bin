@@ -6152,12 +6152,12 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.5.0-cp37-cp37m-linux_arm7l.whl ~
 <details><summary>Tensorflow v2.6.0</summary><div>
 
 ```
-$ sudo pip3 install pip --upgrade
-$ sudo pip3 install keras_applications==1.0.8 --no-deps
-$ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
-$ sudo pip3 install gdown h5py==3.1.0
-$ sudo pip3 install pybind11
-$ pip3 install -U --user six wheel mock
+$ sudo pip3 install pip --upgrade && \
+sudo pip3 install keras_applications==1.0.8 --no-deps && \
+sudo pip3 install keras_preprocessing==1.1.0 --no-deps && \
+sudo pip3 install gdown h5py==3.1.0 && \
+sudo pip3 install pybind11 && \
+pip3 install -U --user six wheel mock
 ```
 - Apply customization to add custom operations for MediaPipe. (max_pool_argmax, max_unpooling, transpose_conv_bias)
 ```bash
