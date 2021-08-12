@@ -17,7 +17,7 @@ Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi.
 |RaspberryPi3/4|RaspberryPiOS/Debian|Buster|aarch64 / armv8|3.7.3|64bit, glibc2.28|
 |RaspberryPi3/4|Ubuntu 18.04|Bionic|aarch64 / armv8|3.6.9|64bit, glibc2.27|
 |RaspberryPi3/4|Ubuntu 20.04|Focal|aarch64 / armv8|3.8.2|64bit, glibc2.31|
-|RaspberryPi3/4|Ubuntu 21.04/Debian|Hirsute/Bullseye|aarch64 / armv8|3.9.2+|64bit, glibc2.33/glibc2.31|
+|RaspberryPi3/4|Ubuntu 21.04/Debian|Hirsute/Bullseye|aarch64 / armv8|3.9.x|64bit, glibc2.33/glibc2.31|
 
 Minimal configuration stand-alone installer for Tensorflow Lite.  
 **https://github.com/PINTO0309/TensorflowLite-bin.git**
