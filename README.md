@@ -6179,8 +6179,6 @@ cd tensorflow/lite/python/interpreter_wrapper
 sudo gdown --id 1zTO0z6Pe_a6RJxw7N_3gyqhFxGunFK-y
 tar -zxvf interpreter_wrapper.tar.gz && rm interpreter_wrapper.tar.gz -f
 cd ../../../..
-sudo bazel clean --expunge
-./configure
 ```
 
 ============================================================  
@@ -6191,6 +6189,8 @@ sudo bazel clean --expunge
 ============================================================  
 
 ```bash
+$ sudo bazel clean --expunge
+$ ./configure
 $ sudo bazel --host_jvm_args=-Xmx512m build \
 --config=monolithic \
 --config=noaws \
@@ -6242,6 +6242,8 @@ $ sudo chmod 777 tensorflow-2.6.0-cp37-none-linux_armv7l.whl
 ============================================================  
 
 ```bash
+$ sudo bazel clean --expunge
+$ ./configure
 $ sudo bazel build \
 --config=monolithic \
 --config=noaws \
