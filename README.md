@@ -6152,7 +6152,9 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.5.0-cp37-cp37m-linux_arm7l.whl ~
 <details><summary>Tensorflow v2.6.0</summary><div>
 
 ```
-$ sudo pip3 install pip --upgrade && \
+$ sudo apt update && sudo apt upgrade -y && \
+sudo apt install libhdf5-dev && \
+sudo pip3 install pip --upgrade && \
 sudo pip3 install keras_applications==1.0.8 --no-deps && \
 sudo pip3 install keras_preprocessing==1.1.0 --no-deps && \
 sudo pip3 install gdown h5py==3.1.0 && \
@@ -6178,31 +6180,6 @@ sudo gdown --id 1zTO0z6Pe_a6RJxw7N_3gyqhFxGunFK-y
 tar -zxvf interpreter_wrapper.tar.gz && rm interpreter_wrapper.tar.gz -f
 cd ../../../..
 $ sudo bazel clean --expunge
-```
-- Fix XNNPACK build errors [#50920](https://github.com/tensorflow/tensorflow/issues/50920).
-```
-$ nano tensorflow/workspace2.bzl
-```
-```bzl
-    tf_http_archive(
-        name = "XNNPACK",
-        sha256 = "7320355409ae5dd2c8600cafbd07b56c379cd13666a7c971ffd3a01025c0f63e",
-        strip_prefix = "XNNPACK-56b78a03e359ac04a3ba758596cd28b198a8000f",
-        urls = [
-            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/XNNPACK/archive/56b78a03e359ac04a3ba758596cd28b198a8000f.zip",
-            "https://github.com/google/XNNPACK/archive/56b78a03e359ac04a3ba758596cd28b198a8000f.zip",
-        ],
-    )
-↓
-    tf_http_archive(
-        name = "XNNPACK",
-        sha256 = "e1fee5a16e4a06d3bd77ab33cf87b1c6d826715906248a308ab790486198d3c9",
-        strip_prefix = "XNNPACK-476eb84d6a8e6f8249d5584d30759c6fbdbf791d",
-        urls = [
-            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/XNNPACK/archive/476eb84d6a8e6f8249d5584d30759c6fbdbf791d.zip",
-            "https://github.com/google/XNNPACK/archive/476eb84d6a8e6f8249d5584d30759c6fbdbf791d.zip",
-        ],
-    )
 ```
 
 ============================================================  
