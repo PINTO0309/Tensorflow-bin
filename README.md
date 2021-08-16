@@ -117,10 +117,10 @@ $ sudo pip3 install numpy==1.20.3
 $ sudo pip3 install h5py==3.1.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
-$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-2.6.0-cp37-none-linux_armv7l_download.sh"
-$ ./tensorflow-2.6.0-cp37-none-linux_armv7l_download.sh
+$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-2.6.0-cp37-none-linux_aarch64_download.sh"
+$ ./tensorflow-2.6.0-cp37-none-linux_aarch64_download.sh
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.6.0-cp37-none-linux_armv7l.whl
+$ sudo -H pip3 install tensorflow-2.6.0-cp37-none-linux_aarch64.whl
 
 【Required】 Restart the terminal.
 ```
