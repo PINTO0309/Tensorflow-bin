@@ -6256,6 +6256,29 @@ $ sudo bazel build \
 ```
 
 ============================================================  
+  
+**Tensorflow v2.6.0 - CUDA x86_64 - Bazel 3.7.2**  
+
+============================================================  
+
+`supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 5.3,6.1,6.2,7.2,7.5,8.6`
+
+```bash
+$ sudo bazel clean --expunge
+$ ./configure
+$ sudo bazel build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+--ui_actions_shown=20 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
 
 ```bash
 $ su --preserve-environment
