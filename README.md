@@ -6402,8 +6402,6 @@ $ sudo bazel build \
 
 ============================================================  
 
-`supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 5.3,6.1,6.2,7.2,7.5,8.6`
-
 ```bash
 $ sudo bazel clean --expunge
 $ cp tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_0.inc tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_2.inc \
@@ -6414,6 +6412,9 @@ $ cp tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_0.inc tensorflow/compiler/tf
 && sed -i '63a #include "tensorflow/compiler/tf2tensorrt/stub/NvInferPlugin_8_2.inc"' tensorflow/compiler/tf2tensorrt/stub/nvinfer_plugin_stub.cc
 
 $ ./configure
+
+supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 5.3,6.1,6.2,7.2,7.5,8.6
+	
 $ sudo bazel build \
 --config=monolithic \
 --config=noaws \
