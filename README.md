@@ -6413,7 +6413,7 @@ $ cp tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_0.inc tensorflow/compiler/tf
 
 $ ./configure
 
-supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 5.3,6.1,6.2,7.2,7.5,8.6
+supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 6.1,7.5,8.6
 	
 $ sudo bazel build \
 --config=monolithic \
