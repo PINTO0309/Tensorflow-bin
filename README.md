@@ -6432,7 +6432,7 @@ $ sudo bazel build \
 $ su --preserve-environment
 # ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 # exit
-$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.7.0-cp37-cp37m-linux_*.whl ~
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.7.0*.whl ~
 ```
 
 </div></details>
