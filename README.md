@@ -113,14 +113,14 @@ $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran l
 $ sudo pip3 install pip --upgrade
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
 $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
-$ sudo pip3 install numpy==1.20.3
+$ sudo pip3 install numpy==1.19.5
 $ sudo pip3 install h5py==3.1.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
-$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-2.6.0-cp37-none-linux_aarch64_download.sh"
+$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/tensorflow-2.6.0-cp37-none-linux_aarch64_numpy1195_download.sh"
 $ ./tensorflow-2.6.0-cp37-none-linux_aarch64_download.sh
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.6.0-cp37-none-linux_aarch64.whl
+$ sudo -H pip3 install tensorflow-2.6.0-cp37-none-linux_aarch64_numpy1195_download.whl
 
 【Required】 Restart the terminal.
 ```
