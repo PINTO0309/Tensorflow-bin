@@ -6308,17 +6308,11 @@ sudo gdown --id 1Az4hEvLXAb71e52gBORQz87Z0FExUz2B
 tar -zxvf kernels.tar.gz && rm kernels.tar.gz -f
 cd ../../..
 ```
-- Apply multi-threading support for XNNPACK.
+- Apply multi-threading support for XNNPACK (Python).
 ```bash
-# interpreter.py
-cd tensorflow/lite/python
-sudo gdown --id 1lPfsE-h3P8DJyAcTNLt3-QzCWp9SCYbA
-cd ../../..
-# interpreter_wrapper.cc, interpreter_wrapper.h, interpreter_wrapper_pybind11.cc
-cd tensorflow/lite/python/interpreter_wrapper
-sudo gdown --id 1xsco1lc21eyX1Ev60m1AkqzLQyQAC1ie
-tar -zxvf interpreter_wrapper.tar.gz && rm interpreter_wrapper.tar.gz -f
-cd ../../../..
+# interpreter_wrapper.cc
+sudo gdown --id 1iNc8qC1y5CJdMWCcTXhl6SiDQg3M1DRv
+git apply xnnpack_python.patch
 ```
 
 ============================================================  
