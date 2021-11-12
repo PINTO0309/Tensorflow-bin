@@ -63,9 +63,9 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |.whl|4T|FD|XP|MP|NP|Note|
 |:--|:--:|:--:|:--:|:--:|:--:|:--|
 |tensorflow-2.5.0-cp37-none-linux_armv7l.whl|○|○|○|○|1.19/1.20|Raspbian/Debian Buster, glibc 2.28|
-|tensorflow-2.6.0-cp37-none-linux_aarch64.whl|○|○|○|○|1.19/1.21|RaspberryPiOS/Debian Buster, glibc 2.28|
-|tensorflow-2.6.0-cp38-none-linux_aarch64.whl|○|○|○|○|1.19/1.21|Ubuntu 20.04 Focal, glibc 2.31|
-|tensorflow-2.6.0-cp39-none-linux_aarch64.whl|○|○|○|○|1.19/1.21|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
+|tensorflow-2.7.0-cp37-none-linux_aarch64.whl|○|○|○|○|1.19/1.21|RaspberryPiOS/Debian Buster, glibc 2.28|
+|tensorflow-2.7.0-cp38-none-linux_aarch64.whl|○|○|○|○|1.19/1.21|Ubuntu 20.04 Focal, glibc 2.31|
+|tensorflow-2.7.0-cp39-none-linux_aarch64.whl|○|○|○|○|1.19/1.21|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.  
@@ -117,10 +117,10 @@ $ sudo pip3 install numpy==1.19.5
 $ sudo pip3 install h5py==3.1.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
-$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/tensorflow-2.6.0-cp37-none-linux_aarch64_numpy1195_download.sh"
-$ ./tensorflow-2.6.0-cp37-none-linux_aarch64_download.sh
+$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/tensorflow-2.7.0-cp37-none-linux_aarch64_numpy1195_download.sh"
+$ ./tensorflow-2.7.0-cp37-none-linux_aarch64_download.sh
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.6.0-cp37-none-linux_aarch64_numpy1195_download.whl
+$ sudo -H pip3 install tensorflow-2.7.0-cp37-none-linux_aarch64_numpy1195_download.whl
 
 【Required】 Restart the terminal.
 ```
