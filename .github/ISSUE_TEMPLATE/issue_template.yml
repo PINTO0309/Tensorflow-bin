@@ -28,9 +28,13 @@ body:
       description: What OS are you seeing the issue in? If you don't see your OS listed, please provide more details in the "Description" section above.
       multiple: true
       options:
-        - Windows
-        - Ubuntu
-        - Mac OS
+        - RaspberryPi OS Buster
+        - RaspberryPi OS Stretch
+        - Debian Buster
+        - Debian Stretch
+        - Ubuntu 21.04
+        - Ubuntu 20.04
+        - Ubuntu 18.04
         - Other
     validations:
       required: true
@@ -41,10 +45,8 @@ body:
       description: If you don't see your architecture listed, please provide more details in the "Description" section above.
       multiple: true
       options:
-        - x86_64
         - aarch64
         - armv7
-        - armv6
         - Other
     validations:
       required: true
@@ -57,7 +59,6 @@ body:
       options:
         - RaspberryPi4
         - RaspberryPi3
-        - RaspberryPi Zero
         - Other
     validations:
       required: true
