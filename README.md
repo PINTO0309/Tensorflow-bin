@@ -6452,7 +6452,7 @@ cd ../../..
 
 ============================================================  
   
-**Tensorflow v2.8.0 - Buster armv7l/armhf - Bazel 3.7.2**  
+**Tensorflow v2.8.0 - Buster armv7l/armhf - Bazel 4.2.1**  
 **Native Build**
 
 ============================================================  
@@ -6486,7 +6486,7 @@ $ sudo bazel --host_jvm_args=-Xmx512m build \
 
 ============================================================  
   
-**Tensorflow v2.8.0 - Buster armv7l/armhf - Bazel 3.7.2**  
+**Tensorflow v2.8.0 - Buster armv7l/armhf - Bazel 4.2.1**  
 **Cross-compilation by x86 host**
 
 ============================================================  
@@ -6505,7 +6505,7 @@ $ sudo chmod 777 tensorflow-2.8.0-cp37-none-linux_armv7l.whl
 
 ============================================================  
   
-**Tensorflow v2.8.0 - Debian Buster aarch64 - Bazel 3.7.2**  
+**Tensorflow v2.8.0 - Debian Buster aarch64 - Bazel 4.2.1**  
 **Using EC2 m6g.16xlarge**
 
 ============================================================  
@@ -6527,7 +6527,7 @@ $ sudo bazel build \
 
 ============================================================  
   
-**Tensorflow v2.8.0 - CUDA11.4 - TensorRT8.2 - x86_64 - Bazel 3.7.2**  
+**Tensorflow v2.8.0 - CUDA11.4 - TensorRT8.2 - x86_64 - Bazel 4.2.1**  
 
 ============================================================  
 
