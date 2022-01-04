@@ -6430,6 +6430,141 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.7.0*.whl ~
 
 </div></details>
 
+<details><summary>Tensorflow v2.8.0</summary><div>
+
+```
+$ sudo apt update && sudo apt upgrade -y && \
+sudo apt install libhdf5-dev && \
+sudo pip3 install pip --upgrade && \
+sudo pip3 install keras_applications==1.0.8 --no-deps && \
+sudo pip3 install keras_preprocessing==1.1.2 --no-deps && \
+sudo pip3 install gdown h5py==3.1.0 && \
+sudo pip3 install pybind11 && \
+pip3 install -U --user six wheel mock
+```
+- Apply customization to add custom operations for MediaPipe. (max_pool_argmax, max_unpooling, transpose_conv_bias)
+```bash
+cd tensorflow/lite/kernels
+sudo gdown --id 1qTVQ9qnbvzxxWm-1mGGkO7NRB9Rd_Uht
+tar -zxvf kernels.tar.gz && rm kernels.tar.gz -f
+cd ../../..
+```
+
+============================================================  
+  
+**Tensorflow v2.8.0 - Buster armv7l/armhf - Bazel 3.7.2**  
+**Native Build**
+
+============================================================  
+
+```bash
+$ sudo bazel clean --expunge
+$ ./configure
+$ sudo bazel --host_jvm_args=-Xmx512m build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--local_ram_resources=4096 \
+--local_cpu_resources=2 \
+--copt=-mfpu=neon-vfpv4 \
+--copt=-ftree-vectorize \
+--copt=-funsafe-math-optimizations \
+--copt=-ftree-loop-vectorize \
+--copt=-fomit-frame-pointer \
+--copt=-DRASPBERRY_PI \
+--host_copt=-DRASPBERRY_PI \
+--linkopt=-Wl,-latomic \
+--host_linkopt=-Wl,-latomic \
+--define=tensorflow_mkldnn_contraction_kernel=0 \
+--define=raspberry_pi_with_neon=true \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.8.0 - Buster armv7l/armhf - Bazel 3.7.2**  
+**Cross-compilation by x86 host**
+
+============================================================  
+
+```bash
+$ git clone https://github.com/PINTO0309/tensorflow-on-arm.git && \
+  cd tensorflow-on-arm/build_tensorflow
+$ docker build -t tf-arm -f Dockerfile .
+$ docker run -it --rm \
+  -v /tmp/tensorflow_pkg/:/tmp/tensorflow_pkg/ \
+  --env TF_PYTHON_VERSION=3.7 \
+  tf-arm ./build_tensorflow.sh configs/rpi.conf
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.8.0-cp37-none-linux_armv7l.whl .
+$ sudo chmod 777 tensorflow-2.8.0-cp37-none-linux_armv7l.whl
+```
+
+============================================================  
+  
+**Tensorflow v2.8.0 - Debian Buster aarch64 - Bazel 3.7.2**  
+**Using EC2 m6g.16xlarge**
+
+============================================================  
+
+```bash
+$ sudo bazel clean --expunge
+$ ./configure
+$ sudo bazel build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+--ui_actions_shown=64 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.8.0 - CUDA11.4 - TensorRT8.2 - x86_64 - Bazel 3.7.2**  
+
+============================================================  
+
+```bash
+$ sudo bazel clean --expunge
+$ cp tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_0.inc tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_2.inc \
+&& sed -i '62a #elif NV_TENSORRT_MAJOR == 8 && NV_TENSORRT_MINOR == 2' tensorflow/compiler/tf2tensorrt/stub/nvinfer_stub.cc \
+&& sed -i '63a #include "tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_2.inc"' tensorflow/compiler/tf2tensorrt/stub/nvinfer_stub.cc \
+&& cp tensorflow/compiler/tf2tensorrt/stub/NvInferPlugin_8_0.inc tensorflow/compiler/tf2tensorrt/stub/NvInferPlugin_8_2.inc \
+&& sed -i '62a #elif NV_TENSORRT_MAJOR == 8 && NV_TENSORRT_MINOR == 2' tensorflow/compiler/tf2tensorrt/stub/nvinfer_plugin_stub.cc \
+&& sed -i '63a #include "tensorflow/compiler/tf2tensorrt/stub/NvInferPlugin_8_2.inc"' tensorflow/compiler/tf2tensorrt/stub/nvinfer_plugin_stub.cc
+
+$ ./configure
+
+supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 6.1,7.5,8.6
+	
+$ sudo bazel build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+--ui_actions_shown=20 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+
+```bash
+$ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.8.0*.whl ~
+```
+
+</div></details>
+
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
 
