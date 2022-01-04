@@ -6533,13 +6533,6 @@ $ sudo bazel build \
 
 ```bash
 $ sudo bazel clean --expunge
-$ cp tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_0.inc tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_2.inc \
-&& sed -i '62a #elif NV_TENSORRT_MAJOR == 8 && NV_TENSORRT_MINOR == 2' tensorflow/compiler/tf2tensorrt/stub/nvinfer_stub.cc \
-&& sed -i '63a #include "tensorflow/compiler/tf2tensorrt/stub/NvInfer_8_2.inc"' tensorflow/compiler/tf2tensorrt/stub/nvinfer_stub.cc \
-&& cp tensorflow/compiler/tf2tensorrt/stub/NvInferPlugin_8_0.inc tensorflow/compiler/tf2tensorrt/stub/NvInferPlugin_8_2.inc \
-&& sed -i '62a #elif NV_TENSORRT_MAJOR == 8 && NV_TENSORRT_MINOR == 2' tensorflow/compiler/tf2tensorrt/stub/nvinfer_plugin_stub.cc \
-&& sed -i '63a #include "tensorflow/compiler/tf2tensorrt/stub/NvInferPlugin_8_2.inc"' tensorflow/compiler/tf2tensorrt/stub/nvinfer_plugin_stub.cc
-
 $ ./configure
 
 supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 6.1,7.5,8.6
