@@ -6532,6 +6532,8 @@ $ sudo bazel build \
 ============================================================  
 
 ```bash
+$ wget https://github.com/bazelbuild/bazel/releases/download/4.2.1/bazel-4.2.1-installer-linux-x86_64.sh
+$ sudo chmod +x bazel-4.2.1-installer-linux-x86_64.sh && sudo ./bazel-4.2.1-installer-linux-x86_64.sh
 $ sudo bazel clean --expunge
 $ ./configure
 
