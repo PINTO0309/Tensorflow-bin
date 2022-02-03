@@ -129,11 +129,8 @@ $ sudo -H pip3 install tensorflow-2.8.0-cp39-none-linux_aarch64.whl
 ## Operation check
 **Example of Python 3.x series**
 ```bash
-$ python3
->>> import tensorflow
->>> tensorflow.__version__
-1.15.0
->>> exit()
+$ python -c 'import tensorflow as tf;print(tf.__version__)'
+2.8.0
 ```
 
 **Sample of MultiThread x4**
