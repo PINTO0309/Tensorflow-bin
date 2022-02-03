@@ -2,7 +2,7 @@
   
 **Older versions of Wheel files can be obtained from the [Previous version download script (GoogleDrive)](previous_versions).**  
   
-Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi.  
+Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi. Since the 64-bit OS for RaspberryPi has been officially released, I stopped building Wheel in armhf. If you need Wheel for armhf, please use this. [TensorflowLite-bin](https://github.com/PINTO0309/TensorflowLite-bin)  
 - Support for custom operations in MediaPipe. **`MaxPoolingWithArgmax2D`**, **`MaxUnpooling2D`**, **`Convolution2DTransposeBias`**  
 - Support for Flex Delegate.  
 - Support for XNNPACK.
