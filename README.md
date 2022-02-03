@@ -6452,60 +6452,7 @@ cd ../../..
 
 ============================================================  
   
-**Tensorflow v2.8.0 - Buster armv7l/armhf - Bazel 4.2.1**  
-**Native Build**
-
-============================================================  
-
-```bash
-$ sudo bazel clean --expunge
-$ ./configure
-$ sudo bazel --host_jvm_args=-Xmx512m build \
---config=monolithic \
---config=noaws \
---config=nohdfs \
---config=nonccl \
---config=v2 \
---local_ram_resources=4096 \
---local_cpu_resources=2 \
---copt=-mfpu=neon-vfpv4 \
---copt=-ftree-vectorize \
---copt=-funsafe-math-optimizations \
---copt=-ftree-loop-vectorize \
---copt=-fomit-frame-pointer \
---copt=-DRASPBERRY_PI \
---host_copt=-DRASPBERRY_PI \
---linkopt=-Wl,-latomic \
---host_linkopt=-Wl,-latomic \
---define=tensorflow_mkldnn_contraction_kernel=0 \
---define=raspberry_pi_with_neon=true \
---define=tflite_pip_with_flex=true \
---define=tflite_with_xnnpack=true \
-//tensorflow/tools/pip_package:build_pip_package
-```
-
-============================================================  
-  
-**Tensorflow v2.8.0 - Buster armv7l/armhf - Bazel 4.2.1**  
-**Cross-compilation by x86 host**
-
-============================================================  
-
-```bash
-$ git clone https://github.com/PINTO0309/tensorflow-on-arm.git && \
-  cd tensorflow-on-arm/build_tensorflow
-$ docker build -t tf-arm -f Dockerfile .
-$ docker run -it --rm \
-  -v /tmp/tensorflow_pkg/:/tmp/tensorflow_pkg/ \
-  --env TF_PYTHON_VERSION=3.7 \
-  tf-arm ./build_tensorflow.sh configs/rpi.conf
-$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.8.0-cp37-none-linux_armv7l.whl .
-$ sudo chmod 777 tensorflow-2.8.0-cp37-none-linux_armv7l.whl
-```
-
-============================================================  
-  
-**Tensorflow v2.8.0 - Debian Buster aarch64 - Bazel 4.2.1**  
+**Tensorflow v2.8.0 - Debian Bullseye aarch64 - Bazel 4.2.1**  
 **Using EC2 m6g.16xlarge**
 
 ============================================================  
