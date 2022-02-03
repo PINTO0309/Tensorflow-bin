@@ -118,6 +118,7 @@ $ sudo pip3 install h5py==3.1.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
 $ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/tensorflow-2.8.0-cp39-none-linux_aarch64_numpy1221_download.sh"
+$ sudo chmod +x tensorflow-2.8.0-cp39-none-linux_aarch64_numpy1221_download.sh
 $ ./tensorflow-2.8.0-cp39-none-linux_aarch64_numpy1221_download.sh
 $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-2.8.0-cp39-none-linux_aarch64.whl
