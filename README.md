@@ -6553,10 +6553,11 @@ $ sudo bazel build \
 ============================================================  
 
 ```bash
-$ wget https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-installer-linux-x86_64.sh
-$ sudo chmod +x bazel-5.0.0-installer-linux-x86_64.sh && sudo ./bazel-5.0.0-installer-linux-x86_64.sh
-$ sudo bazel clean --expunge
-$ ./configure
+$ wget https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-installer-linux-x86_64.sh \
+&& sudo chmod +x bazel-5.0.0-installer-linux-x86_64.sh \
+&& sudo ./bazel-5.0.0-installer-linux-x86_64.sh \
+&& sudo bazel clean --expunge
+&& ./configure
 
 supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 6.1,7.5,8.6
 	
