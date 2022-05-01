@@ -6532,8 +6532,12 @@ $ curl -OL https://github.com/PINTO0309/TensorflowLite-bin/releases/download/v2.
 ============================================================  
 
 ```bash
-$ sudo bazel clean --expunge
-$ ./configure
+$ wget -O bazel https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-linux-arm64 \
+&& sudo chmod 777 bazel \
+&& sudo cp bazel /usr/local/bin \
+&& sudo bazel clean --expunge \
+&& ./configure
+
 $ sudo bazel build \
 --config=monolithic \
 --config=noaws \
