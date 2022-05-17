@@ -109,19 +109,20 @@ $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
 ```bash
 $ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran libgfortran5 \
                           libatlas3-base libatlas-base-dev libopenblas-dev libopenblas-base libblas-dev \
-                          liblapack-dev cython3 libatlas-base-dev openmpi-bin libopenmpi-dev python3-dev
+                          liblapack-dev cython3 libatlas-base-dev openmpi-bin libopenmpi-dev python3-dev \
+			  python-is-python3
 $ sudo pip3 install pip --upgrade
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
-$ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
-$ sudo pip3 install numpy==1.22.1
-$ sudo pip3 install h5py==3.1.0
-$ sudo pip3 install pybind11
+$ sudo pip3 install keras_preprocessing==1.1.2 --no-deps
+$ sudo pip3 install numpy==1.22.3
+$ sudo pip3 install h5py==3.6.0
+$ sudo pip3 install pybind11==2.9.2
 $ pip3 install -U --user six wheel mock
-$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/tensorflow-2.8.0-cp39-none-linux_aarch64_numpy1221_download.sh"
-$ sudo chmod +x tensorflow-2.8.0-cp39-none-linux_aarch64_numpy1221_download.sh
-$ ./tensorflow-2.8.0-cp39-none-linux_aarch64_numpy1221_download.sh
+$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/tensorflow-2.9.0-cp39-none-linux_aarch64_download.sh"
+$ sudo chmod +x tensorflow-2.9.0-cp39-none-linux_aarch64_download.sh
+$ ./tensorflow-2.9.0-cp39-none-linux_aarch64_download.sh
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.8.0-cp39-none-linux_aarch64.whl
+$ sudo -H pip3 install tensorflow-2.9.0-cp39-none-linux_aarch64.whl
 
 【Required】 Restart the terminal.
 ```
@@ -130,7 +131,7 @@ $ sudo -H pip3 install tensorflow-2.8.0-cp39-none-linux_aarch64.whl
 **Example of Python 3.x series**
 ```bash
 $ python -c 'import tensorflow as tf;print(tf.__version__)'
-2.8.0
+2.9.0
 ```
 
 **Sample of MultiThread x4**
