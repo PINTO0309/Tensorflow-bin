@@ -6509,7 +6509,7 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.8.0*.whl ~
 
 ```
 $ sudo apt update && sudo apt upgrade -y && \
-sudo apt install libhdf5-dev unzip && \
+sudo apt install libhdf5-dev unzip pkg-config python3-pip cmake make python-is-python3 && \
 sudo pip3 install pip --upgrade && \
 sudo pip3 install keras_applications==1.0.8 --no-deps && \
 sudo pip3 install keras_preprocessing==1.1.2 --no-deps && \
