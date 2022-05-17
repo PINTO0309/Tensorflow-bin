@@ -6516,6 +6516,7 @@ sudo pip3 install keras_applications==1.0.8 --no-deps && \
 sudo pip3 install keras_preprocessing==1.1.2 --no-deps && \
 sudo pip3 install gdown h5py==3.6.0 && \
 sudo pip3 install pybind11==2.9.2 && \
+sudo pip3 install packaging && \
 pip3 install -U --user six wheel mock
 ```
 - Apply customization to add custom operations for MediaPipe. (max_pool_argmax, max_unpooling, transpose_conv_bias, TransformLandmarks, TransformTensorBilinear, Landmarks2TransformMatrix)
