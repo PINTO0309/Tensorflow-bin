@@ -122,11 +122,8 @@ $ sudo pip3 install numpy==1.22.3
 $ sudo pip3 install h5py==3.6.0
 $ sudo pip3 install pybind11==2.9.2
 $ pip3 install -U --user six wheel mock
-$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/tensorflow-2.9.0-cp39-none-linux_aarch64_download.sh"
-$ sudo chmod +x tensorflow-2.9.0-cp39-none-linux_aarch64_download.sh
-$ ./tensorflow-2.9.0-cp39-none-linux_aarch64_download.sh
 $ sudo pip3 uninstall tensorflow
-$ sudo -H pip3 install tensorflow-2.9.0-cp39-none-linux_aarch64.whl
+$ sudo -H pip3 install --no-cache-dir https://github.com/PINTO0309/Tensorflow-bin/releases/download/v2.9.0/tensorflow-2.9.0-cp39-none-linux_aarch64.whl
 
 【Required】 Restart the terminal.
 ```
