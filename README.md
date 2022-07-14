@@ -124,6 +124,7 @@ $ sudo pip3 install pybind11==2.9.2
 $ pip3 install -U --user six wheel mock
 $ sudo pip3 uninstall tensorflow
 
+$ TFVER=2.9.0
 $ PYVER=39
 or
 $ PYVER=38
@@ -132,7 +133,7 @@ $ PYVER=310
 
 $ sudo -H pip3 install \
 --no-cache-dir \
-https://github.com/PINTO0309/Tensorflow-bin/releases/download/v2.9.0/tensorflow-2.9.0-cp${PYVER}-none-linux_aarch64.whl
+https://github.com/PINTO0309/Tensorflow-bin/releases/download/v${TFVER}/tensorflow-${TFVER}-cp${PYVER}-none-linux_aarch64.whl
 
 【Required】 Restart the terminal.
 ```
