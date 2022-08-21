@@ -127,15 +127,18 @@ $ pip3 install -U --user six wheel mock
 $ sudo pip3 uninstall tensorflow
 
 $ TFVER=2.9.0
+
 $ PYVER=39
 or
 $ PYVER=38
 or
 $ PYVER=310
 
+$ ARCH=`python -c 'import platform; print(platform.machine())'`
+
 $ sudo -H pip3 install \
 --no-cache-dir \
-https://github.com/PINTO0309/Tensorflow-bin/releases/download/v${TFVER}/tensorflow-${TFVER}-cp${PYVER}-none-linux_aarch64.whl
+https://github.com/PINTO0309/Tensorflow-bin/releases/download/v${TFVER}/tensorflow-${TFVER}-cp${PYVER}-none-linux_${ARCH}.whl
 
 【Required】 Restart the terminal.
 ```
