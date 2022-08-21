@@ -6605,6 +6605,88 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.9.0*.whl ~
 
 </div></details>
 
+<details><summary>Tensorflow v2.10.0</summary><div>
+
+```
+$ sudo apt update && sudo apt upgrade -y && \
+sudo apt install -y libhdf5-dev unzip pkg-config python3-pip cmake make python-is-python3 && \
+sudo pip3 install pip --upgrade && \
+sudo pip3 install keras_applications==1.0.8 --no-deps && \
+sudo pip3 install keras_preprocessing==1.1.2 --no-deps && \
+sudo pip3 install gdown h5py==3.6.0 && \
+sudo pip3 install pybind11==2.9.2 && \
+sudo pip3 install packaging && \
+pip3 install -U --user six wheel mock
+```
+- Apply customization to add custom operations for MediaPipe. (max_pool_argmax, max_unpooling, transpose_conv_bias, TransformLandmarks, TransformTensorBilinear, Landmarks2TransformMatrix)
+```bash
+$ curl -OL https://github.com/PINTO0309/TensorflowLite-bin/releases/download/v2.10.0/mediapipe_customop_patch.zip \
+&& unzip -d mediapipe_customop_patch mediapipe_customop_patch.zip \
+&& git apply mediapipe_customop_patch/*
+```
+
+============================================================  
+  
+**Tensorflow v2.10.0 - Debian Bullseye aarch64 - Bazel 5.0.0**  
+**Using EC2 m6g.16xlarge**
+
+============================================================  
+
+```bash
+$ wget -O bazel https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-linux-arm64 \
+&& sudo chmod 777 bazel \
+&& sudo cp bazel /usr/local/bin \
+&& sudo bazel clean --expunge \
+&& ./configure
+
+$ sudo bazel build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+--ui_actions_shown=64 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+  
+**Tensorflow v2.10.0 - CUDA11.6 - TensorRT8.4 - x86_64 - Bazel 5.0.0**  
+
+============================================================  
+
+```bash
+$ wget https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-installer-linux-x86_64.sh \
+&& sudo chmod +x bazel-5.0.0-installer-linux-x86_64.sh \
+&& sudo ./bazel-5.0.0-installer-linux-x86_64.sh \
+&& sudo bazel clean --expunge
+&& ./configure
+
+supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 6.1,7.5,8.6
+	
+$ sudo bazel build \
+--config=monolithic \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_pip_with_flex=true \
+--define=tflite_with_xnnpack=true \
+--ui_actions_shown=20 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+============================================================  
+
+```bash
+$ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+$ sudo cp /tmp/tensorflow_pkg/tensorflow-2.10.0*.whl ~
+```
+
+</div></details>
+
 ## Reference articles
 - **[64-bit OS image creation repository for RaspberryPi3/4](https://github.com/drtyhlpr/rpi23-gen-image.git)**
 
