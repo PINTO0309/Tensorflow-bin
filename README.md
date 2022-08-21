@@ -90,11 +90,12 @@ $ ./install-buster.sh
 ## Usage
 **Example of Python 3.x + Tensorflow v1 series**
 ```bash
-$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran \
-                          libgfortran5 libatlas3-base libatlas-base-dev \
-                          libopenblas-dev libopenblas-base libblas-dev \
-                          liblapack-dev cython3 openmpi-bin libopenmpi-dev \
-                          libatlas-base-dev python3-dev
+$ sudo apt-get install -y \
+    libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran \
+    libgfortran5 libatlas3-base libatlas-base-dev \
+    libopenblas-dev libopenblas-base libblas-dev \
+    liblapack-dev cython3 openmpi-bin libopenmpi-dev \
+    libatlas-base-dev python3-dev
 $ sudo pip3 install pip --upgrade
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
 $ sudo pip3 install keras_preprocessing==1.1.0 --no-deps
@@ -110,11 +111,12 @@ $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
 ```
 **Example of Python 3.x + Tensorflow v2 series**  
 ```bash
-$ sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran \
-                          libgfortran5 libatlas3-base libatlas-base-dev \
-                          libopenblas-dev libopenblas-base libblas-dev \
-                          liblapack-dev cython3 libatlas-base-dev openmpi-bin \
-                          libopenmpi-dev python3-dev python-is-python3
+$ sudo apt-get install -y \
+    libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran \
+    libgfortran5 libatlas3-base libatlas-base-dev \
+    libopenblas-dev libopenblas-base libblas-dev \
+    liblapack-dev cython3 libatlas-base-dev openmpi-bin \
+    libopenmpi-dev python3-dev python-is-python3
 $ sudo pip3 install pip --upgrade
 $ sudo pip3 install keras_applications==1.0.8 --no-deps
 $ sudo pip3 install keras_preprocessing==1.1.2 --no-deps
