@@ -135,6 +135,7 @@ or
 $ PYVER=310
 
 $ ARCH=`python -c 'import platform; print(platform.machine())'`
+$ echo CPU ARCH: ${ARCH}
 
 $ sudo -H pip3 install \
 --no-cache-dir \
