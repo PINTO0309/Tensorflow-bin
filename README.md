@@ -6629,13 +6629,13 @@ $ curl -OL https://github.com/PINTO0309/TensorflowLite-bin/releases/download/v2.
 
 ============================================================  
   
-**Tensorflow v2.10.0 - Debian Bullseye aarch64 - Bazel 5.0.0**  
+**Tensorflow v2.10.0 - Debian Bullseye aarch64 - Bazel 5.1.1**  
 **Using EC2 m6g.16xlarge**
 
 ============================================================  
 
 ```bash
-$ wget -O bazel https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-linux-arm64 \
+$ wget -O bazel https://github.com/bazelbuild/bazel/releases/download/5.1.1/bazel-5.1.1-linux-arm64 \
 && sudo chmod 777 bazel \
 && sudo cp bazel /usr/local/bin \
 && sudo bazel clean --expunge \
@@ -6655,14 +6655,14 @@ $ sudo bazel build \
 
 ============================================================  
   
-**Tensorflow v2.10.0 - CUDA11.6 - TensorRT8.4 - x86_64 - Bazel 5.0.0**  
+**Tensorflow v2.10.0 - CUDA11.7 - TensorRT8.4.3 - x86_64 - Bazel 5.1.1**  
 
 ============================================================  
 
 ```bash
-$ wget https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-installer-linux-x86_64.sh \
-&& sudo chmod +x bazel-5.0.0-installer-linux-x86_64.sh \
-&& sudo ./bazel-5.0.0-installer-linux-x86_64.sh \
+$ wget https://github.com/bazelbuild/bazel/releases/download/5.1.1/bazel-5.1.1-installer-linux-x86_64.sh \
+&& sudo chmod +x bazel-5.1.1-installer-linux-x86_64.sh \
+&& sudo ./bazel-5.1.1-installer-linux-x86_64.sh \
 && sudo bazel clean --expunge
 && ./configure
 
