@@ -126,7 +126,7 @@ $ sudo pip3 install pybind11==2.9.2
 $ pip3 install -U --user six wheel mock
 $ sudo pip3 uninstall tensorflow
 
-$ TFVER=2.9.0
+$ TFVER=2.10.0
 
 $ PYVER=39
 or
