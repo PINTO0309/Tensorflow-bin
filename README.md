@@ -64,9 +64,9 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |:--|:--:|:--:|:--:|:--:|:--:|:--|
 |tensorflow-2.5.0-cp37-none-linux_armv7l.whl|○|○|○|○|1.19/1.20|Raspbian/Debian Buster, glibc 2.28|
 |tensorflow-2.7.0-cp37-none-linux_aarch64.whl|○|○|○|○|1.19/1.21|RaspberryPiOS/Debian Buster, glibc 2.28|
-|tensorflow-2.9.0-cp38-none-linux_aarch64.whl|○|○|○|○|1.22|Ubuntu 20.04 Focal, glibc 2.31|
-|tensorflow-2.9.0-cp39-none-linux_aarch64.whl|○|○|○|○|1.22|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
-|tensorflow-2.9.0-cp310-none-linux_aarch64.whl|○|○|○|○|1.22|Ubuntu 22.04 glibc 2.35|
+|tensorflow-2.10.0-cp38-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 20.04 Focal, glibc 2.31|
+|tensorflow-2.10.0-cp39-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
+|tensorflow-2.10.0-cp310-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 22.04 glibc 2.35|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.  
