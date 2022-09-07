@@ -148,7 +148,7 @@ https://github.com/PINTO0309/Tensorflow-bin/releases/download/v${TFVER}/tensorfl
 **Example of Python 3.x series**
 ```bash
 $ python -c 'import tensorflow as tf;print(tf.__version__)'
-2.9.0
+2.10.0
 ```
 
 **Sample of MultiThread x4**
