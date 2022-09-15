@@ -106,8 +106,6 @@ $ sudo pip3 uninstall tensorflow
 $ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-1.15.0-cp37-cp37m-linux_armv7l_download.sh"
 $ ./tensorflow-1.15.0-cp37-cp37m-linux_armv7l_download.sh
 $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
-
-【Required】 Restart the terminal.
 ```
 **Example of Python 3.x + Tensorflow v2 series**
 ```bash
@@ -140,8 +138,6 @@ $ echo CPU ARCH: ${ARCH}
 $ sudo -H pip3 install \
 --no-cache-dir \
 https://github.com/PINTO0309/Tensorflow-bin/releases/download/v${TFVER}/tensorflow-${TFVER}-cp${PYVER}-none-linux_${ARCH}.whl
-
-【Required】 Restart the terminal.
 ```
 
 ## Operation check
