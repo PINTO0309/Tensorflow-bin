@@ -6704,7 +6704,7 @@ pip3 install -U --user six wheel mock
 ```
 - Apply customization to add custom operations for MediaPipe. (max_pool_argmax, max_unpooling, transpose_conv_bias, TransformLandmarks, TransformTensorBilinear, Landmarks2TransformMatrix)
 ```bash
-$ curl -OL https://github.com/PINTO0309/TensorflowLite-bin/releases/download/v2.10.0/mediapipe_customop_patch.zip \
+$ curl -OL https://github.com/PINTO0309/TensorflowLite-bin/releases/download/v2.11.0/mediapipe_customop_patch.zip \
 && unzip -d mediapipe_customop_patch mediapipe_customop_patch.zip \
 && git apply mediapipe_customop_patch/*
 ```
