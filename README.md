@@ -6694,7 +6694,7 @@ sudo apt install -y \
   libhdf5-dev unzip pkg-config python3-pip \
   cmake make python-is-python3 && \
 sudo pip3 install pip --upgrade && \
-sudo pip3 install numpy==1.23.2 && \
+sudo pip3 install numpy==1.23.4 && \
 sudo pip3 install keras_applications==1.0.8 --no-deps && \
 sudo pip3 install keras_preprocessing==1.1.2 --no-deps && \
 sudo pip3 install gdown h5py==3.6.0 && \
