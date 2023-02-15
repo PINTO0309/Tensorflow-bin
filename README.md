@@ -77,7 +77,7 @@ The behavior is unconfirmed because I do not have C language implementation skil
 
 **Appx2. C-API Usage**
 ```sh
-$ wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/C-library/2.2.0-armhf/install-buster.sh
+$ wget https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/C-library/2.2.0-armhf/install-buster.sh
 $ ./install-buster.sh
 ```
 |Version|Binary|Note|
