@@ -103,8 +103,8 @@ $ sudo pip3 install h5py==2.9.0
 $ sudo pip3 install pybind11
 $ pip3 install -U --user six wheel mock
 $ sudo pip3 uninstall tensorflow
-$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/tensorflow-1.15.0-cp37-cp37m-linux_armv7l_download.sh"
-$ ./tensorflow-1.15.0-cp37-cp37m-linux_armv7l_download.sh
+$ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/previous_versions/download_tensorflow-1.15.0-cp37-cp37m-linux_armv7l.sh"
+$ ./download_tensorflow-1.15.0-cp37-cp37m-linux_armv7l.sh
 $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
 ```
 **Example of Python 3.x + Tensorflow v2 series**
