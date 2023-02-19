@@ -6786,6 +6786,8 @@ sudo pip3 install gdown h5py==3.6.0 && \
 sudo pip3 install pybind11==2.9.2 && \
 sudo pip3 install packaging && \
 pip3 install -U --user six wheel mock
+
+$ sed -i '15a #include <assert.h>' tensorflow/tsl/framework/fixedpoint/MatMatProductAVX2.h
 ```
 
 ============================================================
