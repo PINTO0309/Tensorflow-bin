@@ -6838,6 +6838,7 @@ $ sudo bazel build \
 --config=v2 \
 --define=tflite_pip_with_flex=true \
 --define=tflite_with_xnnpack=true \
+--define=with_xla_support=false \
 --ui_actions_shown=20 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
