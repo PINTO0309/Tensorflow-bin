@@ -6770,7 +6770,7 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.11.0*.whl ~
 
 </div></details>
 
-<details><summary>Tensorflow v2.12.0</summary><div>
+<details><summary>＜INVALID＞ Tensorflow v2.12.0</summary><div>
 
 ```
 $ sudo apt update && sudo apt upgrade -y && \
