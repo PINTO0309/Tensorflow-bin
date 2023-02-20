@@ -6797,11 +6797,6 @@ $ sed -i '15a #include <assert.h>' tensorflow/tsl/framework/fixedpoint/MatMatPro
 ============================================================
 
 ```bash
-$ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 12
-$ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
-$ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 12
-$ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 11
-
 $ wget -O bazel https://github.com/bazelbuild/bazel/releases/download/5.3.0/bazel-5.3.0-linux-arm64 \
 && sudo chmod 777 bazel \
 && sudo cp bazel /usr/local/bin \
@@ -6809,12 +6804,10 @@ $ wget -O bazel https://github.com/bazelbuild/bazel/releases/download/5.3.0/baze
 && ./configure
 
 $ sudo bazel build \
---config=monolithic \
 --config=noaws \
 --config=nohdfs \
 --config=nonccl \
 --config=v2 \
---define=tflite_pip_with_flex=true \
 --define=tflite_with_xnnpack=true \
 --copt="-Wno-stringop-overflow" \
 --ui_actions_shown=64 \
@@ -6837,12 +6830,10 @@ $ wget https://github.com/bazelbuild/bazel/releases/download/5.3.0/bazel-5.3.0-i
 supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 6.1,7.5,8.6
 
 $ sudo bazel build \
---config=monolithic \
 --config=noaws \
 --config=nohdfs \
 --config=nonccl \
 --config=v2 \
---define=tflite_pip_with_flex=true \
 --define=tflite_with_xnnpack=true \
 --define=with_xla_support=false \
 --ui_actions_shown=20 \
