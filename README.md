@@ -6797,6 +6797,9 @@ $ sed -i '15a #include <assert.h>' tensorflow/tsl/framework/fixedpoint/MatMatPro
 ============================================================
 
 ```bash
+$ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 12
+$ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
+
 $ wget -O bazel https://github.com/bazelbuild/bazel/releases/download/5.3.0/bazel-5.3.0-linux-arm64 \
 && sudo chmod 777 bazel \
 && sudo cp bazel /usr/local/bin \
