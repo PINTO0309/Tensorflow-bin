@@ -17,6 +17,7 @@ Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi. Since the 64-bit 
 |RaspberryPi3/4|Ubuntu 20.04|Focal|aarch64 / armv8|3.8.2|64bit, glibc2.31|
 |RaspberryPi3/4|Ubuntu 21.04/Debian/RaspberryPiOS|Hirsute/Bullseye|aarch64 / armv8|3.9.x|64bit, glibc2.33/glibc2.31|
 |RaspberryPi3/4|Ubuntu 22.04|Jammy|aarch64 / armv8|3.10.x|64bit, glibc2.35|
+|???|Debian|Bookworm|aarch64 / armv8|3.11.x|64bit, glibc2.36|
 
 Minimal configuration stand-alone installer for Tensorflow Lite.  
 **https://github.com/PINTO0309/TensorflowLite-bin.git**
@@ -66,6 +67,10 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-2.10.0-cp38-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 20.04 Focal, glibc 2.31|
 |tensorflow-2.10.0-cp39-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
 |tensorflow-2.10.0-cp310-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 22.04 glibc 2.35|
+|tensorflow-2.12.0rc0-cp38-none-linux_aarch64.whl|○||○||1.24|Ubuntu 20.04 Focal, glibc 2.31|
+|tensorflow-2.12.0rc0-cp39-none-linux_aarch64.whl|○||○||1.24|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
+|tensorflow-2.12.0rc0-cp310-none-linux_aarch64.whl|○||○||1.24|Ubuntu 22.04 glibc 2.35|
+|tensorflow-2.12.0rc0-cp311-none-linux_aarch64.whl|○||○||1.24|Debian  Bookworm glibc 2.36|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**  
 The behavior is unconfirmed because I do not have C language implementation skills.  
