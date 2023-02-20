@@ -6784,6 +6784,7 @@ sudo pip3 install keras_preprocessing==1.1.2 --no-deps && \
 sudo pip3 install gdown h5py==3.6.0 && \
 sudo pip3 install pybind11==2.9.2 && \
 sudo pip3 install packaging && \
+sudo pip3 install protobuf==3.20.3 && \
 pip3 install -U --user six wheel mock
 
 $ sed -i '15a #include <assert.h>' tensorflow/tsl/framework/fixedpoint/MatMatProductAVX2.h
