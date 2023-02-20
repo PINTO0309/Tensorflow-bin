@@ -6792,7 +6792,7 @@ $ sed -i '15a #include <assert.h>' tensorflow/tsl/framework/fixedpoint/MatMatPro
 
 ============================================================
 
-**Tensorflow v2.12.0 - Ubuntu 22.04 aarch64 - Bazel 5.3.0**
+**Tensorflow v2.12.0 - Ubuntu 20.04/22.04 aarch64 - Bazel 5.3.0**
 **Using EC2 m6g.16xlarge**
 
 ============================================================
