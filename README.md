@@ -6776,7 +6776,7 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.11.0*.whl ~
 $ sudo apt update && sudo apt upgrade -y && \
 sudo apt install -y \
   libhdf5-dev unzip pkg-config python3-pip \
-  cmake make python-is-python3 gcc-12 && \
+  cmake make python-is-python3 gcc-12 g++-12 && \
 sudo pip3 install pip --upgrade && \
 sudo pip3 install numpy==1.24.2 && \
 sudo pip3 install keras_applications==1.0.8 --no-deps && \
