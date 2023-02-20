@@ -6816,6 +6816,7 @@ $ sudo bazel build \
 --config=v2 \
 --define=tflite_pip_with_flex=true \
 --define=tflite_with_xnnpack=true \
+--copt="-Wno-stringop-overflow" \
 --ui_actions_shown=64 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
