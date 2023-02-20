@@ -6797,7 +6797,7 @@ $ sed -i '15a #include <assert.h>' tensorflow/tsl/framework/fixedpoint/MatMatPro
 
 ============================================================
 
-**Tensorflow v2.12.0 - Debian 11/Ubuntu 20.04/22.04 aarch64 - Bazel 5.3.0**
+**Tensorflow v2.12.0 - Debian 11/Debian 12/Ubuntu 20.04/22.04 aarch64 - Bazel 5.3.0**
 **Using EC2 m6g.16xlarge**
 
 ============================================================
@@ -6815,6 +6815,7 @@ $ sudo bazel build \
 --config=nonccl \
 --config=v2 \
 --define=tflite_with_xnnpack=true \
+--copt="-Wno-stringop-overflow" \
 --ui_actions_shown=64 \
 //tensorflow/tools/pip_package:build_pip_package
 ```
