@@ -6776,7 +6776,7 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.11.0*.whl ~
 $ sudo apt update && sudo apt upgrade -y && \
 sudo apt install -y \
   libhdf5-dev unzip pkg-config python3-pip \
-  cmake make python-is-python3 && \
+  cmake make python-is-python3 gcc-12 && \
 sudo pip3 install pip --upgrade && \
 sudo pip3 install numpy==1.24.2 && \
 sudo pip3 install keras_applications==1.0.8 --no-deps && \
@@ -6791,7 +6791,7 @@ $ sed -i '15a #include <assert.h>' tensorflow/tsl/framework/fixedpoint/MatMatPro
 
 ============================================================
 
-**Tensorflow v2.12.0 - Debian Bullseye aarch64 - Bazel 5.3.0**
+**Tensorflow v2.12.0 - Ubuntu 22.04 aarch64 - Bazel 5.3.0**
 **Using EC2 m6g.16xlarge**
 
 ============================================================
