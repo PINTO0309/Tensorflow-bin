@@ -6836,7 +6836,8 @@ $ wget https://github.com/bazelbuild/bazel/releases/download/5.3.0/bazel-5.3.0-i
 && sudo bazel clean --expunge
 && ./configure
 
-supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 6.1,7.5,8.6
+# https://developer.nvidia.com/cuda-gpus
+supports compute capabilities >= 3.5 [Default is: 3.5,7.0]: 8.6
 
 $ sudo bazel build \
 --config=noaws \
