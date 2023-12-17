@@ -6862,6 +6862,7 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.12.0*.whl ~
 <details><summary>Tensorflow v2.15.0</summary><div>
 
 ```bash
+# Bullseye, Ubuntu22.04
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install -y \
     libhdf5-dev \
@@ -6883,6 +6884,30 @@ pip install pybind11==2.9.2 && \
 pip install packaging && \
 pip install protobuf==3.20.3 && \
 pip install six wheel mock gdown
+
+# Bookworm
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install -y \
+    libhdf5-dev \
+    unzip \
+    pkg-config \
+    python3-pip \
+    cmake \
+    make \
+    git \
+    python-is-python3 \
+    wget \
+    patchelf && \
+pip install -U pip --break-system-packages && \
+pip install numpy==1.26.2 --break-system-packages && \
+pip install keras_applications==1.0.8 --no-deps --break-system-packages && \
+pip install keras_preprocessing==1.1.2 --no-deps --break-system-packages && \
+pip install h5py==3.6.0 --break-system-packages && \
+pip install pybind11==2.9.2 --break-system-packages && \
+pip install packaging --break-system-packages && \
+pip install protobuf==3.20.3 --break-system-packages && \
+pip install six wheel mock gdown --break-system-packages
+
 
 git clone -b r2.15-tflite-build https://github.com/PINTO0309/tensorflow.git
 cd tensorflow
