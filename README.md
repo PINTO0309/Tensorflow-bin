@@ -6862,7 +6862,7 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.12.0*.whl ~
 <details><summary>Tensorflow v2.15.0</summary><div>
 
 ```bash
-git cloen -b r2.15-tflite-build https://github.com/PINTO0309/tensorflow.git
+git clone -b r2.15-tflite-build https://github.com/PINTO0309/tensorflow.git
 cd tensorflow
 
 sudo apt update && sudo apt upgrade -y && \
