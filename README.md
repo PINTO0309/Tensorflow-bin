@@ -62,7 +62,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 **Python 3.x + Tensorflow v2**
 
-\*\*FD = FlexDelegate, \*\*\*XP = XNNPACK Float16 boost, \*\*\*\*MP = MediaPipe CustomOP, \*\*\*\*\*NP = Numpy
+\*FD = FlexDelegate, \*\*XP = XNNPACK Float16 boost, \*\*\*MP = MediaPipe CustomOP, \*\*\*\*NP = Numpy
 
 |.whl|FD|XP|MP|NP|Note|
 |:--|:--:|:--:|:--:|:--:|:--|
