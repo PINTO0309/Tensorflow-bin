@@ -61,18 +61,17 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-1.15.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
 
 **Python 3.x + Tensorflow v2**
-\*4T = 4 Threads, \*\*FD = FlexDelegate, \*\*\*XP = XNNPACK, \*\*\*\*MP = MediaPipe CustomOP, \*\*\*\*\*NP = Numpy
-|.whl|4T|FD|XP|MP|NP|Note|
-|:--|:--:|:--:|:--:|:--:|:--:|:--|
-|tensorflow-2.5.0-cp37-none-linux_armv7l.whl|○|○|○|○|1.19/1.20|Raspbian/Debian Buster, glibc 2.28|
-|tensorflow-2.7.0-cp37-none-linux_aarch64.whl|○|○|○|○|1.19/1.21|RaspberryPiOS/Debian Buster, glibc 2.28|
-|tensorflow-2.10.0-cp38-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 20.04 Focal, glibc 2.31|
-|tensorflow-2.10.0-cp39-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
-|tensorflow-2.10.0-cp310-none-linux_aarch64.whl|○|○|○|○|1.23|Ubuntu 22.04 glibc 2.35|
-|tensorflow-2.12.0rc0-cp38-none-linux_aarch64.whl|○||○||1.24|Ubuntu 20.04 Focal, glibc 2.31|
-|tensorflow-2.12.0rc0-cp39-none-linux_aarch64.whl|○||○||1.24|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
-|tensorflow-2.12.0rc0-cp310-none-linux_aarch64.whl|○||○||1.24|Ubuntu 22.04 glibc 2.35|
-|tensorflow-2.12.0rc0-cp311-none-linux_aarch64.whl|○||○||1.24|Debian  Bookworm glibc 2.36|
+\*\*FD = FlexDelegate, \*\*\*XP = XNNPACK Float16 boost, \*\*\*\*MP = MediaPipe CustomOP, \*\*\*\*\*NP = Numpy
+|.whl|FD|XP|MP|NP|Note|
+|:--|:--:|:--:|:--:|:--:|:--|
+|tensorflow-2.5.0-cp37-none-linux_armv7l.whl|○||○|1.19/1.20|Raspbian/Debian Buster, glibc 2.28|
+|tensorflow-2.7.0-cp37-none-linux_aarch64.whl|○||○|1.19/1.21|RaspberryPiOS/Debian Buster, glibc 2.28|
+|tensorflow-2.10.0-cp38-none-linux_aarch64.whl|○||○|1.23|Ubuntu 20.04 Focal, glibc 2.31|
+|tensorflow-2.10.0-cp39-none-linux_aarch64.whl|○||○|1.23|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
+|tensorflow-2.10.0-cp310-none-linux_aarch64.whl|○||○|1.23|Ubuntu 22.04 glibc 2.35|
+|tensorflow-2.15.0.post1-cp39-none-linux_aarch64.whl||○||1.24|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
+|tensorflow-2.15.0.post1-cp310-none-linux_aarch64.whl||○||1.24|Ubuntu 22.04 glibc 2.35|
+|tensorflow-2.15.0.post1-cp311-none-linux_aarch64.whl||○||1.24|Debian Bookworm glibc 2.36|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**
 The behavior is unconfirmed because I do not have C language implementation skills.
