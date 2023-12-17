@@ -3,8 +3,9 @@
 **Older versions of Wheel files can be obtained from the [Previous version download script (GoogleDrive)](previous_versions).**
 
 Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi. Since the 64-bit OS for RaspberryPi has been officially released, I stopped building Wheel in armhf. If you need Wheel for armhf, please use this. **[TensorflowLite-bin](https://github.com/PINTO0309/TensorflowLite-bin)**
-- Support for Flex Delegate.
+- ~Support for Flex Delegate.~
 - Support for XNNPACK.
+- Support for XNNPACK `Half-precision Inference Doubles On-Device Inference Performance`.
 
 **Python API packages**
 
