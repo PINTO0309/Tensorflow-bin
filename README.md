@@ -61,7 +61,9 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-1.15.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
 
 **Python 3.x + Tensorflow v2**
+
 \*\*FD = FlexDelegate, \*\*\*XP = XNNPACK Float16 boost, \*\*\*\*MP = MediaPipe CustomOP, \*\*\*\*\*NP = Numpy
+
 |.whl|FD|XP|MP|NP|Note|
 |:--|:--:|:--:|:--:|:--:|:--|
 |tensorflow-2.5.0-cp37-none-linux_armv7l.whl|○||○|1.19/1.20|Raspbian/Debian Buster, glibc 2.28|
