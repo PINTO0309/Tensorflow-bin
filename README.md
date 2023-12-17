@@ -23,11 +23,6 @@ Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi. Since the 64-bit 
 Minimal configuration stand-alone installer for Tensorflow Lite.
 **https://github.com/PINTO0309/TensorflowLite-bin.git**
 
-Prebuilt binary for Jetson Nano by **`Michael`**.
-**https://dl.photoprism.org/tensorflow/**
-
-**[Add a custom OP to the TFLite runtime to build the whl installer (for Python)](https://zenn.dev/pinto0309/articles/a0e40c2817f2ee)**, **`MaxPoolingWithArgmax2D`**, **`MaxUnpooling2D`**, **`Convolution2DTransposeBias`**
-
 ## Binary type
 
 **<details><summary>Python 2.x / 3.x + Tensorflow v1.15.0</summary><div>**
@@ -6966,3 +6961,7 @@ sudo cp /tmp/tensorflow_pkg/tensorflow-2.15.0*.whl ~
 - **[[Japanese ver.] [Tensorflow Lite] Various Neural Network Model quantization methods for Tensorflow Lite (Weight Quantization, Integer Quantization, Full Integer Quantization, Float16 Quantization, EdgeTPU). As of May 05, 2020.](https://qiita.com/PINTO/items/008c54536fca690e0572)**
 
 - **[[English ver.] [Tensorflow Lite] Various Neural Network Model quantization methods for Tensorflow Lite (Weight Quantization, Integer Quantization, Full Integer Quantization, Float16 Quantization, EdgeTPU). As of May 05, 2020.](https://qiita.com/PINTO/items/865250ee23a15339d556)**
+
+- Prebuilt binary for Jetson Nano by **`Michael`**. **https://dl.photoprism.org/tensorflow/**
+
+- **[Add a custom OP to the TFLite runtime to build the whl installer (for Python)](https://zenn.dev/pinto0309/articles/a0e40c2817f2ee)**, **`MaxPoolingWithArgmax2D`**, **`MaxUnpooling2D`**, **`Convolution2DTransposeBias`**
