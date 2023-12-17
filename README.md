@@ -71,9 +71,9 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-2.10.0-cp38-none-linux_aarch64.whl|○||○|1.23|Ubuntu 20.04 Focal, glibc 2.31|
 |tensorflow-2.10.0-cp39-none-linux_aarch64.whl|○||○|1.23|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
 |tensorflow-2.10.0-cp310-none-linux_aarch64.whl|○||○|1.23|Ubuntu 22.04 glibc 2.35|
-|tensorflow-2.15.0.post1-cp39-none-linux_aarch64.whl||○||1.24|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
-|tensorflow-2.15.0.post1-cp310-none-linux_aarch64.whl||○||1.24|Ubuntu 22.04 glibc 2.35|
-|tensorflow-2.15.0.post1-cp311-none-linux_aarch64.whl||○||1.24|Debian Bookworm glibc 2.36|
+|tensorflow-2.15.0.post1-cp39-none-linux_aarch64.whl||○||1.26|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
+|tensorflow-2.15.0.post1-cp310-none-linux_aarch64.whl||○||1.26|Ubuntu 22.04 glibc 2.35|
+|tensorflow-2.15.0.post1-cp311-none-linux_aarch64.whl||○||1.26|Debian Bookworm glibc 2.36|
 
 **【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**
 The behavior is unconfirmed because I do not have C language implementation skills.
