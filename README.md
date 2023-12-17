@@ -6887,6 +6887,8 @@ pip install six wheel mock gdown
 git clone -b r2.15-tflite-build https://github.com/PINTO0309/tensorflow.git
 cd tensorflow
 
+export TF_PYTHON_VERSION=3.xx
+
 wget -O bazel https://github.com/bazelbuild/bazel/releases/download/6.1.0/bazel-6.1.0-linux-arm64 \
 && sudo chmod 777 bazel \
 && sudo cp bazel /usr/local/bin \
