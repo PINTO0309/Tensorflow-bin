@@ -99,7 +99,7 @@ $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
 
 **Example of Python 3.x + Tensorflow v2 series**
 ```bash
-# Bullseye, Ubuntu22.04
+##### Bullseye, Ubuntu22.04
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install -y \
     libhdf5-dev \
@@ -121,8 +121,9 @@ pip install pybind11==2.9.2 && \
 pip install packaging && \
 pip install protobuf==3.20.3 && \
 pip install six wheel mock gdown
-
-# Bookworm
+```
+```bash
+##### Bookworm
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install -y \
     libhdf5-dev \
@@ -144,7 +145,8 @@ pip install pybind11==2.9.2 --break-system-packages && \
 pip install packaging --break-system-packages && \
 pip install protobuf==3.20.3 --break-system-packages && \
 pip install six wheel mock gdown --break-system-packages
-
+```
+```bash
 pip uninstall tensorflow
 
 TFVER=2.15.0.post1
