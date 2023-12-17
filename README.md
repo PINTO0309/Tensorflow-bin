@@ -17,7 +17,7 @@ Prebuilt binary with Tensorflow Lite enabled. For RaspberryPi. Since the 64-bit 
 |RaspberryPi3/4|Ubuntu 20.04|Focal|aarch64 / armv8|3.8.2|64bit, glibc2.31|
 |RaspberryPi3/4|Ubuntu 21.04/Debian/RaspberryPiOS|Hirsute/Bullseye|aarch64 / armv8|3.9.x|64bit, glibc2.33/glibc2.31|
 |RaspberryPi3/4|Ubuntu 22.04|Jammy|aarch64 / armv8|3.10.x|64bit, glibc2.35|
-|???|Debian|Bookworm|aarch64 / armv8|3.11.x|64bit, glibc2.36|
+|RaspberryPi3/4/5|Debian|Bookworm|aarch64 / armv8|3.11.x|64bit, glibc2.36|
 
 Minimal configuration stand-alone installer for Tensorflow Lite.
 **https://github.com/PINTO0309/TensorflowLite-bin.git**
@@ -6856,6 +6856,59 @@ $ sudo bazel build \
 $ sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.12.0*.whl ~
 ```
+
+</div></details>
+
+<details><summary>Tensorflow v2.15.0</summary><div>
+
+```bash
+git cloen -b r2.15-tflite-build https://github.com/PINTO0309/tensorflow.git
+cd tensorflow
+
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install -y \
+    libhdf5-dev \
+    unzip \
+    pkg-config \
+    python3-pip \
+    cmake \
+    make \
+    python-is-python3 \
+    wget \
+    patchelf && \
+pip install -U pip && \
+pip install numpy==1.26.2 && \
+pip install keras_applications==1.0.8 --no-deps && \
+pip install keras_preprocessing==1.1.2 --no-deps && \
+pip install h5py==3.6.0 && \
+pip install pybind11==2.9.2 && \
+pip install packaging && \
+pip install protobuf==3.20.3 && \
+pip install six wheel mock gdown
+
+wget -O bazel https://github.com/bazelbuild/bazel/releases/download/6.1.0/bazel-6.1.0-linux-arm64 \
+&& sudo chmod 777 bazel \
+&& sudo cp bazel /usr/local/bin \
+&& sudo bazel clean --expunge \
+&& ./configure
+
+sudo bazel build \
+--config=noaws \
+--config=nohdfs \
+--config=nonccl \
+--config=v2 \
+--define=tflite_with_xnnpack=true \
+--define=xnnpack_force_float_precision=fp16 \
+--copt="-Wno-stringop-overflow" \
+--ui_actions_shown=64 \
+//tensorflow/tools/pip_package:build_pip_package
+```
+
+```bash
+sudo ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+sudo cp /tmp/tensorflow_pkg/tensorflow-2.15.0*.whl ~
+```
+
 
 </div></details>
 
