@@ -30,7 +30,7 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 ## Binary type
 
-**Python 2.x / 3.x + Tensorflow v1.15.0**
+**<details><summary>Python 2.x / 3.x + Tensorflow v1.15.0</summary><div>**
 
 |.whl|4Threads|Note|
 |:--|:--:|:--|
@@ -38,6 +38,8 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-1.15.0-cp27-cp27mu-linux_armv7l.whl|○|Raspbian/Debian Buster, glibc 2.28|
 |tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl|○|Raspbian/Debian Buster, glibc 2.28|
 |tensorflow-1.15.0-cp37-cp37m-linux_aarch64.whl|○|Debian Buster, glibc 2.28|
+
+</div></details>
 
 **Python 3.x + Tensorflow v2**
 
@@ -49,7 +51,8 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 |tensorflow-2.15.0.post1-cp310-none-linux_aarch64.whl||○||1.26|Ubuntu 22.04 glibc 2.35|
 |tensorflow-2.15.0.post1-cp311-none-linux_aarch64.whl||○||1.26|Debian Bookworm glibc 2.36|
 
-**【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x**
+**<details><summary>【Appendix】 C Library + Tensorflow v1.x.x / v2.x.x</summary><div>**
+
 The behavior is unconfirmed because I do not have C language implementation skills.
 **[Official tutorial on Tensorflow C binding generation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/lib_package/README.md)**
 
@@ -68,8 +71,11 @@ $ ./install-buster.sh
 |v2.2.0|C-library/2.2.0-armhf/install-buster.sh|Raspbian/Debian Buster, glibc 2.28|
 |v2.3.0|C-library/2.3.0-aarch64/install-buster.sh|RaspberryPiOS/Raspbian/Debian Buster, glibc 2.28|
 
+</div></details>
+
 ## Usage
-**Example of Python 3.x + Tensorflow v1 series**
+**<details><summary>Example of Python 3.x + Tensorflow v1 series</summary><div>**
+
 ```bash
 $ sudo apt-get install -y \
     libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran \
@@ -88,6 +94,9 @@ $ wget "https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/master/previo
 $ ./download_tensorflow-1.15.0-cp37-cp37m-linux_armv7l.sh
 $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
 ```
+
+</div></details>
+
 **Example of Python 3.x + Tensorflow v2 series**
 ```bash
 # Bullseye, Ubuntu22.04
