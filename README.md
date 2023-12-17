@@ -6893,7 +6893,7 @@ wget -O bazel https://github.com/bazelbuild/bazel/releases/download/6.1.0/bazel-
 && sudo bazel clean --expunge \
 && ./configure
 
-sudo bazel build \
+bazel build \
 --config=noaws \
 --config=nohdfs \
 --config=nonccl \
