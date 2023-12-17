@@ -6862,9 +6862,6 @@ $ sudo cp /tmp/tensorflow_pkg/tensorflow-2.12.0*.whl ~
 <details><summary>Tensorflow v2.15.0</summary><div>
 
 ```bash
-git clone -b r2.15-tflite-build https://github.com/PINTO0309/tensorflow.git
-cd tensorflow
-
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install -y \
     libhdf5-dev \
@@ -6873,6 +6870,7 @@ sudo apt install -y \
     python3-pip \
     cmake \
     make \
+    git \
     python-is-python3 \
     wget \
     patchelf && \
@@ -6885,6 +6883,9 @@ pip install pybind11==2.9.2 && \
 pip install packaging && \
 pip install protobuf==3.20.3 && \
 pip install six wheel mock gdown
+
+git clone -b r2.15-tflite-build https://github.com/PINTO0309/tensorflow.git
+cd tensorflow
 
 wget -O bazel https://github.com/bazelbuild/bazel/releases/download/6.1.0/bazel-6.1.0-linux-arm64 \
 && sudo chmod 777 bazel \
