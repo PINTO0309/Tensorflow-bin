@@ -6902,7 +6902,7 @@ pip install -U pip --break-system-packages && \
 pip install numpy==1.26.2 --break-system-packages && \
 pip install keras_applications==1.0.8 --no-deps --break-system-packages && \
 pip install keras_preprocessing==1.1.2 --no-deps --break-system-packages && \
-pip install h5py==3.6.0 --break-system-packages && \
+pip install h5py==3.10.0 --break-system-packages && \
 pip install pybind11==2.9.2 --break-system-packages && \
 pip install packaging --break-system-packages && \
 pip install protobuf==3.20.3 --break-system-packages && \
