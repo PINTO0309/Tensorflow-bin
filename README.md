@@ -114,35 +114,66 @@ $ sudo pip3 install tensorflow-1.15.0-cp37-cp37m-linux_armv7l.whl
 ```
 **Example of Python 3.x + Tensorflow v2 series**
 ```bash
-$ sudo apt-get install -y \
-    libhdf5-dev libc-ares-dev libeigen3-dev gcc gfortran \
-    libgfortran5 libatlas3-base libatlas-base-dev \
-    libopenblas-dev libopenblas-base libblas-dev \
-    liblapack-dev cython3 libatlas-base-dev openmpi-bin \
-    libopenmpi-dev python3-dev python-is-python3
-$ sudo pip3 install pip --upgrade
-$ sudo pip3 install keras_applications==1.0.8 --no-deps
-$ sudo pip3 install keras_preprocessing==1.1.2 --no-deps
-$ sudo pip3 install numpy==1.24.2
-$ sudo pip3 install h5py==3.6.0
-$ sudo pip3 install pybind11==2.9.2
-$ pip3 install -U --user six wheel mock
-$ sudo pip3 uninstall tensorflow
+# Bullseye, Ubuntu22.04
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install -y \
+    libhdf5-dev \
+    unzip \
+    pkg-config \
+    python3-pip \
+    cmake \
+    make \
+    git \
+    python-is-python3 \
+    wget \
+    patchelf && \
+pip install -U pip && \
+pip install numpy==1.26.2 && \
+pip install keras_applications==1.0.8 --no-deps && \
+pip install keras_preprocessing==1.1.2 --no-deps && \
+pip install h5py==3.6.0 && \
+pip install pybind11==2.9.2 && \
+pip install packaging && \
+pip install protobuf==3.20.3 && \
+pip install six wheel mock gdown
 
-$ TFVER=2.12.0rc0
+# Bookworm
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install -y \
+    libhdf5-dev \
+    unzip \
+    pkg-config \
+    python3-pip \
+    cmake \
+    make \
+    git \
+    python-is-python3 \
+    wget \
+    patchelf && \
+pip install -U pip --break-system-packages && \
+pip install numpy==1.26.2 --break-system-packages && \
+pip install keras_applications==1.0.8 --no-deps --break-system-packages && \
+pip install keras_preprocessing==1.1.2 --no-deps --break-system-packages && \
+pip install h5py==3.10.0 --break-system-packages && \
+pip install pybind11==2.9.2 --break-system-packages && \
+pip install packaging --break-system-packages && \
+pip install protobuf==3.20.3 --break-system-packages && \
+pip install six wheel mock gdown --break-system-packages
 
-$ PYVER=39
+pip uninstall tensorflow
+
+TFVER=2.15.0.post1
+
+PYVER=39
 or
-$ PYVER=38
+PYVER=310
 or
-$ PYVER=310
-or
-$ PYVER=311
+PYVER=311
 
-$ ARCH=`python -c 'import platform; print(platform.machine())'`
-$ echo CPU ARCH: ${ARCH}
+ARCH=`python -c 'import platform; print(platform.machine())'`
+echo CPU ARCH: ${ARCH}
 
-$ sudo -H pip3 install \
+pip install \
 --no-cache-dir \
 https://github.com/PINTO0309/Tensorflow-bin/releases/download/v${TFVER}/tensorflow-${TFVER}-cp${PYVER}-none-linux_${ARCH}.whl
 ```
@@ -151,7 +182,7 @@ https://github.com/PINTO0309/Tensorflow-bin/releases/download/v${TFVER}/tensorfl
 **Example of Python 3.x series**
 ```bash
 $ python -c 'import tensorflow as tf;print(tf.__version__)'
-2.12.0rc0
+2.15.0.post1
 ```
 
 **Sample of MultiThread x4**
