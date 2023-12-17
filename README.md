@@ -66,11 +66,6 @@ Prebuilt binary for Jetson Nano by **`Michael`**.
 
 |.whl|FD|XP|MP|NP|Note|
 |:--|:--:|:--:|:--:|:--:|:--|
-|tensorflow-2.5.0-cp37-none-linux_armv7l.whl|○||○|1.19/1.20|Raspbian/Debian Buster, glibc 2.28|
-|tensorflow-2.7.0-cp37-none-linux_aarch64.whl|○||○|1.19/1.21|RaspberryPiOS/Debian Buster, glibc 2.28|
-|tensorflow-2.10.0-cp38-none-linux_aarch64.whl|○||○|1.23|Ubuntu 20.04 Focal, glibc 2.31|
-|tensorflow-2.10.0-cp39-none-linux_aarch64.whl|○||○|1.23|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
-|tensorflow-2.10.0-cp310-none-linux_aarch64.whl|○||○|1.23|Ubuntu 22.04 glibc 2.35|
 |tensorflow-2.15.0.post1-cp39-none-linux_aarch64.whl||○||1.26|Ubuntu 21.04 glibc 2.33, Debian Bullseye glibc 2.31|
 |tensorflow-2.15.0.post1-cp310-none-linux_aarch64.whl||○||1.26|Ubuntu 22.04 glibc 2.35|
 |tensorflow-2.15.0.post1-cp311-none-linux_aarch64.whl||○||1.26|Debian Bookworm glibc 2.36|
